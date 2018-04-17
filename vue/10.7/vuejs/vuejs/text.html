@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--{{text}}-->
+    <h1 v-text="hd"></h1>
+
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            hd:'魔镜魔镜，谁是最美的人，是白雪公主，不是echo，但echo是你最爱的人！！！'
+        }
+    })
+</script>
+</body>
+</html>

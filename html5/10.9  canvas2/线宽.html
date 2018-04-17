@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="300"></canvas>
+
+
+    <script>
+        var can = document.querySelector('#can');
+        var ctx = can.getContext('2d');
+        ctx.moveTo(50,50);
+        ctx.lineTo(50,250);
+        ctx.strokeStyle='#c11';
+        ctx.stroke();
+        ctx.beginPath()
+        ctx.moveTo(50,50);
+        ctx.lineTo(250,250);
+        ctx.strokeStyle='#ccc';
+        ctx.stroke();
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="../../vue.js"></script>
+    <link rel="stylesheet" href="animate.css"/>
+</head>
+<body>
+
+<div class="echo">
+    <allen></allen>
+    <!--<h1 class="animated tada">Example</h1>-->
+    <div class="animated infinite tada">呵呵哒</div>
+</div>
+
+<script type="text/x-handlebars-template" id='h'>
+    <div>
+
+        <button @click='type=!type'>切换</button>
+        <transition name='DJF'>
+            <h1 v-if='type'>哈哈哈哈</h1>
+        </transition>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id='hh'>
+    <div>
+        <button>切换</button>
+        <h1>呵呵哒</h1>
+    </div>
+</script>
+<script>
+    Vue.component('brain',{
+        template:'#hh'
+    })
+    var a = {
+        template:'#h',
+        data:function(){
+            return {
+                type:false
+            }
+        }
+    }
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+          type:false
+        },
+        components:{
+            allen:a
+        }
+    })
+</script>
+<style>
+    .DJF-enter,.DJF-leave-to{
+        opacity:0
+    }
+    .DJF-enter-active,.DJF-leave-active{
+        transition:all 1s
+    }
+    .DJF-enter-to,.DJF-leave{
+        opacity:1;
+        font-size: 300px;
+        color:red;
+    }
+</style>
+</body>
+</html>

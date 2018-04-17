@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hahaha</title>
+</head>
+<style>
+    canvas{
+        background-color: #fff;
+        color: #fff;
+        background-image: url(1.jpg);
+        background-position: -140px 180px;
+        background-repeat:no-repeat;
+    }
+</style>
+<body>
+<canvas id="canvas" width="800" height="600" style="border:1px solid #cccbcc" ></canvas>
+</body>
+<script>
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    
+    ctx.strokeStyle='#6CCAB8';
+    function Clock(opt) {
+        for (var key in opt) {
+            this[key] = opt[key];
+        }
+        console.log(opt[key])
+        ctx.font="18px 华文琥珀";
+        ctx.textAlign="center";
+        ctx.textBaseline="middle";
+        this.init();
+    }
+    //指明Clock构造函数对应的原型
+    Clock.prototype = {
+        //指定当前原型是Clock的原型
+        constructor: Clock,
+        //所有功能函数的调用
+        init: function () {
+            var self=this;
+            //定时器
+            var timer=setInterval(function(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+
+                //1、绘制大圆
+                self.drawBigCircle();
+                //2、绘制刻度线
+                self.drawTicks();
+                //3、绘制指针
+                self.drawPoints();
+            },1000);
+        },
+        //绘制表盘
+        drawBigCircle: function () {
+            ctx.beginPath();
+            ctx.lineWidth=1;
+            ctx.arc(this.bigX, this.bigY, this.bigR, 0, 2 * Math.PI);
+            ctx.stroke();
+        },
+        //绘制刻度线
+        drawTicks: function () {
+            //起始弧度
+            var startRadian=-Math.PI/3;//第一个刻度线的所弧度值
+            //每一个刻度之间的弧度差
+            var singleRadian=Math.PI/30;
+
+            for (var i = 0; i < 60; i++) {
+                //计算出每一个刻度线的起点和终点位于大圆上的弧度值
+                var radian=startRadian+singleRadian*i;
+
+                //发现i被5整除就是大刻度，反之就是小刻度
+
+                var length;//刻度线的长度
+                var width;//刻度线的线宽
+                if(i%5==0){
+                    //大刻度线
+                    length=this.bigLength;
+                    width=this.bigWidth;
+
+                    //绘制文字
+                    this.drawText(i/5+1,radian);
+                }else{
+                    //小刻度线
+                    length=this.smallLength;
+                    width=this.smallWidth;
+                }
+
+
+                var h1 = (this.bigR - length) * Math.sin(radian);
+                var b1 = (this.bigR - length) * Math.cos(radian);
+
+                var h2 = this.bigR * Math.sin(radian);
+                var b2 = this.bigR * Math.cos(radian);
+                b1;
+                var x1 = this.bigX + b1;
+                var y1 = this.bigY + h1;
+
+                var x2 = this.bigX + b2;
+                var y2 = this.bigY + h2;
+
+
+                ctx.lineWidth=width;
+
+                ctx.beginPath();
+                ctx.moveTo(x1,y1);
+                ctx.lineTo(x2,y2);
+
+                ctx.stroke();
+            }
+        },
+        //绘制整点数字
+        drawText:function(text,radian){
+            //假定文字位于半径
+            var textR=110;
+            //h是纵向增量，b是横向增量
+            var h=textR*Math.sin(radian);
+            var b=textR*Math.cos(radian);
+            //计算出文字的坐标
+            var x=this.bigX+b;
+            var y=this.bigY+h;
+
+            ctx.fillText(text,x,y);
+
+
+            //    sin radian=h2/bigR
+            //    -->h2=bigR * sin radian
+            //    cos radian=b2/bigR
+            //    -->b2=bigR*cos radian;
+
+            //    var x2=bigX+b2;
+            //    var y2=bigY+h2;
+        },
+        //绘制指针
+        drawPoints:function(){
+
+            //a、为了绘制指针，主要就是解决指针的终点的问题(起点位于大圆的圆心)
+            //b、为了解决指针的终点的坐标，需要知道终点位于大圆上的弧度值
+            //c、而这个弧度值是要根据具体的时间来计算出来的
+            //d、为了绘图方便，首先来一个固定的时间完成一个指针的绘制
+            var date=new Date();
+
+            var second=date.getSeconds();//获取秒数
+            var minute=date.getMinutes();//获取分钟数
+            //15秒对应的弧度值为0；并且1秒的弧度差为2PI/60
+            //那么指定秒数的弧度值：second*2PI/60-PI/2
+            var secondRadian=second*2*Math.PI/60-Math.PI/2;
+            var minuteRadian=minute*2*Math.PI/60-Math.PI/2;
+            //指定指针的长度：
+            var secodeLength=100;
+            var minuteLength=80;
+
+            var h=secodeLength*Math.sin(secondRadian);
+            var b=secodeLength*Math.cos(secondRadian);
+            var h1=minuteLength*Math.sin(minuteRadian);
+            var b1=minuteLength*Math.cos(minuteRadian);
+            //计算出指针终点的坐标
+            var x=this.bigX+b;
+            var y=this.bigY+h;
+
+            var x1=this.bigX+b1;
+            var y1=this.bigY+h1;
+            ctx.beginPath();
+            ctx.moveTo(this.bigX,this.bigY);
+            ctx.lineTo(x1,y1);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(this.bigX,this.bigY);
+            ctx.lineTo(x,y);
+            ctx.stroke();
+        }
+
+    }
+    var clock1 = new Clock({
+
+    })
+    var clock = new Clock({
+        //大圆的坐标和半径
+        bigX: 300,
+        bigY: 300,
+        bigR: 150,
+        //刻度线的长度
+        length: 10,
+        //小刻度线的长度和线宽
+        smallLength:6,
+        smallWidth:2,
+        //大刻度线的长度和线宽
+        bigLength:20,
+        bigWidth:6
+    })
+
+
+//
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	var arr=[['a','b','c'],['n','m','b'],['q','w','e']]
+
+/*	$.each(arr,function(i,j){
+		console.log(j)
+		// $.each(j,function(k,o){
+		// 	console.log(o)
+		// })
+	})*/
+	/*$('ul>li').each(function(i,j){
+		console.log(j)
+	})*/
+	var ul1=$('ul').children();
+	var li1=$('ul>li').children();
+	// console.log(li1)
+	console.log(ul1.length)
+	$.each('ul>li',function(){
+		
+	})
+
+	$.ajax({
+		type:'',
+		url:'',
+		data:{}
+	})
+	}
+	$.ajax({
+   type:'',
+   url:'',
+   data:{},
+   dataType:'',
+   beforeSend:function(){
+
+   },
+   success:function(){
+
+   },
+   complete:function(){
+
+   }
+})
+var options = {
+ type:'请求方式',
+ url:'请求地址',
+ async:'是否异步',
+ data:'发送数据',
+ success:'成功回调函数',
+ error:'失败回调函数'
+ }
+	</script>
+</body>
+</html>

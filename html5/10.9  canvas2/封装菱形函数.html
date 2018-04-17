@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="can" height="400" width="800"></canvas>
+
+
+<script>
+    var can = document.querySelector('#can');
+    var x = can.getContext('2d');
+    x.moveTo(50,50);
+    x.lineTo(250,250);
+    x.lineTo(50,250);
+    x.strokeStyle='#ccc';
+    x.fillStyle='pink';
+    x.lineCap='round';
+    x.lineJoin='round';
+    x.lineWidth='8';
+    x.fill();
+    x.stroke();
+    x.beginPath();
+
+</script>
+</body>
+</html>

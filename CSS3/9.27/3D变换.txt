@@ -1,0 +1,64 @@
+		c3  3D变换
+
+透视：近大远小
+
+perspective：透视视角
+
+语法：
+
+perspective：npx
+
+表示设置视距为n像素
+
+视距表示用户视点到图片的距离
+
+一般设置为2000px
+
+perspective的两种表达方式、
+1.写在所有动画元素的父级元素种，以属性形式出现、
+	perspective:npx
+写在所有动画元素的样式中，以属性值的行书出现
+	transform:perspective(npxq)
+
+perspective效果就是近大远小。，当translateZ大于视距的时候，图片消失不见，translateZ等于视距的时候，图片充满整个屏幕，translateZ小于视距的时候，其值越小，图片越小
+
+3D变换
+transform：
+rotateZ  rotateY  rotateX  后面要跟小括号（ndeg）
+
+绕Y轴旋转，逆时针为正方向，顺时针为反方向
+
+X轴旋转，顺时针为正方向，逆时针为正方向
+
+translateX  translateY  translateZ   后面要跟小括号（npx）
+
+x轴向右为正方向
+y轴向右为反方向
+z向右为用户方向
+
+transform-style
+
+语法：
+
+transform-style：flat/preserve-3d
+
+flat表示2d效果
+
+preserve-3D表示3d效果
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

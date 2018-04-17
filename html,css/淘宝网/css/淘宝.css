@@ -1,0 +1,50 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.navbox{
+	height: 221px;
+	width: 1366px;
+	background-color: #ccc;
+}
+.nava{
+	height: 40px;
+	width: 100%;
+	/*background-color: #f1ff11;*/
+}
+.navaa{
+	height:40px;
+	width: 50%;
+
+}
+.nava_a{
+	background-color: #c11;
+	float: left;
+}
+.nava_b{
+	background:#f1ff11;
+	float: right;
+}
+.navb{
+	height: 142px;
+	width: 100%;
+	background: #ccc;
+}
+.navc{
+	height: 39px;
+	width: 100%;
+	background-color: green;
+}
+.navb_a{
+	height: 100%;
+	width: 310px;
+	background-color: #f1ff11;
+	float: left;
+}
+.navb_b{
+	height: 100%;
+	width: 1056px;
+	background-color: #ccc;
+	float: right;
+}

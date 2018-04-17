@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+	.top{
+		height: 40px;
+		width: 160px;
+		background-color: #c11;
+		position: absolute;
+		line-height: 40px;
+		font-size: 40px;
+	}
+	.left,.right{
+		height: 320px;
+		width: 40px;
+		background-color: #c11;
+		position: absolute;
+		line-height: 40px;
+		font-size: 40px;
+	}
+
+
+</style>
+<body>
+	<div class="top">江山佳丽</div>
+	<div class="left">万代为师代领风骚</div>
+	<div class="right">江山为已开湾岱山</div>
+</body>
+<script>
+var top1=document.querySelector('.top');
+var right1=document.querySelector('.right');
+var left1=document.querySelector('.left');
+
+var w=document.documentElement.clientWidth;
+var lw=top1.offsetWidth;
+var ll=left1.offsetWidth;
+var lr=right1.offsetWidth;
+top1.style.left=w/2-lw/2+'px';
+left1.style.left=w/4-ll/2+'px';
+right1.style.left=w*3/4-lr/2+'px';
+
+window.onresize=function(){
+	var w=document.documentElement.clientWidth;
+	top1.style.left=w/2-lw/2+'px';
+	left1.style.left=w/4-ll/2+'px';
+	right1.style.left=w*3/4-lr/2+'px';
+
+
+}
+
+
+
+</script>
+</html>

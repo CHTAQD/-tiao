@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		height: 625px;
+		width: 1300px;
+		background-image: url(image/42a98226cffc1e17970b631f4090f603738de96c.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.box{
+		 width:1px;
+		height:1px; 
+		background: green;
+		position: absolute;
+		top:-70px;left:-292px;right:0;bottom: 0;
+		margin:auto;
+		border-radius: 50%;
+		transition: all 0.5s;
+		font-size: 1px;
+		text-align: center;
+		line-height: auto;
+		color:#ccc;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">哈哈</div>
+	<script>
+	var box=document.querySelector('.box');
+	var w=parseInt(getStyle(box,'width'));
+	var h=parseInt(getStyle(box,'height'));
+	var f=parseInt(getStyle(box,'fontSize'))
+	var c=parseInt(getStyle(box,'color'))
+	box.onclick=function(){
+	setInterval(function(){
+		w+=1;
+		h+=1;
+		f+=0.1;
+		box.style.color='rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')';
+		box.style.fontSize=f+'px';
+		box.style.width=w+'px';
+		box.style.height=h+'px';
+		box.style.backgroundColor='rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')';
+		
+	},100)
+}
+	function getStyle(obj,attr){
+	if(document.getElementsByClassName){
+		return getComputedStyle(obj,null)[attr]
+	}else{
+		return  obj.currentStyle[attr] 
+	}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #000;
+
+    }
+</style>
+<body>
+<canvas id="can" height="600" width="800"></canvas>
+<script>
+    var can = document.querySelector('#can');
+    var ctx = can.getContext('2d');
+    var i = 0;
+
+/*
+    ctx.globalCompositeOperation="destination-out";
+    ctx.arc(-150,-150,50,0,2*Math.PI)
+
+    ctx.fill()*/
+
+    var timer = setInterval(function(){
+        ctx.clearRect(-160,-160,can.width,can.height)
+        ctx.strokeRect(-150,-150,300,300);
+
+        ctx.rotate(0.01*Math.PI);
+
+    },50)
+    ctx.translate(300,300)
+    </script>
+</body>
+</html>

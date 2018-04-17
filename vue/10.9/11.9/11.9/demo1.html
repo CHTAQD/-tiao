@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="../vue.js"></script>
+    <style>
+        .success{
+            display: inline-block;
+        }
+        .error{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="haha">
+<ul>
+    <li v-for="v in news">
+        <span :class="v.status?'success':'error'">{{v.title}}</span>
+        <button v-on:click="changeStatus(v,false)" v-if="v.status">删除</button>
+        <button v-on:click="changeStatus(v,true)" v-if="!v.status">恢复</button>
+    </li>
+</ul>
+</div>
+
+<script>
+    var app = new Vue({
+        el:".haha",
+        data:{
+            news:[
+                {title:'echo',status:true},
+                {title:'Allen',status:true}
+            ]
+        },
+        methods:{
+            changeStatus:function(item,status){
+                item.status=status;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

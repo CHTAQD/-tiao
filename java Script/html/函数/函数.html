@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+div{
+	height: 100px;
+	width: 100px;
+	background-color: #c11;
+}
+</style>
+<body>
+	<script>
+	// var a=prompt('输入数字','');
+	// var b=prompt('输入数字图','');```							1
+	// var c=prompt('输入符号','');
+	// switch(c){
+	// 	case '+':result=a+b;
+	// 	break;
+	// }
+	// alert(result)
+	// function he(){
+	// 	//函数体
+		
+	// }
+// 	function he(){
+// 	var a=Number(prompt('第一个值',''));
+// 	var b=Number(prompt('第二个值',''));
+// 	var c=prompt('字符');
+// 	switch(c){
+// 		case '+':i=a+b;
+// 		break;
+// 	}
+// 	return i;
+// }
+
+	// function i(aa){
+	// 	alert(i)													2
+	// }
+	// 	aa()
+	
+// 	function i(o){
+// 	var a=0;
+// 	for(var c=0;c<o;c++){
+// 		if(c%3==0){
+// 			a+=c
+// 		}
+// 	}	
+
+// 	alert(a)
+// }
+//      i(50)
+    // function he(){
+    // 	var num=1;
+    // 	var i=0;
+    // 	while(i<5){
+    // 		num*=i;
+    // 		i++
+    // 	}
+    // 	alert(num)
+    // }
+    // he()
+    //2.字面量形式声明函数。匿名函数   没有名字的函数
+    // var aa=function(){
+    											//				 3
+    // }
+//     var a=function(){
+//     var aa=prompt('输入数字','');
+//     if(aa%2==0){
+//     	alert('偶数')
+//     }else{										//				3.1
+//     	alert('奇数')
+//     }
+// }
+// a()
+
+
+// 以对象的形式声明函数
+// var aa=new Function('alert(1)')
+// aa()
+
+
+
+// var a=prompt('第一个值','');
+// var b=prompt('第二个值','');
+// var c=prompt('符号','');
+// switch(c){
+
+// }
+
+// function en(){
+
+// }
+
+// var a=function(){
+
+// }
+
+// var a=new Function()
+
+// var a=prompt('','');
+// var b=prompt('','');
+// var c=prompt('','');
+// switch(c){
+// 	case '+':i=a+b;
+// 	break;
+// }
+
+
+// function en(j){
+// for(var a=1;a<j;a++){
+// 	for(var c=j;c>a;c--){
+// 		document.write('&nbsp');
+// 	}
+// 	for(var i=0;i<a;i++){
+// 		document.write('*&nbsp;');
+// 	}
+// 	document.write('<br>')
+//  }
+// }
+
+// en('10');
+
+// function en(){
+
+// }
+// var a=function(){
+
+// }
+
+
+// var a=new Function()
+
+
+
+
+// function en(){
+
+// }
+
+// var a=function(){
+
+// }
+
+// function un(){
+
+// var a=prompt('值1','');
+// var b=prompt('值2','');
+// var c=prompt('符号','');
+
+// switch(c){
+// 	case '+':i=a+b;
+// 	break;
+// }
+// return i
+// }
+
+// un()
+
+//  var a=function(){
+// 	for(var a=1;a<10;a++){
+// 		for(var i=1;i<10;i++){
+			
+// 			document.write('**&nbsp;&nbsp;')
+// 		}
+// 		document.write('<br>')
+// 	}
+// }()
+
+// var a=function(){
+// var t=0;
+// while(t<3){
+// 	document.write(t+'&nbsp;')
+// 	t++
+// }
+// }
+// ()
+
+// (function(b){
+// 	for(var a=1;a<b;a++){
+//  		for(var i=1;i<b;i++){
+			
+//  			document.write('**&nbsp;&nbsp;')
+// 		}
+// 		document.write('<br>')
+// 	}
+// }(200)
+// )
+
+// function aa(a,b){
+// 	var num=a+b;
+// 	alert(num)
+// }
+
+// aa(88,99)
+// aa(22,99)
+// aa(33,99)
+
+// 形参>实参
+// function aa(a,b){
+// 	alert(a);
+// 	alert(b);
+// }
+// aa(1)
+// 传入的参数一一对应，不传的自动转换为undefined;
+
+// function a(i){
+// 	alert(arguments.length) 
+// 	alert(arguments.callee)
+// 	alert(arguments[5])
+// }
+// a(12,15,6,15,353,131,3,135,1,35)
+
+
+// function un(i,j){
+// 	for(var a=i;a<j;a++){
+// 		for(var b=20;b>a;b--){
+// 			document.write('&nbsp')
+// 		}
+// 		for(var k=0;k<a;k++){
+// 			document.write("*&nbsp")
+// 		}
+// 		document.write('<br>')
+// 	}
+
+// }
+// un(4,20)
+
+// function en(i){
+// 	var i=i||6;
+// 	for(var a=1;a<i;a++){
+// 		document.write("*&nbsp;")
+// 	}
+// }
+// en()
+
+// function ou(q,j,color1,color2){
+// document.write('<table border=1>')
+// for(var a=1;a<q;a++){
+// 	if(a%2==0){
+// 		var e=color1;
+// 	}else{
+// 		var e=color2;
+// 	}
+// 	document.write('<tr bgcolor="+e+">')
+// 	 for(var b=1;b<j;b++){												budong
+// 	 	document.write('<td bgcolor="+e+">32131</td>')
+// 	 }
+// 	document.write('</tr>')
+// }
+// document.write('</table>')
+// }
+// ou(10,10,'red','#f1ff11')
+// 
+// 
+// 
+// 
+// function en(){
+// 	if(arguments.length==1){
+// 		alert(123)						//有几个参数就显示那个对应的if
+// 	}else if(arguments.length==2){
+	
+// 		alert(654)  
+// 	}else if(arguments.length>3){
+	
+// 		alert(‘氦气)
+// 	}
+// }
+// en(1,4)
+
+// function en(){
+// 	if(arguments.length==1){
+// 		alert(123)
+// 	}else if()
+// }
+
+// function en(){
+// 	if(typeof arguments[]==='undefined'){
+
+// 	}else if(typeof arguments[]==='string')
+// }
+
+// function un(){
+// 	if(arguments.length==1){
+// 		alert('一个参数')
+// 	}else if(arguments.length==2){
+
+// 	}
+// }
+// un(1,2)
+
+// function en(){
+// 	if(typeof arguments[]==='undefined'){
+
+// 	}
+// }
+// 函数体内return后面的全不执行
+// 函数体内多个return只执行一个
+
+/*function en(){
+	return 1;
+	alert(23)
+}
+alert(en())*/
+
+
+
+//回调
+/*function a(i){
+	return i()
+}
+a(b)
+function b(){
+for(var j=1;j<10;j++){
+	document.write('**&nbsp;')
+}
+}
+*/
+
+
+//递归
+/*function a(i){
+	if(i==1){
+		return i
+	}else{
+		return a(i-1)+i
+	}
+}
+alert(a(5))
+*/
+
+//闭包 
+
+/*function a(){
+	var i=123;
+	function c(){
+		alert(i)
+	}
+	return c
+}
+
+var j=a();
+j()
+*/
+
+
+
+
+//for循环
+
+
+/*for(var a=1;a<5;a++){
+	for(var c=5;c>a;c--){
+		document.write('&nbsp')
+	}
+	for(var d=1;d<a;d++){
+		document.write('*&nbsp')
+	}
+	document.write('<br>')
+}
+*/
+/*function en(){
+setTimeout('document.write("我出现了哈哈哈")',5000)
+}
+en()*/
+
+
+
+var aa=[1,2,3,,,,,,,'sdsd',,[56,78,42,86],29]
+for(var a=0;a<aa.length;a++){
+	if(typeof aa[a]==='object'){
+		for(var i=0;i<aa[a].length;i++){
+			alert(aa[a][i])
+		}
+	}else{
+		if(aa[a]!=undefined){
+			alert(aa[a])
+		}
+	}
+}
+
+
+
+
+
+
+
+var v=['jkas'];
+
+v[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	
+	<!-- <div style='height:100px;width: 100px;background-color: #c11;' onclick='en(20)' ></div>
+	<a href="javascript:alert(1)">点击</a>
+ -->
+</body>
+</html>

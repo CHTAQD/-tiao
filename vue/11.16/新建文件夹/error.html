@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>组件模板常见错误</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen></allen>
+    <brain></brain>
+</div>
+
+<script>
+    Vue.component('allen',{
+        template:'<div class="emily"><ul><li v-for="v in lovers">{{v.content}}</li></ul><textarea name="pl" id="pl" cols="30" rows="10" v-on:keyup.enter="emily"></textarea></div>',
+        data:function(){
+            return {
+                lovers:[
+                    {content:'pen'},
+                    {content:'apple'},
+                    {content:'penapple'},
+                    {content:'ppap'}
+                ]
+            }
+        },
+        methods:{
+            emily:function(){
+               console.log(this);
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            echo:'',
+        },
+        components:{
+            brain:{
+                template:'<div><input type="text" v-model="echo"/><span>{{echo}}</span></div>',
+                data(){
+                    return {
+                        echo:''
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

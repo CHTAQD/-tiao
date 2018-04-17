@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义属性值类型的判断</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen :haha="true"></allen>
+</div>
+
+<script type="text/x-template" id="h">
+    <div>
+        <div v-if="haha">
+            hahaha
+        </div>
+    </div>
+
+</script>
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:{
+            haha:{
+                type:Boolean,
+                default:false
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+    })
+</script>
+</body>
+</html>

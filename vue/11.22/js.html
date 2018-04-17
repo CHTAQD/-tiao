@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js操作实现动画</title>
+    <script src="../vue.js"></script>
+    <script src="velocity.min.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <button @click='type=!type'>切换</button>
+    <!--1.在transition标签中以事件的形式添加动画控制属性-->
+    <transition name='echo' @before-enter='beforeEnter' @enter='enter' @leave='leave'>
+        <h1 v-if='type'>哈哈哈哈</h1>
+    </transition>
+</div>
+
+<script>
+    new Vue({
+        el:'.echo',
+        data:{
+            type:true
+        },
+        methods:{
+            beforeEnter:function(el){
+                el.style.opacity=0
+            },
+            //在事件处理函数中引入el和done形参，el表示使用当前事件的元素
+            // done是用来告知velocity插件当前动画已经结束了，
+            enter:function(el,done){
+                //事件处理函数中的代码：Velocity(el,{属性：属性值}，{duration：n毫秒，complete：none})
+                                                                                    //已经结束了
+            Velocity(el,{opacity:1},{duration:1000,complete:done})
+            },
+            leave:function(el,done){
+                Velocity(el,{opacity:0},{duration:1000,complete:done})
+            }
+        }
+    })
+</script>
+</body>
+</html>

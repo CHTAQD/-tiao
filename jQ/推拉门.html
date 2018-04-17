@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    #box{
+        position: relative;
+        width: 650px;
+        height: 300px;
+        margin:auto;
+    }
+    ul>li{
+        position: absolute;
+    }
+    img{
+        width: 400px;
+        height: 300px;
+    }
+</style>
+<body>
+<div id="box">
+    <ul>
+        <li><img src="img/下载 (2).png" alt=""/></li>
+        <li><img src="img/下载 (4).png" alt=""/></li>
+        <li><img src="img/下载 (3).png" alt=""/></li>
+        <li><img src="img/下载 (4).png" alt=""/></li>
+        <li><img src="img/下载 (2).png" alt=""/></li>
+        <li><img src="img/下载 (5).png" alt=""/></li>
+    </ul>
+</div>
+</body>
+<script>
+    var lis=document.querySelectorAll("li");
+
+    function change(){                      
+        for(var i=1;i<lis.length;i++){
+            lis[i].style.left=400+(i-1)*50+'px';
+        }
+    }
+    change();
+
+    for(var j=0;j<lis.length;j++){
+        lis[j].index=j;
+       lis[j].onmouseover=function(){
+           change();                                                     
+           for(var k=1;k<this.index+1;k++){
+               lis[k].style.left=k*50+"px";
+           }
+       }
+    }
+</script>
+<html>

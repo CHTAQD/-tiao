@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    .box{
+        height: 120px;
+        border:2px solid blue;
+        margin:30px auto;
+        position: relative;
+        /*overflow: hidden;*/
+    }
+    .box>li{
+        position: absolute;
+    }
+    .box>.lastLi{
+        right: 0;
+    }
+    img{
+        width: 300px;
+        height:120px;
+    }
+</style>
+<body>
+<ul class="box">
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/2.png" alt=""/></li>
+    <li><img src="img/3.png" alt=""/></li>
+    <li><img src="img/4.png" alt=""/></li>
+    <li><img src="img/5.png" alt=""/></li>
+    <li class="lastLi"><img src="img/6.png" alt=""/></li>
+</ul>
+</body>
+<script>
+    $(function(){
+        var moveLi=$(".box>li").not(".lastLi");//除了最后一个
+        var imgW=50;//每张图片的距离
+        var boxW=300+300+(moveLi.length-1)*imgW;//第一张和第二张
+        $(".box").width(boxW);
+        moveLi.each(function(k){//对li进行遍地
+            if(k==0){  //下标值为0时 对应的此图片left为0 即不动
+                $(this).css("left",0)
+            }else{
+                $(this).css("left",300+(k-1)*imgW);
+            }
+        });
+        $(".box").on("mouseover","li",function(){
+         var m=moveLi.slice(1,$(this).index()+1);//截取下标值第一个之后的  但不包括最后一个
+            m.stop().animate({'margin-left':-(300-imgW)},600);//向左移动图片-50
+            moveLi.not(m).stop().animate({"margin-left":0},600);// 再移回原来的位置
+        })
+    })
+</script>
+<ml>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    $(function(){
+        $.get('url',{
+            aa:$('#aa').val()
+            bb:$('#cc').val()
+        },function(date,textStatus){
+            $('#bb').html(date)
+        })
+    })
+    </script>
+</body>
+</html> -->
+

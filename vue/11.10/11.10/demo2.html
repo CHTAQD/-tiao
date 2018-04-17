@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-for循环对象</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="hahaha">
+    <ul>
+        <!--在v-for循环中，循环对象的时候可以添加值，
+        键以及索引三种数据，并且三种值都可以输出-->
+        <li v-for="(value,key,index) in lovers">
+            {{index}}:{{key}}-{{value}}
+        </li>
+    </ul>
+    <!--v-for也可以直接循环数字，这样的循环就是制定循环次数。
+    打印的v就是数值-->
+    <table width="100%" border="1">
+        <tr v-for="v in 20">
+            <td>{{v}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var app = new Vue({
+        el:'.hahaha',
+        data:{
+            lovers:{
+                name:"echo",
+                age:19,
+                sex:"godness",
+                say:"I love you!!!"
+            }
+        }
+    })
+</script>
+</body>
+</html>

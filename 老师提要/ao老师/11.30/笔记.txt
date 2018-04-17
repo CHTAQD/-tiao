@@ -1,0 +1,20 @@
+object-fit: initial;
+更改视频 宽高比例
+
+
+http://www.spritecow.com 
+
+css 精灵图 处理网站
+
+
+使用sass
+
+1.我们需要进入终端，cmd当中执行命令
+
+E：进入你的项目盘 然后进入相关路径
+
+执行 我们的sass命令
+
+如sass空格 --watch空格
+
+scss我们的scss文件夹 ：css 是我们的生成文件夹

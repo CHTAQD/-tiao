@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册协议</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <input type="checkbox" v-model="isTrue"/>点击接受协议
+    <br/>
+    <span v-if="!isTrue">请先接受协议</span>
+    <br/>
+    <button v-if="isTrue">注册</button>
+</div>
+<script>
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            isTrue:false,
+        }
+    })
+</script>
+
+</body>
+</html>

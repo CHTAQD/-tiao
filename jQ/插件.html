@@ -1,0 +1,136 @@
+<!-- jQuery插件中插件的使用
+	1>插件 （plugin）
+	：遵循一定规范的应用程序接口编写出来的程序(API)
+	2>官网:plugins.jquery.com
+	3>表单验证插件、
+	4>Form插件：2个核心方法--ajaxForm(). ajaxSubmit()
+2.解决多库共存的两种方法
+	;（function($){	前面加一个分号就是解决多库共存的方法
+		代码段
+	}）(jquery);
+
+
+	obj=jQuery.noConflict();
+	obj(function(){
+		代码段
+	})
+3.$.inArray(value,array);
+确定第一个参数在数组中的位置，如果没有找到返回-1
+value:在数组中查找的元素,看是否存在。
+array:待处理数组。
+
+ -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src='jquery-3.2.1.js'></script>
+<script src='dist/插件/jquery-validation-1.17.0/dist/localization/messages_zh.min.js'></script>
+<script src='dist/插件/jquery-validation-1.17.0/dist/jquery.validate.js'></script>
+
+<style>
+	*{
+		font-family: Verdana;
+		font-size: 96%;
+
+	}
+	label{
+		width: 10em;
+		float: left;
+
+	}
+	label.error{
+		float: none;
+		color: red;
+		padding-left: 5em;
+		vertical-align: top;
+	}
+	p{
+		clear: both;
+	}
+	.submit{
+		margin-left: 12em;
+	}
+	em{
+		font-weight: bold;
+		padding-right:1em;
+		vertical-align: top; 
+	}
+</style>
+<body>
+	<form action="" class="cmxform" id="commentForm" method="get" action="#">
+		<fieldset>
+			<legend>
+				一个简单的验证待验证提示的评论例子
+			</legend>
+			<p>
+				<label for="cusername">姓名</label>
+				<input type="text" id="cusername" name="username" size="25" class="requbired" minlength="2">
+			</p><p>
+				<label for="cemail">电子邮件</label>
+				<input type="text" id="cemail" name="username" size="25" class="required" >
+			</p><p>
+				<label for="curl">网址</label>
+				<input type="text" id="curl" name="username" size="25" class="required">
+			</p><p>
+				<label for="ccomment">你的评论</label>
+				<textarea type="text" id="ccomment" name="comment" size="22" class="required"></textarea>
+			</p>
+			
+			<p>
+				<input type="submit" class="submit" value="提交">
+			</p>
+		</fieldset>
+
+
+	</form>
+
+
+
+
+	<script>
+	$(function(){
+		$('#commentForm').validate();
+	})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

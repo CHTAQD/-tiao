@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	body{
+		height: 8000px;
+	}
+	.nav{
+		height: 60px;
+		width: 100%;
+		display: none;
+		background: #c11;
+		position:fixed;
+		top:0px;
+		left: 0;
+	}
+</style>
+<body>
+	<div class="nav"></div>
+
+
+
+
+
+
+<script src='animate.js'></script>
+<script>
+	var nav=document.querySelector('.nav');
+	document.onscroll=function(){
+	var objt=document.documentElement.scrollTop||document.body.scrollTop;
+
+		var obj = document.documentElement.scrollTop||document.body.scrollTop;
+	if(objt>=700){
+		nav.style.display='block';
+		animate(nav,{height:60},100)
+	}else{
+		nav.style.display='none';
+
+		animate(nav,{height:0},100);
+	}
+
+}
+
+
+
+</script>
+</body>
+
+</html>

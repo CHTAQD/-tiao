@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script src='../../../vue.js'></script>
+<style>
+    .red{
+        color: red;
+    }
+</style>
+<body>
+<div class="box">
+    <div v-if='j'>5sdfhsduodhsaldni</div>
+    <div v-else='j'>123456\78</div>
+    <div v-for='j in li'>{{j}}</div>
+
+</div>
+<script>
+    var vov = new Vue({
+        el:'.box',
+        data:{
+            li:{
+                a:1,
+                b:2
+            }
+        }
+    })
+</script>
+</body>
+</html>

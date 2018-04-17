@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+/* body{
+	height: 100%;
+	width: 100%;
+} */
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+/* 	 .box{
+		height: 100px;
+		width: 100px;
+		background-color: #c11;
+		position: relative;
+		transition: all 2s;
+	}
+	.inner{
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		background-color: #ccc;
+	}  */
+
+
+
+
+/*1.*/
+
+
+
+/*  	.box{
+	height: 30px;
+	width: 30px;
+	background-color: #c11;
+	border-radius: 50%;
+	margin:100px auto;
+	opacity: 1;
+}  */
+
+
+
+.box{
+	height:300px;
+	width: 300px;
+	background-color:#ccc;
+	margin:100px auto;
+	position: relative;
+}
+.box img{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	/*transition: all 0.5s;*/
+	opacity: 0;
+}
+.anniu{
+	height: 50px;
+	width: 50px;
+	background-color:#ccc;
+	position: absolute;
+	left:475px;
+	top:231px;
+}
+</style>
+<body>
+	<!-- <div class="box">
+		<div class="inner"></div>
+	</div> -->
+
+	<div class="box">
+		<img src="image/133208643099.jpg@!420" id="img1" alt="">
+		<img src="image/133208587345.jpg@!420" id='img2' alt="">
+		<img src="image/133208648987.jpg@!420" id='img3' alt="">
+	</div>
+<div class="anniu"></div>
+</body>
+<script src='animate.js'></script>
+<script>
+
+var j1=document.querySelector('#img1')
+var j2=document.getElementById('img2')
+var j3=document.querySelector('#img3')
+var anniu=document.querySelector('.anniu')
+
+
+anniu.onclick=function(){
+	setInterval(i,3000)
+	
+}
+// =anniu.onkeyup
+
+/*function i(){
+animate(j1,{left:0,opacity:1},1000,function(){
+		animate(j1,{left:400,opacity:0},500,function(){
+			animate(j2,{left:0,opacity:1},1000,function(){
+				animate(j2,{left:400,opacity:0},500,function(){
+					animate(j3,{left:0,opacity:1},1000,function(){
+						animate(j3,{left:400,opacity:0},500,function(){
+							animate(j1,{opacity:1,left:0},500,function(){
+								animate(j2,{opacity:1,left:0},500,function(){
+									animate(j1,{opacity:1,left:0},500,function(){
+										animate(j3,{opacity:0,left:0},500,function(){
+											
+												
+										})
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		})
+	})
+}
+*/
+function i(){
+	animate(j1,{/*left:0,*/opacity:1},1000,function(){
+		animate(j1,{/*left:400,*/opacity:0},500,function(){
+			animate(j2,{/*left:0,*/opacity:1},1000,function(){
+				animate(j2,{/*left:400,*/opacity:0},500,function(){
+					animate(j3,{/*left:0,*/opacity:1},1000,function(){
+						animate(j3,{/*left:400,*/opacity:0},500,function(){
+							/*animate(j1,{opacity:1,left:0},500,function(){
+								animate(j2,{opacity:1,left:0},500,function(){
+									animate(j1,{opacity:1,left:0},500,function(){
+										animate(j3,{opacity:0,left:0},500,function(){
+											
+												
+										})
+									})
+								})
+							})*/
+						})
+					})
+				})
+			})
+		})
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var box=document.querySelector('.box')
+
+box.onclick=function(){
+	
+	// setInterval(
+			// animate(box,{opacity:0},100,function(){
+			// 	animate(box,{opacity:1},10)
+			// })
+		// ,1000)
+		setInterval(move,900)
+}
+
+
+
+function move(){
+	animate(box,{opacity:0},100,function(){
+		animate(box,{opacity:1},10)
+	})
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var box=document.querySelector('.box');
+var inner=document.querySelector('.inner')
+// alert(document.documentElement.clientWidth)
+inner.onclick=function(){
+	animate(inner,{left:-30,backgroundColor:'#ccc'},function(){
+animate(inner,{left:0,backgroundColor:'#c11'},1000,function(){
+ animate(box,{height:300,width:300,left:1080,backgroundColor:'#f1ff11'},4000,Tween.Quad.easeIn,function(){
+	animate(box,{height:100,width:100,top:500,backgroundColor:'#ccc'},2000,function(){
+		animate(box,{height:200,width:200,left:0,backgroundColor:'green'},3000,function(){
+			animate(box,{height:100,width:100,top:0,backgroundColor:'#c11'},2000,function(){
+				animate(box,{height:671,width:1366},2000,function(){
+
+				})
+			})
+		  })
+	   })
+
+	})
+ })
+})
+}*/
+</script>
+</html>

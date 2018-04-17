@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vue.js"></script>
+    <style>
+        .tab td,.tab th,.tab{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="hahaha">
+    <table class="tab">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>说</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--for in 可以换成 for of,效果是一样的-->
+        <tr v-for="v in lovers">
+            <td>{{v.name}}</td>
+            <td>{{v.age}}</td>
+            <td>{{say}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <script>
+        var app = new Vue({
+            el:".hahaha",
+            data:{
+               lovers:[
+                   {name:"echo",age:19},
+                   {name:"Allen",age:24}
+               ],
+                say:"I love you!!!"
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+9:27:57
+星空下的男孩加入本群。
+10:19:07
+马彩月 2017/7/20 10:19:07
+<form action="1.html" name="myform">
+		<input type="text" name="text" value="请输入关键字">
+</form>
+//文本框文字onfocus与onblur事件
+	//获取时默认字消失，丢失是文字恢复
+	// var text=document.myform.text;
+	/*text.onfocus=function(){ 
+		if(text.value=="请输入关键字"){
+			this.value='';
+		}
+	}
+	text.onblur=function(){
+		if(text.value==''){
+			this.value="请输入关键字";
+		}
+	}*/
+10:22:43
+马彩月 2017/7/20 10:22:43
+<form action="1.html" name="myform">
+<input type="text" name="dan" value="100">
+		<input type="button" value="*">
+		<select name="index" id="">
+			<option value="green">1个</option>
+			<option value="red" selected>2个</option>
+			<option value="yellow">3个</option>
+		</select>
+		<input type="button" value="=">
+		<input type="text" name="he" value="100">
+</form
+/*var dan=document.myform.dan;
+	var index=document.myform.index;
+	var he=document.myform.he;
+	index.onchange=function(){
+		var dj=parseInt(dan.value);
+		var gs=index.selectedIndex+1;
+		he.value=dj*gs;
+		document.bgColor=index[index.selectedIndex].value;
+			}*/
+onchange：表单内容改变事件
+10:25:13
+马彩月 2017/7/20 10:25:13
+<form action="1.html" name="myform">
+姓名：<input type="text" name="text">
+		性别：<input type="text" name="text">
+		年龄：<input type="text" name="text">
+		<input type="submit" value='提交'>
+</form>
+/*var text=document.myform.text;
+	myform.onsubmit=function(){     //myform为表单提交
+		for(var i=0;i<text.length;i++){
+		if(text[i].value==''){
+			alert('请输入内容！');
+			return false;
+			}
+		}
+	}
+	*/
+  onsubmit：表单提交事件

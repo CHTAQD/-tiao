@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>刮刮乐</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+            background:#ccc;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="240" height="240"></canvas>
+
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    //初始工作
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+
+    //逻辑部分
+    ctx.fillRect(0,0,240,240);
+    ctx.globalCompositeOperation="destination-out";
+    console.log(ctx.getImageData(0,0,canvas.width,canvas.height));
+
+    //    var $ol=$("canvas").offsetLeft,
+    //            $ot=$("canvas").offsetTop;
+
+    //需求：鼠标按下并移动的时候，以鼠标经过的点为圆心画圆
+    $("canvas").on("mousedown",function(){
+        $("canvas").on("mousemove",function(e){
+            ctx.beginPath();
+            ctx.arc(e.offsetX, e.offsetY,30,0,2*Math.PI);
+            ctx.fill();
+            console.log(e.pageX);
+            //当擦除掉一半的时候，就要清除整个黑色矩形。
+        })
+    }).on("mouseup",function(){
+        $("canvas").off("mousemove");
+    })
+    //    ctx.beginPath();
+    //    ctx.arc(120,120,50,0,2*Math.PI);
+    //    ctx.fill();
+
+</script>
+<html>

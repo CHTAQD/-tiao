@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: #c11;
+		transition: all 0.5s;
+	}
+</style>
+<body>
+	<div class="box"></div>
+	<!-- <form action="1.html" name="myform">
+		<input type="text" name="text" value="请输入关键字">
+
+</form> -->
+<!-- 	<form action="1.html" name="myform">
+<input type="text" name="dan" value="100">
+		<input type="button" value="*">
+		<select name="index" id="">
+			<option value="green">1个</option>
+			<option value="red" selected>2个</option>
+			<option value="yellow">3个</option>
+		</select>
+		<input type="button" value="=">
+		<input type="text" name="he" value="100">
+</form> -->
+			<form action="1.html" name="myform">
+姓名：<input type="text" name="text">
+		性别：<input type="text" name="text">
+		年龄：<input type="text" name="text">
+		<input type="submit" value='提交'>
+</form>
+</body>
+<script>
+/*一，事件驱动
+1，*/
+/*二，事件分类
+1,鼠标事件
+2，键盘事件
+3，表单事件
+4，页面事件*/
+// var box=document.querySelector('.box')
+// box.onmousedown=function(){
+// 	box.style.backgroundColor='#ccc';
+// 	box.onmouseup=function(){
+// 		box.style.backgroundColor='#f1ff11';
+// 	}
+// }
+// box.onmouseover=function(){
+// 	console.log(1)
+// }
+// document.onkeyup=function(){
+// 	box.style.backgroundColor='green'
+// }
+// document.onkeydown=function(){
+// 	box.style.backgroundColor='#000'
+// }
+
+//文本框文字onfocus与onblur事件
+	//获取时默认字消失，丢失是文字恢复
+
+	// var text=myform.text;
+	// text.onfocus=function(){
+	// 	if(text.value=='请输入关键字'){
+	// 		this.value='';
+	// 	}
+	// }
+	// text.onblur=function(){
+	// 	if(text.value==''){m
+	// 	
+	// 		this.value='请输入关键字'
+	// 	}
+	// }
+
+/*var dan=document.myform.dan;
+	var index=document.myform.index;
+	var he=document.myform.he;
+	index.onchange=function(){
+		var dj=parseInt(dan.value);
+		var gs=index.selectedIndex+1;
+		he.value=dj*gs;
+		document.bgColor=index[index.selectedIndex].value;
+			}*/
+
+var text=document.myform.text;
+	myform.onsubmit=function(){
+		for(var i=0;i<text.length;i++){
+			if(text[i].value==''){
+				alert('请输入完整')
+				return false;
+			}
+
+		}
+	}
+	
+	</script>
+</html>

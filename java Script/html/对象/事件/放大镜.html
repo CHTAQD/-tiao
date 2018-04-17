@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+	.box{
+		height: 450px;
+		width: 600px;
+		background-color: #c11;
+		float: left;
+		/*display: none;*/
+	}
+	.boxtop{
+		height: 370px;
+		width: 600px;
+		background-color: #000;
+		
+	}
+	.boxtop img{
+		height:100%;
+		width: 100%;
+		float: left;
+	}
+	.boxbottom{
+		height: 80px;
+		width: 600px;
+		background: #ccc;
+	}
+	.boxbottom img{
+		height:100%;
+		width:20%;
+		float: left;
+	}
+	.bigbox{
+		height: 500px;
+		width: 700px;
+		background-color: #000;
+		float: right;
+		overflow: hidden;
+		display: none;
+		position:fixed;
+		left: 650px;
+	}
+	.fu{
+		height: 100px;
+		width: 150px;
+		background-color: rgba(255,255,255,0.5);
+		position: absolute;
+		display: none;
+
+	}
+	.bigbox img{
+		height: 300% ;
+		width: 300%;
+		position: absolute;
+	}
+</style>
+<body>
+	<div class="box">
+	
+		<div class="boxtop">
+			<div class="fu"></div>
+			<img src="../image/盟1.jpg" alt="">
+		</div>
+		<div class="boxbottom">
+			<img src="../image/足1.jpg" alt="">
+			<img src="../image/足2.jpg" alt="">
+			<img src="../image/足3.jpg" alt="">
+			<img src="../image/盟1.jpg" alt="">
+			<img src="../image/盟2.jpg" alt="">
+		</div>
+	</div>
+	
+	<div class="bigbox">
+		<img src="../image/盟1.jpg" alt="">
+	</div>
+
+
+
+	<script>
+		var topimg=document.querySelector('.boxtop img');
+		var topimg1=document.querySelector('.boxtop');
+		var bottomimg=document.querySelectorAll('.boxbottom img');
+		var bigimg=document.querySelector('.bigbox img')
+		var box=document.querySelector('.box');
+		var bigbox=document.querySelector('.bigbox')
+		var fu=document.querySelector('.fu')
+		for(var i=0;i<bottomimg.length;i++){
+			bottomimg[i].index=i;
+			bottomimg[i].onmouseover=function(){
+				var j=bottomimg[this.index].getAttribute('src');
+				topimg.setAttribute('src',j)
+				bigimg.setAttribute('src',j)																																																																																				
+			}
+		}
+		topimg1.onmouseover=function(){
+			fu.style.display='block';
+			bigbox.style.display='block';
+		}
+		topimg1.onmouseout=function(){
+			fu.style.display='none';
+			bigbox.style.display='none';
+		}
+		topimg1.onmousemove=function(e){
+			var ev=e||window.event;
+			var l=ev.clientX-topimg1.offsetLeft-fu.offsetWidth/2;
+			var t=ev.clientY-topimg1.offsetTop-fu.offsetHeight/2;
+			fu.style.left=l+'px';
+			fu.style.top=t+'px';
+		}
+	</script>
+</body>
+</html>

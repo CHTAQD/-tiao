@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.bigbox{
+	height: auto;
+	width: auto;
+	background-color: #c11;
+	/*overflow: hidden;*/
+	/*给父盒子溢出隐藏*/
+		}
+		.aa{
+			height: 100px;
+			width: 100px;
+			background-color: #f1ff11;
+			float: left;
+			margin-left: 10px;
+		}
+		.box{
+			height: 200px;
+			width: 200px;
+			background-color: #000;clear: both;
+		}
+		/*.或单开一个div{
+			给 clear: both;
+			也能把大盒子撑开
+		}*/
+</style>
+<body>
+<div class="bigbox">
+ 	<div class="aa"></div>
+ 	<div class="aa"></div>
+ 	<div class="aa"></div>
+</div>	
+<div class="box"></div>
+marw
+</body>
+</html>
+给父盒子
+<!-- .box:after{
+		content:'';
+		display: block;
+		clear: both;
+	} 
+ -->

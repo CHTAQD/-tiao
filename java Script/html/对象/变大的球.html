@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+.box{
+	height: 100px;
+	width: 100px;
+	background-color: #ccc;
+	border-radius: 50% 50% 50% 50%;
+	margin:250px auto;
+}
+</style>
+<body>
+	<div class="box"></div>
+</body>
+<script>
+var box=document.querySelector('.box')[0];
+var w=parseInt(getStyle(box,'width'));
+var h=parseInt(getStyle(box,'height'));
+setInterval(function(){
+	w+=1;
+	h+=1;
+	box.style.width=w+'px';
+	box.style.height=h+'px';
+	box.style.backgroundColor='rgb('+Math.floor(math.random()*255)+','+Math.floor(math.random()*255)+','+Math.floor(math.random()*255)+')';
+},100)
+
+function getStyle(obj,attr){
+	if(document.getElementsByClassName){
+		return getComputedStyle(obj,null)[attr]
+	}else{
+		return  obj.currentStyle[attr] 
+	}
+	}
+
+</script>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width:100px;
+		height:100px;
+		background: green;
+		position: absolute;
+		top:0;left:0;right:0;bottom: 0;
+		margin:auto;
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+	var box=document.querySelector('.box');
+	var w=parseInt(getStyle(box,'width'));
+	var h=parseInt(getStyle(box,'height'));
+	setInterval(function(){
+		w+=1;
+		h+=1;
+		box.style.width=w+'px';
+		box.style.height=h+'px';
+		box.style.backgroundColor='rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')';
+	},100)
+
+	function getStyle(obj,attr){
+	if(document.getElementsByClassName){
+		return getComputedStyle(obj,null)[attr]
+	}else{
+		return  obj.currentStyle[attr] 
+	}
+	}
+	</script>
+</body>
+</html>

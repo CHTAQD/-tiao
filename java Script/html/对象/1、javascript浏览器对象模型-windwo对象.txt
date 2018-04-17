@@ -1,0 +1,98 @@
+
+javascript浏览器对象模型-window对象
+
+一、知识扩充
+BOM(Browser  Object Model)
+window对象是BOM中所有对象的核心。
+window对象{
+       Document 对象：操作html文档；
+       History 对象：包含浏览器窗口中访问过的 URL
+       Location 对象：包含有关当前 URL 的信息。
+       Navigator 对象：包含有关浏览器的信息。
+       Screen 对象：包含有关客户端显示屏幕的信息。
+}		
+
+二、属性
+1、位置类型
+（1）获得浏览器的位置
+      IE:
+       window.screenLeft
+       可以获得浏览器距屏幕左上角的左边距  
+        window.screenTop
+       可以获得浏览器距屏幕左上角的上边距
+      FF:  screenX、screenY
+注意：IE在浏览器文档处，火狐在浏览器栏上
+
+（2）获得浏览器的尺寸
+FF:window.innerWidth  获得窗口的宽度
+     window.innerHeight  获得窗口的高度
+通用：
+document.documentElement.clientHeight
+document.documentElement.clientWidth
+  
+    2.关系类型
+      A.parent   返回父窗口
+      B.top   返回顶层窗口
+      C.self===window
+      D.length  返回窗口中的框架数量
+      解释：parent、top、与self
+      parent常用在iframe和frame中的子页面访问父页面中的对象；
+      top ：一个页面可能会有很多层，top是指最顶层的框架
+      self ：是指当前窗口
+
+    3.status  设置窗口状态栏的文本(目前只有IE支持)
+
+三、方法
+1.窗体控制
+    A.对窗体的移动
+    window.moveBy(x,y)  相对于当前位置沿着X\Y轴移动指定的像素，如负数是反方向
+    window.moveTo(x,y)  相对于浏览器的左上角沿着X\Y轴移动到指定的像素，如负数是反方向
+
+    B.窗体尺寸的改变   
+    resizeBy(x,y)  相对于当前窗体的大小，调整宽度和高度
+    resizeTo(x,y)  把窗体调整为指定宽度和高度
+
+2.对窗体滚动条的控制
+   scrollBy(x,y) 相对于当前滚动条的位置移动的像素(前提有滚动条)
+   scrollTo(x,y) 相对于当前窗口的高度或宽度，移动到指定的像素
+
+3.时间间隔的函数（计时器）
+  setInterval("函数或者代码串",指定的时间(毫秒))
+       按照指定的周期(毫秒)不断的执行函数或是代码串
+  clearInterval()清除时间函数进程
+  setTimeout("函数或者代码串",指定的时间(毫秒))
+       在指定的毫秒数后只执行一次函数或代码。 
+  clearTimeout()清除时间函数进程
+
+案例：
+1、从0执行到7，到8停止；
+2、点击出现1，再点击出现2，在点击循环[判断||开关]；
+3、小说形式改编；
+4、文字闪烁出现；
+5、倒计时；
+
+
+4.打开与关闭新的窗口
+    （1）close():关闭当前窗口；
+    （2）open(url,name,location) 通过脚本打开新的窗口
+    url:打开新页面的地址；
+    name:window对象的名称；
+    location:对新窗口进行设置； 
+   如：top:窗口在屏幕中的上边距；top=10
+          left:窗口在屏幕中的左边距；
+          width:新窗口的宽度；
+          height:新窗口的高度；
+          scrollbars:是否显示滚动条yes/no/1/0；
+          resizable:设置新窗口大小是否固定；
+          toolbar:浏览器工具条是否显示(前进、后退等)
+          menubar:菜单栏，有文件、编辑等；
+          location:地址栏；
+          direction:更新信息的按钮；
+
+(3)window.opener 实际上就是通过window.open打开的窗体的父窗体。
+比如在父窗体parent里面 通过 window.open("subForm.html"),那么在subform.html中window.opener就代表parent,可以通过这种方式设置父窗体的值或者调用js方法。
+
+
+
+
+

@@ -1,0 +1,116 @@
+ 			css部分
+
+伪元素选择器
+
+：表示伪类
+：：表示伪元素
+
+伪类：给指定元素绑定一个新的类名
+
+伪元素：相当于在指定元素的特定位子添加一个新的元素
+
+before在元素之前
+
+after在元素之后
+
+选中首字母或首文字
+first-letter
+此选择器只对块级元素
+
+
+选中首行文字或字母
+first-line
+只对块级元素有效
+
+cs3中的色值表示形式
+rgba
+Transparent
+
+
+
+transparent父元素设置不会继承给子元素
+
+opacity 设置是会完全继承给所有子元素的
+
+H 色调取值范围0-360,0/360表示红色、120表示绿色、240表示蓝色
+S 饱和度 取值范围0%-100%
+L 亮度   取值范围0%-100%
+A 透明度 取值0-1之间
+
+文本阴影
+text-shadow：x偏移量 y偏移量 模糊度 阴影颜色
+
+
+各个位上取值都是0-F
+
+防止溢出
+
+box-sizing
+
+定义盒模型大小，它有两种模式
+
+border-box
+
+计算方式为：
+width = border + padding + content
+
+content-box
+计算方式为width=content
+
+边框圆角ditten
+border-radius
+参数：上右下左，对边框各个角进行设置。
+
+上：1
+右：2
+下：3
+左：4
+
+border-radius：npx  mpx
+1.3是npx
+
+2，4是mpx
+
+border-radius：npx mpx opx ；
+1是npx
+2.4是mpx
+3是opx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

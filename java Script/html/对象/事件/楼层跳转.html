@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .top{
+            width: 100%;
+            height: 700px;
+            background: brown;
+        }
+        .center{
+            width: 100%;
+            height: 5600px;
+        }
+        .bottom{
+            width: 100%;
+            height: 700px;
+            background: saddlebrown;
+        }
+        .bix{
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .inbix{
+            width: 1000px;
+            height: 700px;
+            border: 3px solid #000;
+            box-sizing: border-box;
+            font-size: 100px;
+            line-height: 700px;
+            text-align: center;
+        }
+        .btn{
+            width: 0;
+            height: 0;
+            background: greenyellow;
+            position: fixed;
+            bottom: 40px;left: 50px;
+            display: none;
+            overflow: hidden;
+        }
+        .inbtn,.fan{
+            width: 35px;
+            height: 35px;
+            border: 3px solid #fff;
+            background: #000;
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+<div class="top"></div>
+<div class="center">
+    <div class="bix">
+        <div class="inbix">1楼</div>
+        <div class="inbix">2楼</div>
+        <div class="inbix">3楼</div>
+        <div class="inbix">4楼</div>
+        <div class="inbix">5楼</div>
+        <div class="inbix">6楼</div>
+        <div class="inbix">7楼</div>
+        <div class="inbix">8楼</div>
+    </div>
+    <div class="btn">
+        <div class="inbtn">1</div>
+        <div class="inbtn">2</div>
+        <div class="inbtn">3</div>
+        <div class="inbtn">4</div>
+        <div class="inbtn">5</div>
+        <div class="inbtn">6</div>
+        <div class="inbtn">7</div>
+        <div class="inbtn">8</div>
+        <div class="fan">顶部</div>
+    </div>
+</div>
+<div class="bottom"></div>
+<script src="animate.js"></script>
+<script>
+    var fan=document.querySelector('.fan')
+    var btn=document.querySelector('.btn');
+    var inbtn=document.querySelectorAll('.inbtn');
+    var inbix=document.querySelectorAll('.inbix');
+    var inh=inbix.offsetHeight;
+    var rgba=['#FF0036','#EA5F8D','#0AA6E8','#64C333','#F15453','#19C8A9','#F7A945','#FF0036'];
+    var flag=true;
+    //    inbtn[0].style.backgroundColor='#FF0036';
+    document.onscroll=function(){
+        var objt=document.body.scrollTop||document.documentElement.scrollTop;
+        if(flag){
+            flag=false;
+            if(objt>=600){
+                btn.style.display='block';
+                animate(btn,{width:40,height:370},1000,function(){
+                    flag=true;
+                });
+            }else{btn.style.display='none';
+                animate(btn,{width:0,height:0},1000,function(){
+                    flag=true;
+                });
+            }
+        }
+
+        //按钮变色
+        for(var j=0;j<inbtn.length;j++){
+            if(objt>=inbix[j].offsetTop){
+                for(var a=0;a<inbtn.length;a++){
+                    inbtn[a].style.backgroundColor='#000'
+                }
+                inbtn[j].style.backgroundColor=rgba[j];
+            }
+        }
+
+        //点击按钮跳转
+        for(var i=0;i<inbtn.length;i++){
+            inbtn[i].index=i;
+            inbtn[i].onclick=function(){
+                var obj=document.body.scrollTop==0?document.documentElement:document.body;
+                var int=inbix[this.index].offsetTop;
+                animate(obj,{scrollTop:int},200)
+            }
+        }
+        for(var b=0;b<inbtn.length;b++){
+            inbtn[b].index=b;
+            inbtn[b].onmouseenter=function(){
+                this.style.backgroundColor=rgba[this.index]
+            }
+
+        }
+    }
+    //最后一步
+    fan.onclick=function(){
+        var obje=document.body.scrollTop==0?document.documentElement:document.body;
+        animate(obje,{scrollTop:0},200,function(){
+            btn.style.display='none';
+        })
+    }
+</script>
+</body>
+<html>

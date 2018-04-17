@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>变色</title>
+</head>
+<script src='../vue.js'></script>
+<body>
+<div class="box">
+    <button>切换</button>
+    <h1 v-haha="'green'">haahahahah</h1>
+</div>
+
+
+<script>
+
+   new Vue({
+       el:'.box',
+       data:{
+           directives:{
+               haha:{
+                   bind:function(el,bind){
+                       var color = bind.value?
+                   }
+               }
+           }
+       }
+   })
+</script>
+</body>
+</html>

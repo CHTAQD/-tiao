@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	// 构造函数创建
+	var a='Hello kitty! Hello world';
+	var reg=new RegExp('hello','i');
+	/*alert(reg.test(a))
+	alert(reg.exec(a))*/
+	//字面量创建
+	var exp=/hello/ig;
+	alert(a.match(exp))
+	alert(a.search(exp))
+	alert(a.replace(exp,'hahha'))
+	alert(a.split(exp))
+	alert(a.replace(exp,'huoh'))
+	alert(a.split(exp));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

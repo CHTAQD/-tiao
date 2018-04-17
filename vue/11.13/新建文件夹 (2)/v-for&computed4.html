@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <ul>
+        <li v-for="v in status">
+            {{v.name}}
+            <br/>
+            {{v.sex}}
+        </li>
+    </ul>
+    {{type}}
+    <input type="radio" name="person" value="all" v-model="type"/>所有人
+    <input type="radio" name="person" value="boy" v-model="type"/>男生
+    <input type="radio" name="person" value="girl" v-model="type"/>女生
+</div>
+
+<script>
+    var echo = new Vue({
+        el:".echo",
+        computed:{
+            status:function(){
+               if(this.type=="all"){
+                console.log(this.type);
+                   return this.lovers;
+               }
+                else{
+                   console.log(this.type);
+                   var type = this.type;
+                   return this.lovers.filter(function(v){
+                        return v.sex == type;
+                   })
+               }
+            }
+        },
+        data:{
+            type:"",
+            lovers: [
+                {name:"echo",age:19,sex:"girl"},
+                {name:"emily",age:19,sex:"girl"},
+                {name:"emma",age:19,sex:"girl"},
+                {name:"allen",age:24,sex:"boy"},
+                {name:"jack",age:24,sex:"boy"},
+                {name:"elbert",age:24,sex:"boy"},
+            ]
+        }
+
+    })
+</script>
+</body>
+</html>

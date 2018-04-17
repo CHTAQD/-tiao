@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ol oo='ass'>
+	<div><li></li>
+		<li></li>
+		<li>abc</li>
+		<li></li>
+		<li></li></div>
+	</ol>
+.wrap('<div></div>')
+.wrapAll('<div></div>')
+.wrapInner('<div></div>')
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(document).ready(function(){
+		var $li1 = $('<li>sds</li>');
+		var $li2 = $('<li></li>')
+		// $('ol').append($li1)
+		// $('ol').append($li1)
+		$($li1).appendTo('ol')
+		$li1.replaceWith('<b>wosh</b>')
+
+		alert(
+			$()
+			)
+
+
+	})
+	$('ol').wrap('<b></b>')
+		$('ol li').click(function(){
+			$(this).clone().appendTo($('ol'))
+		})
+
+
+
+		
+	</script>
+</body>
+</html>

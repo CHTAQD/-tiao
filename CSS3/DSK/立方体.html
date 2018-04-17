@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #f7f7f7;
+    }
+    *{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+.box{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    perspective: 2000px;
+    position:relative;
+    transform-style:preserve-3d;
+    transform:rotateX(30deg) rotateY(30deg);
+    transition:all 2s;
+}
+    .box>div{
+        height: 200px;
+        width:200px;
+        position: absolute;
+        opacity:0.5;
+        text-align:center;
+
+        border-radius:20%;
+        line-height:200px;
+    }
+    .box>div a{
+        text-underline:none;
+        color:#fff;
+    }
+    .before{
+        animation:j 5s  forwards ;
+        background-color: #007fff;
+    }
+    .after{
+        animation:ja 5s  forwards;
+        background-color:#009900;
+    }
+   .top{
+       animation:jac 5s   forwards;
+
+        background-color: #C3DE00;
+    }
+    .buttom {
+        animation:jacc 5s  3s forwards;
+        background-color: green;
+
+    }
+    .left{
+        animation:jaccy 5s  8s forwards;
+        background-color: red;
+
+    }
+
+    .right{
+        animation:jaccys 5s  12s forwards;
+        background-color: purple;
+
+    }
+    @keyframes ja{
+        from{
+
+        }
+        to{
+            transform:translateZ(-200px) rotateY(180deg);
+
+        }
+    }
+    @keyframes jac{
+        from{
+
+        }
+        to{
+            transform:rotateX(90deg) translateY(-100PX) translateZ(100px);
+
+        }
+    }
+    @keyframes jacc{
+        from{
+
+        }
+        to{
+            transform: rotateX(90deg) translateY(-100px) translateZ(-100px);
+
+        }
+    }
+    @keyframes jaccy{
+        from{
+
+        }
+        to{
+            transform:rotateY(-90deg) translateX(-100px) translateZ(100px);
+
+        }
+    }
+    @keyframes jaccys{
+        from{
+
+        }
+        to{
+            transform: rotateY(90deg) translateX(100px) translateZ(100px);
+
+        }
+    }
+    .big{
+        width: 100px;
+        height: 300px;
+        /*background-color: #42AACD;*/
+        float: left;
+        margin-left: 100px;
+        text-align:center;
+
+    }
+    .big ul li{
+        width: 100px;
+        height: 40px;
+        background-image:linear-gradient(to top,#ccc,#fff);
+        margin-top: 10px;
+        line-height:40px;
+    }
+    .big ul li:hover{
+        background-image:linear-gradient(to top,#fff,#ccc);
+    }
+    .big ul li a{
+        text-decoration:none;
+        color:#34343B;
+    }
+</style>
+<body>
+<div class="big">
+    <h3>请选</h3>
+    <ul>
+        <li><a href="http://tech.163.com/16/0629/12/BQNR0MGS00097U81.html" target='_blank'>宇宙中的生命</a></li>
+        <li><a href="https://www.zhihu.com/question/60423816" target='_blank'>web未来</a></li>
+        <li><a href="https://www.zhihu.com/question/34315119" target='_blank'>人与计算机</a></li>
+        <li><a href="html/平行世界.html" target='_blank'>平行世界</a></li>
+        <li><a href="html/催眠术.html" target='_blank'>休眠术</a></li>
+    </ul>
+
+</div>
+<div class="box">
+    <div class="before"><a href="http://tech.163.com/16/0629/12/BQNR0MGS00097U81.html" target='_blank'> 宇宙生命</a></div>
+    <div class="after"><a href="https://www.zhihu.com/question/60423816" target='_blank'>web未来发展</a> </div>
+    <div class="top"><a href="https://www.zhihu.com/question/34315119" target='_blank'>人与计算机</a> </div>
+    <div class="buttom"><a href="html/平行世界.html" target='_blank'>平行世界</a> </div>
+    <div class="left"><a href="html/催眠术.html" target='_blank'>催眠术</a> </div>
+    <div class="right"><a href="" target='_blank'>right</a> </div>
+</div>
+
+<script>
+    var box=document.querySelector('.box');
+    var is=0;
+    var s=0;
+    var i=setInterval(function(){
+        is+=1;
+        if(is>=170){
+                s++;
+            box.style.transform="rotateX("+s+"deg)";
+            if(is>420){
+            box.style.transform="rotateY("+is+"deg)";
+                if(is>750){
+                    s=0;
+                }
+            }
+        }else{
+            return false;
+        }
+
+    },100)
+
+</script>
+</body>
+</html>

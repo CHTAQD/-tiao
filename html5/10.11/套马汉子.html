@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" height="600" width="800" </canvas>
+    <script>
+        var can = document.querySelector('#can');
+        var ctx = can.getContext('2d');
+        ctx.setLineDash([15]);
+        var timer = setInterval(function(){
+            ctx.clearRect(0,0,can.width,can.height);
+            ctx.lineDashOffset++;
+            ctx.moveTo(50,50);
+            ctx.lineTo(550,50);
+            ctx.stroke()
+        },30)
+    </script>
+</body>
+</html>

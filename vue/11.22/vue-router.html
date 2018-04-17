@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue-router</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+    <style>
+        header{
+            height: 100px;
+            width: 100%;
+            background-color: yellowgreen;
+        }
+        div{
+            height: 300px;
+            width: 100%;
+            background-color: blue;
+        }
+        footer{
+            margin-top: -20px;
+            width: 100%;
+            height: 100px;
+            background-color: hotpink;
+        }
+        h1{
+            height: 200px;
+            width: 200px;
+            background-color: #cccbcc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="echo">
+    <header>
+        <router-link to='/movie'>movie</router-link>
+        <br/>
+        <router-link to='/music'>music</router-link>
+        <br/>
+        <router-link to='/friend'>friend</router-link>
+    </header>
+    <div>
+        <router-view></router-view>
+    </div>
+    <footer>
+        <h2>版权所有，违者必究</h2>
+    </footer>
+</div>
+
+<script type="text/x-handlebars-template" id='h'>
+    <h1>一级怪</h1>
+</script>
+<script type="text/x-handlebars-template" id='hh'>
+    <h1>二级怪</h1>
+</script>
+<script type="text/x-handlebars-template" id='hhh'>
+    <h1>三级怪</h1>
+</script>
+<script>
+    const allen = {
+        template:'#h'
+    }
+    const brain = {
+        template:'#hh'
+    }
+    const emily = {
+        template:'#hhh'
+    }
+//    配置路由映射
+    const route = [
+        {path:'/movie',component:allen},
+        {path:'/music',component:brain},
+        {path:'/friend',component:emily},
+    ]
+    //创建路由对象
+    var routes = new VueRouter({
+        routes:route
+    })
+    //把创建好的路由对象添加到根组件的router属性中
+    var echo = new Vue({
+        el:'.echo',
+        router:routes
+    })
+</script>
+</body>
+</html>

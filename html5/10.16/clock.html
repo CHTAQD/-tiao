@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #000;
+    }
+</style>
+<body>
+<canvas width="800" height="600"></canvas>
+
+<script>
+    /*var x = function (ax) {
+        this.name = 'rvjjdjdjdj';
+
+        console.log()
+    }
+    var h = {
+        age: 28
+    }
+
+    x.apply(h, ['xi'])*/
+//
+//    console.log(x.age)
+//    console.log(x(2));
+    var Echo={
+        age:19
+    }
+    var a=function(name){
+        console.log(this.age);
+        this.name='xiaoming';
+    }
+//    var b=a.apply(Echo,['xiii']);
+    a.apply(Echo,['echo']);
+    console.log(a.name);
+
+    alert(Echo.name)
+//    console.log(Echo.name);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+javascript-History、Location、screen对象实例讲解
+
+一、history对象
+    包含浏览器访问过的url
+    1.属性
+     length  返回浏览器历史记录的数量
+    例：两个页面链接，看history.length的数量变化
+    2.方法
+     back() 后退
+     forward()  前进
+     go(number)  如果参数是正数，那么就是前进相应的数目，如果是负数那么反之，如果是0那么就是刷新，一般前进为1；后退为-1；
+
+
+二、location对象  包含有当前url的相关信息
+    1.属性
+      href      设置或返回完整的url
+      search  返回url?后面的查询部分
+    2.方法
+      assign()   加载新的文档（有历史记录）
+      reload(boolean)   重新加载文档, 当参数是true，任何时候都会重新加载，false的时候，只有在文档改变的时候才会加载，否则直接读取内存当中的。
+      replace() 用新的文档代替当前的文档  （没有历史记录）
+
+三、screen对象：记录了客户端显示屏的信息
+     属性：
+     availHeight   返回显示屏幕的高度 (除 Windows 任务栏之外)。
+     availWidth    返回显示屏幕的宽度 (除 Windows 任务栏之外)。
+
+      height       返回显示屏幕的高度。[分辨率]
+      width        返回显示屏幕的宽度。
+
+四、navigator：对象包含有关浏览器的信息
+   属性：
+1、appName 返回浏览器的名称。 
+2、appCodeName 返回浏览器的代码名。  
+3、appVersion 返回浏览器的平台和版本信息。 
+4、platform 返回运行浏览器的操作系统平台。 
+5、geolocation返回地理位置信息（Html5）
+    
+
+

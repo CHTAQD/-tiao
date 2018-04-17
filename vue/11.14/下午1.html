@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src='../vue.js'></script>
+<body>
+    <div class="box">
+        <form action="">
+            <h1 v-text='time'></h1>
+            <button v-on:click.prevent.stop="haha('n')">提交</button>
+        </form>
+    </div>
+
+
+    <script>
+        //在表单form标签中当点击按钮button的时候会存在默认行为
+        //就是刷新页面的行为，如果想要阻止刷新页面的行为
+        var io = new Vue({
+            el:'.box',
+            methods:{
+                haha:(num,e)=>{
+                    alert(num)
+                    return false
+
+                }
+            },
+            data:{
+                time:new Date()
+            }
+        })
+    </script>
+</body>
+</html>

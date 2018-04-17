@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vue.js"></script>
+    <style>
+        span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="echo">
+    <allen :list='news'>
+        <!--在调用组件的时候直接写入一个template标签，-->
+        <!--在template标签中使用scope属性-->
+        <template scope='v'>
+            <!--如果想使用导出的v，就要通过scope来接受导出的v-->
+            <ul>
+                <slot>
+                    <span>{{v.field.title}}</span>
+                </slot>
+            </ul>
+        </template>
+    </allen>
+</div>
+
+<script type="text/x-handlebars-template" id="hh">
+    <div>
+        <ul>
+            <slot v-for='v in list' :field='v'></slot>
+            <!--:field使用来导出数据的，在这里，-->
+            <!--v会把循环到的news里面的每一个数组项-->
+            <!--赋值给field最后组成一组数据，就是一组v-->
+        </ul>
+    </div>
+</script>
+
+<script>
+    var a = {
+        template:'#hh',
+        props:['list']
+    }
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            news:[
+                {title:'woma'},
+                {title:'woma'},
+                {title:'echo'},
+                {title:'echo'},
+            ]
+        },
+        components:{
+            allen:a,
+        }
+    })
+</script>
+</body>
+</html>

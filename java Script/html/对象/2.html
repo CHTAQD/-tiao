@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>河南</li>
+		<li>福建</li>
+		<li>淮北</li>
+		<li>江苏</li>
+		<li>上海</li>
+		<li>北京</li>
+	</ul>
+	<input type="button" value="提交" id="c">
+</body>
+<script>
+var bth1=document.getElementById('c');
+var lis=document.getElementsByTagName('li');
+for(var i=0;i<lis.length;i++){
+	lis[i].onclick=function(){
+		window.opener.document.getElementById('a').value=this.innerHTML;
+	}
+}
+bth1.onclick=function(){
+	window.close()
+}
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="window.html">我是1页面</a>
+	<input type="button" value="刷新" id="b">
+	<input type="button" value="后退" id="c">
+</body>
+<script>
+var j=document.getElementById('b');
+var k=document.getElementById('c')
+j.onclick=function(){
+	history.go(0)
+}
+k.onclick=function(){
+	history.go(-1)
+}
+
+// alert(window.history.length)
+</script>
+</html>
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+	.box{
+		height: 300px;
+		width: 300px;
+		background: #ccc;
+	}
+	/*.box ul li{
+		height: 50px;
+		width: 50px;
+		float: left;
+		background: #f1ff11;
+	}
+	.box ul{
+		height: 200px;
+		width: 150px;
+		background: #c11;
+	}*/
+	/*.inner{
+		height: 100px;
+		width: 100px;
+		background: #c11;
+	}*/
+	.box ul{
+		height: 200px;
+		width: 200px;
+		background: #c11;
+	}
+	.box ul li{
+		height: 50px;
+		width: 50px;
+		background: #f1ff11;
+		margin-left: 10px;
+		float: left;
+	}
+</style>
+<body>
+	<!-- <div class="box" onclick='t1(event,"我是div标签")'>
+		<ul  onclick='t1(event,"我是ul标签")'>
+			<li onclick='t1(event,"我是li标签")'></li>
+			<li onclick='t1(event,"我是li标签")'></li>
+			<li onclick='t1(event,"我是li标签")'></li>
+		</ul>
+	</div> -->
+
+
+	<!-- 2 -->
+	<!-- <div class="box">
+		<div class="inner"></div>
+	</div> -->
+
+	
+	<!-- 3 -->
+	<div class="box">
+		<ul>
+			<li>001</li>
+			<li>002</li>
+			<li>003</li>
+			<li>004</li>
+			<li>005</li>
+		</ul>
+	</div>
+
+</body>
+<script>
+/*function t1(ev,a){
+	//阻止事件流
+	ev.cancelBubble=true;			冒泡
+	alert(a)
+}*/
+// var box=document.querySelector('.box')
+// var inner=document.querySelector('.inner')
+
+
+
+// // 捕获
+// box.addEventListener('click',function(event){
+// 	event.cancelBubble=true;
+// 	alert(this.className);
+// },true)
+// inner.addEventListener('click',function(event){
+// 	event.cancelBubble=true;
+// 	alert(this.className);
+// },true)
+
+
+
+var ulbox=document.querySelector('.box ul');
+ulbox.onclick=function(e){
+	var ev=e||window.event;
+	var obj=ev.scrElement||ev.target;
+	alert(obj.innerHTML)
+}
+</script>
+</html>

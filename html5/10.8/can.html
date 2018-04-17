@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<!--设置画布宽高的时候要注意，按照比例进行放大或缩小，宽高比为2/1-->
+<body>
+    <canvas class='can' height="300" width="600"></canvas>
+
+
+    <script>
+       var can = document.querySelector('.can');
+        var cgx = can.getContext('2d');
+
+        cgx.moveTo(50,50)
+        cgx.lineTo(50,150)
+        cgx.lineTo(150,150)
+        cgx.lineTo(150,50)
+        cgx.lineTo(50,50)
+        cgx.stroke()
+    </script>
+</body>
+
+</html>

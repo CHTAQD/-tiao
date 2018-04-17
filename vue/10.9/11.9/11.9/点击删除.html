@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 点击删除 </title>
+    <script src="../../../vue.js"></script>
+    <style>
+        .success{
+            display: inline-block;
+        }
+        .error{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="momoda">
+    <ul>
+        <li v-for="v in lovers">
+         <span v-bind:class="v.status?success:error">{{v.name}}</span>
+            <button v-if="v.status" v-on:click="changeStatus(v,false)">删除</button>
+            <button v-if="!v.status" v-on:click="changeStatus(v,true)">恢复</button>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var echo = new Vue({
+        el: ".momoda",
+        data: {
+            success:'success',
+            error:'error',
+            lovers: [
+                {name: "mhy", status: true},
+                {name: "xy", status: true},
+                {name: 'xh', status: true},
+                {name: 'xx', status: true},
+                {name: 'dd', status: true}
+            ]
+        },
+        methods: {
+            changeStatus: function (item, status) {
+                console.log(status);
+                item.status=status;
+            }
+        }
+    })
+</script>
+</body>
+</html>

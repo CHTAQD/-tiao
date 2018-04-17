@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen xxx="heheda" :hidden="false"></allen>
+</div>
+
+<script type="text/x-template" id="h">
+<div>
+    <div v-if="show">hahaha</div>
+    <div>{{xxx}}</div>
+    <div v-if="hidden">lkajsdk</div>
+</div>
+</script>
+
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:['xxx','hidden'],
+        data:function(){
+            return {
+               show:false,
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+    })
+</script>
+
+</body>
+</html>

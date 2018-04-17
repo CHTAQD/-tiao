@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		width: 300px;
+		height: 360px;
+		float: left;
+	}
+	.smallbox{
+		width: 300px;
+		height: 300px;
+		position: relative;
+		overflow:hidden;
+	}
+	.mark{
+		width:100px;
+		height:100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(255,255,255,0.5);
+		display: none;
+	}
+	.smallbox img{
+		width: 300px;
+		height: 300px;
+	}
+	.btnbox{
+		width:300px;
+		height: 60px;
+	}
+	.btn{
+		width: 60px;
+		height: 60px;
+		float: left;
+	}
+	.btn img{
+		width: 60px;
+		height: 60px;
+	}
+	.bigbox{
+		width: 600px;
+		height: 600px;
+		float: left;
+		overflow: hidden;
+		margin-left:200px;
+		display: none;
+		position: relative;
+	}
+	.bigbox img{
+		width: 900px;
+		height: 900px;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="smallbox">
+			<img src="1.png" alt="">
+			<div class="mark"></div>
+		</div>
+		<div class="btnbox">
+			<div class="btn"><img src="1.png" alt=""></div>
+			<div class="btn"><img src="2.jpg" alt=""></div>
+			<div class="btn"><img src="3.jpg" alt=""></div>
+			<div class="btn"><img src="4.jpg" alt=""></div>
+			<div class="btn"><img src="5.jpg" alt=""></div>
+		</div>
+	</div>
+	<div class="bigbox">
+		<img src="1.png" alt="">
+	</div>
+	<script>
+	var smallbox=document.querySelector('.smallbox');
+	var btn=document.querySelectorAll('.btn');
+	var img1=document.querySelector('.smallbox img');
+	var img=document.querySelectorAll('.btn img');
+	var bigImg=document.querySelector('.bigbox img');
+	var bigbox=document.querySelector('.bigbox');
+	var mark=document.querySelector('.mark');
+	for(var i=0;i<btn.length;i++){
+		btn[i].index=i;
+		btn[i].onmouseover=function(){
+			var aa=img[this.index].getAttribute('src');
+			img1.setAttribute('src',aa);
+			bigImg.setAttribute('src',aa);
+		}
+	}
+	smallbox.onmousemove=function(e){
+		bigbox.style.display='block';
+		mark.style.display='block';
+		var ev=e||window.event;
+		var ox=ev.clientX;
+		var oy=ev.clientY;
+		var mw=mark.offsetWidth/2;
+		var mh=mark.offsetHeight/2;
+		mark.style.left=(ox-mw)+'px';
+		mark.style.top=(oy-mh)+'px';
+		var bw=bigbox.offsetWidth/2;
+		var bh=bigbox.offsetHeight/2;
+		bigImg.style.bottom=-bw+oy+'px';
+		bigImg.style.right=-bh+ox+'px';
+		console.log((ox-mw),(oy-mh),(-bw+oy),(-bh+ox));
+	}
+	smallbox.onmouseleave=function(){
+		bigbox.style.display='none';
+		mark.style.display='none';
+	}
+
+	</script>
+</body>
+</html>

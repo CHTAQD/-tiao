@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #000;
+    }
+</style>
+<body>
+    <canvas width="800" height="600" id="can"></canvas>
+<script>
+    var can = document.querySelector('#can');
+    var ctx = can.getContext('2d');
+
+    var img = new Image();
+    img.src = 'manman.png';
+    var ws = img.width/4;
+    var hs = img.height/4;
+    var i =0;
+    var step = 200;
+    img.onload=function(){
+
+        var timer = setInterval(function(){
+            ctx.clearRect(0,0,can.width,can.height)
+            ctx.drawImage(img,ws*i,200,ws,hs,200,step,ws,hs);
+
+            step-=5;
+            i++;
+            if(i>=4){
+                i=0;
+            }
+            if(step<=-5){
+                step=200;
+            }
+        },150)
+
+    }
+
+
+
+</script>
+</body>
+</html>

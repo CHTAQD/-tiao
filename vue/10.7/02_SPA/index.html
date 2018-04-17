@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_这是我们的SPA</title>
+    <style>
+    .h {
+        height: 100px;
+        background-color: skyblue;
+    }
+    
+    .b {
+        height: 300px;
+        background-color: yellowgreen;
+    }
+    
+    .f {
+        height: 100px;
+        background-color: hotpink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="h">
+        <a href="#/movie">我的电影</a>
+        <a href="#/music">我的音乐</a>
+        <a href="#/friend">我的好友</a>
+    </div>
+    <div class="b"></div>
+    <div class="f"></div>
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+    //监视锚点值的改变，基于hashchane事件
+    window.addEventListener('hashchange', function(e) {
+        // console.log('锚点值改变了');
+        //获取用户点击的锚点值，知道其含义做对应操作
+        // console.log('当前的锚点值是', location.hash);
+        // 判断用户的需求发起请求ajax
+        var hash = location.hash;
+        var url = '';
+        if (hash === '#/movie') {
+            url = './movie.json';
+        } else if (hash === '#/music') {
+            url = './music.json';
+        } else if (hash === '#/friend') {
+            url = './friend.json';
+        }
+
+        //发起请求
+        $.ajax({
+            type: 'get',
+            url: url,
+            success: function(data) {
+                //将请求数据放入到DOM节点中
+                $('.b').html(data);
+            }
+        });
+
+    })
+    </script>
+</body>
+
+</html>

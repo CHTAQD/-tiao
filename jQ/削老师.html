@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            background-color: #F7F7F7;
+
+        }
+
+
+
+        ul {
+
+            margin: 0;
+
+            padding: 50px;
+
+            list-style: none;
+
+        }
+
+
+
+        .register {
+
+            width: 800px;
+
+            margin: 50px auto;
+
+            background-color: #FFF;
+
+            border: 1px solid #CCC;
+
+            border-radius: 5px;
+
+        }
+
+
+
+        li {
+
+            display: flex;
+
+            margin: 20px 0;
+
+        }
+
+
+
+        label, input {
+
+            display: block;
+
+            float: left;
+
+            height: 46px;
+
+            font-size: 24px;
+
+            box-sizing: border-box;
+
+            color: #333;
+
+        }
+
+
+
+
+        label {
+
+            width: 200px;
+
+            line-height: 46px;
+
+            margin-right: 30px;
+
+            text-align: right;
+
+        }
+
+
+
+        input {
+
+            width: 320px;
+
+            padding: 8px;
+
+            line-height: 1;
+
+            outline: none;
+
+            position: relative;
+
+        }
+
+
+
+        input.code {
+
+            width: 120px;
+
+        }
+
+
+
+        input.verify {
+
+            width: 190px;
+
+            margin-left: 10px;
+
+        }
+
+
+
+        input.disabled {
+
+            background-color: #CCC !important;
+
+        }
+
+
+
+        input[type=button] {
+
+            border: none;
+
+            color: #FFF;
+
+            background-color: #E64145;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+        }
+
+        .error{
+
+            color: red;
+
+            margin-left: 10px;
+
+            font-size: 12px;
+
+            line-height: 46px;
+
+        }
+
+
+
+        .tips {
+
+            position: fixed;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            text-align: center;
+
+        }
+
+
+
+        .tips p {
+
+            min-width: 300px;
+
+            max-width: 400px;
+
+            line-height: 40px;
+
+            margin: 0 auto;
+
+            color: #FFF;
+
+            display: none;
+
+            background-color: #C91623;
+
+        }
+
+    </style>
+<body>
+	<div class="register">
+
+    <form id="ajaxForm">
+
+        <ul>
+
+            <li>
+
+                <label for="name">用户名</label>
+
+                <input type="text" name="name" class="name" id="name">
+
+                <span class="error"></span>
+
+            </li>
+
+            <li>
+
+                <label for="pass">请设置密码</label>
+
+                <input type="password" name="pass" class="pass" id="pass">
+
+            </li>
+
+            <li>
+
+                <label for="repass">请确认密码</label>
+
+                <input type="password" name="repass" class="repass" id="repass">
+
+            </li>
+
+            <li>
+
+                <label for="mobile">验证手机</label>
+
+                <input type="text" name="mobile" class="mobile" id="mobile">
+
+            </li>
+
+            <li>
+
+                <label for="code">短信验证码</label>
+
+                <input type="text" name="code" class="code" id="code">
+
+                <input type="button" value="获取验证码" class="verify">
+
+            </li>
+
+            <li>
+
+                <label for="submit"></label>
+
+                <input type="button" class="submit" value="立即注册" id="submit">
+
+            </li>
+
+        </ul>
+
+    </form>
+
+</div>
+
+<div class="tips">
+
+    <p>用户名不能为空</p>
+
+</div>
+
+
+
+
+<script src='jquery-3.2.1.js'></script>
+<script>
+	 $(function(){
+        //获取短信验证码
+        var $btn=$('.verify');
+        //获取手机输入框对象
+      
+        //获取手机输入框的内容
+       //在val()方法没有传入任何参数的时候表示获取当前input标签的内容。
+        var $tips=$('.tips>p');
+        /*console.log($phoneNum);*/
+        /*console.log($btn)*/
+        $('body').on('click','.verify',function(){
+        	  var $mobile=$('.mobile');
+        	   var $phoneNum=$mobile.val();
+            //1判断是否输入了手机号  提示    过
+            if($phoneNum==""){
+                $tips.html('请输入手机号').fadeIn(500).delay(1500).fadeOut(500);
+                return false;
+            }
+            //2判断手机号是否合法    提示   过
+            //1. 11位，  2. 1开头，3.所有的位上都是数字。
+            // 正则表达式\d表示：0-9；{}：重复次数，大括号里面写几就重复几次；
+            if(!/^1\d{10}$/.test($phoneNum)){
+                $tips.html('请输入正确的手机号').fadeIn(500).delay(1500).fadeOut(500);
+                return false;
+            }
+        })
+    })
+</script>
+</body>
+</html>

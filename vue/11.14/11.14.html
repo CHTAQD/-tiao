@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证</title>
+</head>
+<script src='../vue.js'></script>
+<body>
+<div class="box">
+    <ul>
+        <li v-for='v in lovers'>
+            {{v.name}}
+        </li>
+    </ul>
+    <input type="text" v-model='type' v-on:keyup.enter='r'/>
+</div>
+<script>
+    var i = new Vue({
+        el:'.box',
+        data:{
+            lovers:[
+                {name:'jaccy'},
+                {name:'uio'},
+                {name:'mid'},
+                {name:'xxx'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

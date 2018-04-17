@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        自定义属性和父组件向子组件传递数据
+    </title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+
+    <ul>
+        <li v-for="v in lovers">
+            {{v.name}}
+            <!--<br/>-->
+            <!--<span>{{h}}</span>-->
+        </li>
+    </ul>
+        <allen :show="true"></allen>
+</div>
+
+<script type="text/x-template" id="h">
+    <div>
+        <div v-if="show">hahaha</div>
+    </div>
+</script>
+
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:['show']
+    })
+
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            lovers:[
+                {name:'echo'},
+                {name:'allen'},
+                {name:'emily'},
+                {name:'brain'}
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

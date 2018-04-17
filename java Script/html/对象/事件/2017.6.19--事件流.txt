@@ -1,0 +1,40 @@
+1.事件流：页面中接收事件的顺序
+
+2.事件冒泡：现代浏览器兼容，IE5.5及以下会跳过html
+    1.阻止冒泡：
+        function stopBubble(e){
+            if(e){
+                e.setopPropagation();//非IE浏览器
+            }else{
+                window.event.cancelBubble=true;
+            }
+        }
+3.html事件：onmouseover、onmouset、onfocus、onblur、onload
+    ps:标签内的this指向本身，在标签内可以省略。event不能省略
+
+4.dom0级事件：
+    1.事件添加：对象."on"+事件名=function(){
+        执行代码块
+    }
+    2.事件删除：对象."on"+事件名=null;
+
+5.dom2级事件：
+    1.两个方法：addEventListener(),removeEventListener()
+    2.addEventListener(type,fn(),boolean)
+        ps:type为事件名，不加on；
+    3.优点是能给同一个对象添加多个事件，不覆盖
+    4.事件删除只能删除有名函数，不能删除匿名函数
+    5.兼容性，现代浏览器都支持
+
+6.IE事件处理程序：
+    1.两个方法：attachEvent(),detachEvent(),两个参数
+    2.格式：对象.attachEvent(name,fn);
+    3.删除同dom2
+    4.兼容性：IE，opera（具有IE渲染内核的浏览器）
+
+7.跨浏览器
+
+
+
+一、DTV+CSS
+    父元素如果存在垂直方 向的如margin-top、margin-bottom，给子元素加其属性值，会将值传递给父元素，如果只给子元素加类属性，父元素加1px透明边框。

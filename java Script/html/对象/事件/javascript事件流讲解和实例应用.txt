@@ -1,0 +1,65 @@
+javascript事件流讲解和实例应用
+
+  当页面元素触发事件的时候，该元素的容器以及整个页面都会按照特定顺序响应该元素的触发事件，事件传播的顺序叫做事件流。
+
+一、事件流的分类
+
+    1.冒泡型事件(所有的浏览器都支持)
+由明确的事件源到最不确定的事件源依次向上触发。
+
+例：
+<div onclick="test('我是div标签')">
+     <ul onclick="test('我是ul标签')">
+	<li onclick="test('我是li标签')">第1个</li>
+                <li onclick="test('我是li标签')">第2个</li>
+	<li onclick="test('我是li标签')">第3个</li>
+      </ul>
+</div>
+    2.捕获型事件(IE不支持 w3c标准 火狐)
+      不确定的事件源到明确的事件源依次向下触发。
+       addEventListener(事件，处理函数，false)【冒泡】
+       addEventListener(事件，处理函数，true)【捕获】
+例：var box=document.getElementById('box');
+    var inner=document.getElementById('inner');
+    box.addEventListener("click",function(){
+    	alert(this.id)
+    },true)
+    inner.addEventListener("click",function(){
+    	alert(this.id)
+    },true)
+区别：
+事件的传播顺序，在捕获阶段依次为window、document、html、body、div（由大到小），在冒泡阶段依次为div、body、html、document、window（由小到大）。
+
+二、阻止事件流
+    事件对象.cancelBubble=true;   
+注：
+冒泡：被点击的最小元素
+捕获：被点击的最大元素
+例：冒泡
+ function test(a,b){
+          alert(b)
+         a.cancelBubble=true；
+       }
+   【a代表event，b代表传入的内容】
+例：捕获
+box.addEventListener("click",function(event){
+	event.cancelBubble=true;
+    	alert(this.id);
+    },true)
+inner.addEventListener("click",function(event){
+	event.cancelBubble=true;
+    	alert(this.id)	
+ },true)
+
+三、目标事件源的对象
+    IE：事件对象.srcElement
+    FF: 事件对象.target
+var obj=a.srcElement||a.target;
+ 例：
+<ul onclick="test(event,'我是ul标签')">
+	<li>第1个</li>
+	<li>第2个</li>
+	<li>第3个</li>
+</ul>
+例：事件委派各种案例
+      

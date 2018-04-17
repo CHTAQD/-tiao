@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+	html,body{
+		background-color: #abcdef;
+	}
+	.box{
+		width:400px;
+		height:400px;
+		background-color: #666;
+		position: absolute;
+		top:0;
+		left:0;
+		bottom: 0;
+		right:0;
+		margin:auto;
+		overflow: hidden;
+		padding:30px 0 50px 0;
+	}
+	.time1{
+		width:100%;
+		height:50px;
+		font-size: 36px;
+		color:#fff;
+		line-height: 50px;
+		padding-left: 50px;
+	}
+	.time2{
+		width:100%;
+		height:50px;
+		font-size: 16px;
+		line-height: 50px;
+		padding-left: 50px;
+		color:blue;
+	}
+	.time3{
+		width:100%;
+		height: 50px;
+	}
+	.time3 span{
+		float: left;
+		width:50px;
+		height:50px;
+		font-size: 25px;
+		line-height: 50px;
+		color: #000;
+		background-color: #fff;
+		text-align: center;
+	}
+	.time3 span:first-of-type{
+		margin-left:50px;
+	}
+	.time3 strong{
+		width:200px;
+		height:50px;
+		font-size: 30px;
+		line-height:50px;
+		color:#fff;
+		text-align: center;
+		font-weight: bold;
+		float: left;
+	}
+	ul{
+		width:245px;
+		height: 35px;
+		margin:0 auto;
+	}
+	ul li{
+		float: left;
+		width: 35px;
+		height:35px;
+		font-size: 18px;
+		color: #fff;
+		line-height: 35px;
+		text-align: center;
+	}
+	.number{
+		width:245px;
+		height:210px;
+		margin:0 auto;
+	}
+	.number span{
+		float: left;
+		width:35px;
+		height:35px;
+		font-size: 18px;
+		color: #fff;
+		line-height: 35px;
+		text-align: center;
+	}
+	</style>
+<body>
+	<div class="box">
+		<div class="time1">14:44:44</div>
+		<div class="time2">2017年8月2日，星期三</div>
+		<div class="time3">
+			<span>&lt;</span>
+			<strong>2017年8月</strong>
+			<span>&gt;</span>
+		</div>
+		<ul>
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<div class="number">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span>10</span>
+			<span>11</span>
+			<span>12</span>
+			<span>13</span>
+			<span>14</span>
+			<span>15</span>
+			<span>16</span>
+			<span>17</span>
+			<span>18</span>
+			<span>19</span>
+			<span>20</span>
+			<span>21</span>
+			<span>22</span>
+			<span>23</span>
+			<span>24</span>
+			<span>25</span>
+			<span>26</span>
+			<span>27</span>
+			<span>28</span>
+			<span>29</span>
+			<span>30</span>
+			<span>31</span>
+			<span>32</span>
+			<span>33</span>
+			<span>34</span>
+			<span>35</span>
+			<span>36</span>
+			<span>37</span>
+			<span>38</span>
+			<span>39</span>
+			<span>40</span>
+			<span>41</span>
+			<span>42</span>
+		</div>
+	</div>
+
+
+</body>
+<script>
+var time1=document.querySelector('.time1');
+var tine2=document.querySelector('.time2');
+function time(){
+	var d=new Date();
+	time1.innerHTML=fornum(d.getHours())+':'+fornum(d.getMinutes())+':'+fornum(d.getSeconds());
+}
+time()
+setInterval(time,1000)
+
+// 对于
+function fornum(v){
+	return v<10?'0'+v:v;
+}
+
+function forweek(i){
+	var arr=['日','一','二','三','四','五','六']
+	return arr[i]
+}
+
+// 5,获取某个月最后一天
+function laseD(year,mouth){
+	return new Date(year,month,0).getDate();
+
+}
+// alert(lastD(2017,5))
+// 6,获取这个月最后一天是星期几
+function nowW(year,mouth){
+	return new Date(year,(month-1),1).getDay();
+}
+
+
+
+
+
+
+
+
+
+// 7,设置number盒子里的具体日期
+var d=new Date();
+
+function setDate(){
+	//上个月的最后一天
+	var lastday=lastDay(d.getFullYear(),d.getMonth());
+	// 这个月最后一天
+	var nowday=lastD(d.getFullYear(),(d.getMonth()+1))
+
+
+//这个月第一天的星期
+var nowweek=nowW(d.getFullYear(),(d.getMonth()+1));
+
+
+var str='';
+var lastweek=nowweek-1;
+
+
+for(var i=0;i<42;i++){
+	if(i<lastweek){
+		str='<span class="color">'+(lastday--)+'</span>'+str;
+	}else if(){
+		//下
+		str+=''
+	}else{
+		//本月
+		str+='';
+	}
+}
+number.innerHTML=str;
+}
+setDate()
+</script>
+</html>

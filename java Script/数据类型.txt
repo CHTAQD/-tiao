@@ -1,0 +1,103 @@
+/数据类型
+1、分类
+(1)初始类型(原始类型)：
+number、string、boolean、undefined、null
+(2)引用类型(合成类型)：
+object(侠义的对象、数组、函数)
+
+2、为什么这样分（原因）
+栈：	            
+存的数据大小固定的值（原始类型、引用类型的地址），
+查询速度快；
+堆：	
+存的数据大小不固定的值（引用类型），
+查询速度慢；
+
+3、typeof操作符：检测数据类型的一元运算符，返回的结果永远是字符串；
+
+4、初始类型
+
+(1)undefined
+创建变量后但是没有赋值，而变量的默认值就是undefined;
+注意：一个没有声明和赋值的变量，它只能用typeof来运算，如果用在别处，就会报错；
+
+(2)null
+指的是什么都没有，仅仅是一个占位符。
+（它用来清空对象，它的本质是空对象）
+
+
+
+(3)string
+[1]用单双引号来说明，他所包围的值都是字符串。
+[2]单双引号的用法：
+   效率是一样的;只能成对出现，不能相互交叉使用,可以相互嵌套，单引号要包双引号，双引号也可以包单引号，但是它们嵌套时，不可以一样。
+[3]还包括一些特殊的字符:
+   \n   换行; \t  制表符（Tab）; \b  空格; \r  回车;    \'  '; \"   ";   \\   \;
+
+(4)boolean
+   只有两个特殊的值  true(肯定) false(否定)
+
+(5)number
+包括整型和浮点型。支持二进制、八进制、十进制、十六进制。也可用科学计数法来表示， 还包括一些特殊的值：
+         Number.MAX_VALUE   最大值
+         Number.MIN_VALUE   最小值
+
+// 整形 (整数)
+   var aa=123.0;
+   alert(aa);
+   alert(typeof aa)
+// 浮点型（小数）
+   var bb=3.14159260;
+   alert(bb)
+   alert(typeof bb)
+
+   // 二进制：满二进一的数，取值范围是0~1；
+   // parseInt:字符串类型转换为数值型
+   // (解析的变量名,以几进制的结果输出)
+   var dd="011";
+   alert(parseInt(dd,16))
+
+   // 八进制：满八进一的数，取值范围是0~7，以0开头的数；
+   var cc=0110;
+   alert(cc)
+   alert(typeof cc)
+
+   // 十六进制：满十六进一的数，取值范围是0~15，以0x开头的数,0~9 a~f(10~15)；
+    var ff=0x123;
+    alert(ff)
+    alert(typeof ff)
+
+   // 科学计数法：e代表10，e后面的数表示10的N次方；
+   var tt=2e-6;
+   alert(tt)
+   alert(typeof tt)
+
+   // 特殊字符
+   alert(Number.MAX_VALUE)
+   alert(typeof Number.MAX_VALUE)
+
+   alert(Number.MIN_VALUE)
+   alert(typeof Number.MIN_VALUE)
+
+5、初始数据类型值与Typeof类型表格
+数据类型	        值	         Typeof
+undefined   undefined                 undefined
+（申明未赋值）
+null	    null	        	 object
+（空）	
+string    在单双引号之间的值和特殊字符 string
+（字符串）
+boolean	true/false	        boolean
+（布尔）	
+number   整型和浮点型，特殊值	 number
+（数值）	
+
+6、引用类型
+object指包含相关属性和方法的集合；
+以new关键字命名；
+(1)var obj=new Object();
+     alert(obj)
+     alert(typeof obj)
+(2)obj={};
+     alert(obj)
+     alert(typeof obj)

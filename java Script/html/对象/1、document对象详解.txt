@@ -1,0 +1,51 @@
+000
+document对象详解
+
+DOM  (document object modle)
+DOM核心对象是document对象
+DOM作用：对内容、属性、样式的操作
+
+document对象
+一、属性
+  title  返回或设置当前文档的标题
+  URL  返回当前文档的url
+  bgColor 设置文档的背景色
+  fgColor  设置文档的前景色(设置文字颜色)
+
+二、方法
+1、getElementById(idname)  返回拥有指定id的（第一个）对象的引用
+
+2、getElementsByTagName(tagname)  返回带有指定标签名的对象的集合 ;（可以将其假想为数组，通过下标来访问）
+
+、
+3、getElementsByName(name)  返回带有指定name名称的对象的集合
+
+4、getElementsByClassName()   返回带有指定classname名称的对象的集合
+****************************************
+不兼容，可以自己写一个兼容性函数 ****************************************
+
+5、document.querySelector()
+该方法接受一个CSS选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回null。
+
+6、document.querySelectorAll()
+document.querySelectorAll方法与querySelector用法类似，区别是返回一个即节点列表，包含所有匹配给定选择器的节点。
+
+三、dcoument对象的集合
+A.all   所有元素的集合
+B.forms  返回对文档中所有form对象的引用
+   通过集合来访问相应的对象
+     1.通过下标的形式     
+     2.通过name形式
+
+
+
+
+
+
+
+
+
+
+
+
+

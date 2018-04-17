@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>translate　　rotate</title>
+</head>
+<body>
+<canvas id="can" height="800" width="1000"></canvas>
+<script>
+    var can = document.querySelector('#can');
+    var ctx = can.getContext('2d');
+    ctx.translate(400,300)
+
+   var timer = setInterval(function(){
+       ctx.clearRect(-151,-101,can.width,can.height);
+       ctx.rotate(0.01*Math.PI);
+       ctx.strokeStyle='#666666';
+       ctx.strokeRect(-150,-100,300,300)
+   },15)
+    //定义一个旋转的方法 ，确定每次时间的间隔中要旋转多少弧
+    //绘制一个矩形，因为需求要求矩形以中心为轴进行旋转
+    //但是canvas中rotate方法只能以画布左上角为轴进行旋转，
+    //因此只要使矩形的中心到画布的左上角重合就可以了
+    //三，把旋转的矩形平移到画布
+    clearRect
+
+    save
+    restore
+    fillstrokeRect
+
+    translate
+    
+</script>
+</body>
+</html>

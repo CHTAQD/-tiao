@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen :list='lovers' @he='qiuhe'></allen>
+    总计{{totalPrice}}元
+</div>
+
+<script type="text/x-handlebars-template" id='hh'>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for='v in list'>
+                <td>{{v.name}}</td>
+                <td>{{v.price}}</td>
+                <td>
+                    <input type="number" v-model='v.number' @keyup.enter='sum'/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script>
+    var a = {
+        template:'#hh',
+        props:['list'],
+        data(){
+        return {
+            type:0
+        }
+    },
+        methods:{
+            sum:function(){
+                console.log(this)
+                this.$emit('he')
+            }
+        }
+    }
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            totalPrice:0,
+            lovers:[
+                {name:'iphoneX',price:10000,number:1},
+                {name:'iphone8',price:5000,number:1},
+                {name:'iphone7',price:3000,number:1}
+            ]
+        },
+        components:{
+            allen:a
+        },
+        methods:{
+            qiuhe:function(){
+                this.totalPrice=0;
+                this.lovers.forEach((v)=>{
+                    this.totalPrice+= v.price* v.number
+                })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

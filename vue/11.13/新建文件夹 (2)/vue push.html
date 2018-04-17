@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div class="echo">
+    <ul>
+        <li v-for="v in pingLun">
+            {{v.content}}
+        </li>
+    </ul>
+    <textarea v-model="content" name="pingLun" id="PL" cols="30" rows="10"></textarea>
+    <br/>
+    <button v-on:click="submit()">发表</button>
+</div>
+<script>
+    var echo = new Vue({
+        el:".echo",
+        methods:{
+            submit:function(){
+                this.pingLun.push({content:this.content});
+                this.content="";
+            }
+        },
+        data:{
+            content:"",
+            pingLun:[
+                {content:"MCY真漂亮"},
+                {content:"DJF真是黑"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

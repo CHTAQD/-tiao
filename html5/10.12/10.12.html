@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #000;
+    }
+</style>
+<body>
+    <canvas id="can" height="600" width="800"></canvas>
+    <script>
+     var can = document.querySelector('#can');
+     var ctx = can.getContext('2d');
+     var img = new Image();
+     img.src='manman.png';
+     var ws = img.width/4;
+     var hs = img.height/4;
+     var i = 0;
+     var step = 200;
+
+
+     document.onkeydown=function(e){
+
+
+
+     var you = setInterval(function(){
+        ctx.clearRect(0,0,can.width,can.height);
+        ctx.drawImage(img,ws*i,130,ws,hs,step,200,ws,hs);
+         i++;
+         step+=5;
+         if(i>=4){
+             i=0;
+         }
+         if(step>=can.width){
+             step=200;
+         }
+     },200);
+
+
+         var xia = setInterval(function(){
+             ctx.clearRect(0,0,can.width,can.height);
+             ctx.drawImage(img,ws*i,0,ws,hs,200,step,ws,hs);
+             i++;
+             step+=5;
+             if(i>=4){
+                 i=0;
+             }
+           /*  if(step>=can.width){
+                 step=200;
+             }
+*/
+         },200);
+
+         var shang = setInterval(function(){
+             ctx.clearRect(0,0,can.width,can.height);
+             ctx.drawImage(img,ws*i,200,ws,hs,200,step,ws,hs);
+             i++;
+             step-=5;
+             if(i>=4){
+                 i=0;
+             }
+             /*if(step<=0){
+              step=200;
+              }*/
+         },200);
+
+
+         var zuo = setInterval(function(){
+             ctx.clearRect(0,0,can.width,can.height);
+             ctx.drawImage(img,ws*i,hs,ws,hs,step,200,ws,hs);
+             i++;
+             step-=5;
+             if(i>=4){
+                 i=0;
+             }
+             /* if(step>=can.width){
+              step=200;
+              }*/
+         },200);
+
+
+
+
+        var ve = e||window.event;
+        if(ev.keyCode==37){
+            zuo=true;
+            xia=false;
+            shang=false;
+            you=false;
+        }
+    }
+    </script>
+</body>
+</html>

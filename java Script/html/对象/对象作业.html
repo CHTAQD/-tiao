@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//构造函数 A.声明的时候添加
+		/*function beizi(){
+			this.height='123m',
+			this.width='99999m',
+			this.exe=function(){
+				return '喝水'
+			}
+		}
+		var i=new beizi();
+		alert(i.height)
+		alert(i['exe']())*/
+		//B.声明后添加
+		/*function beizi(){};
+		var i=new beizi();
+		i.name='beizi',
+		i.height='10000000lm',
+		i.eee=function(){
+			return '摔，发泄'
+		}
+		alert(i['eee']())*/
+/*
+		2.Object 
+		声明后添加
+		var i=new Object();
+		i.name='beizi',
+		i.exx=function(){
+			return 'shuai'
+		}
+		alert(i.name)*/
+
+
+		//3.json 
+		//声明并添加
+		/*var i={
+			name:'beizi',
+			cc:function(){
+				return 'fei'
+			}
+		}
+		alert(i.cc())
+		*/
+	
+		//声明后添加
+		/*var i={}
+		i.name='beizi',
+		i.ccc=function(){
+			return 'shuai'
+		}
+		alert(i.ccc())*/
+
+
+		//车子
+		//构造函数
+		//声明并添加
+/*		function chezi(){
+			this.name='iP',
+			this.xxx=function(){
+				return 'kanduanying'
+			}
+		}
+		var i=new chezi()
+		alert(i.name)*/
+
+		//声明后添加
+/*		function chezi(){};
+		var i=new chezi();
+		i.name='baoma',
+		i.xh=function(){
+			return 'x6'
+		}
+		alert(i.xh())
+		*/
+
+		//3.json
+//		var a={
+//			name:'baoma',
+//			xx:function(){
+//				return 'x7'
+//			}
+//		}
+//		alert(a.xx())
+//
+//		var i={}
+//		i.name='baoma',
+//		i.xx=function(){
+//			return 'paochang'
+//		}
+//		alert(i.xx())        ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//插板
+    function chaban(a,b){
+        this.name=a;
+        this.color=b;
+    }
+    chaban.prototype.yingyong=function(){
+        return '玩游戏'
+    };
+    var cb=new chaban("勒夫","white");
+    alert(cb.name);
+    alert(cb.yingyong());
+//灯管
+    function dengguan(a,b){
+        this.long=a;
+        this.color=b;
+    }
+    dengguan.prototype.yingyong=function(){
+        return '看'
+    };
+    var dg=new dengguan("1m","purple");
+    alert(dg.color);
+    alert(dg.yingyong());
+//大熊猫小熊猫
+    function small(){
+        this.name="panda";
+        this.eat="吃树";
+    }
+    function big(){
+        this.creep="生死";
+        this.sleep="睡觉";
+    }
+    big.prototype=new small();
+    var s=new small();
+    alert(s.eat);
+
+//木头凳子
+    function wood(){
+        this.long='1m';
+        this.width='50cm'
+    }
+    function stool(){
+        this.yingyong='坐';
+    }
+    stool.prototype=new wood();
+    var ws=new wood();
+    alert(ws.width);
+
+
+*/
+/*工厂
+function i(j,k){
+function aa(){
+	this.height=j,
+	this.name=k
+}
+var o=new aa();
+return o
+}
+var l=new i(180,'苏努');
+alert(l.name)
+*/
+
+// 构造函数
+/*	function aa(i,j){
+		this.name=i,
+		this.height=j
+	}
+	aa.prototype.blay=function(){
+		return 'yazi'
+	}
+var o=new aa('mingzi',180)
+alert(o.name)
+alert(o.blay())
+*/
+
+/*//prototype
+function aa(){
+	this.height=123,
+	this.name=456;
+}
+function bb(){
+	this.name=7878,
+	this.age=44444;
+}
+bb.prototype.blay=function(){
+	return 'yazi'
+}
+// bb.prototype=new aa();
+var i=new bb();
+var j=new aa();
+alert(i.height)
+alert(i.blay());
+*/
+
+
+
+
+
+
+// 取PI
+/*var a=Math.PI;
+alert(a)*/
+// 取上整
+/*var a=-1.213;
+alert(Math.floor(a))*/
+
+/*//取下整
+var b=-1.13548;
+alert(Math.ceil(b))
+
+//绝对值
+var c=-1546;//副的正的都是正的
+alert(Math.abs(c))
+
+//四舍五入
+var a=4.5;
+alert(Math.round())
+
+*/
+
+
+
+
+
+
+/*function floor(max,min){
+	return Math.floor(Math.random()*(max-min+1)+min-1);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

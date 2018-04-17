@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+
+	}
+</style>
+<body>
+	<input type="button" value="生成美女" >
+	<ul style='max-width:850px'></ul>
+</body>
+<script src='function.js'></script>
+<script>
+var put=document.querySelector('input');
+var ul=document.querySelector('ul');
+var k=['窗台美女','半身美','弑神','傲娇女神']
+put.onclick=function(){
+
+
+for(var i=0;i<4;i++){
+		var li=document.createElement('li');
+		ul.appendChild(li)
+		li.innerHTML=k[i]
+	li.style.listStyle='none';
+	li.style.height='150px';
+	li.style.width='100px';
+	// li.style.backgroundColor='#ccc';
+	li.style.backgroundImage='url('+(i+1)+'.jpg)';
+
+	li.style.float='left';
+	li.style.margin='20px 50px';
+	li.style.backgroundPosition='0px 20px';
+	li.style.backgroundRepeat='no-repeat'
+}
+	var lis=getChilds(ul);
+	// var lis=ul.childNodes;
+	for(var i=0;i<lis.length;i++){
+	lis[i].onmouseover=function(){
+		
+		for(var j=0;j<lis.length;j++){
+			lis[j].style.backgroundColor='';
+		}
+
+		this.style.backgroundColor='#f1ff11';
+	
+  }
+ }
+}
+
+
+</script>
+</html>

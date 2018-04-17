@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+	.box{
+		height: 300px;
+		width: 300px;
+		background-color:#f1ff11;
+		border:1px solid #c11;
+		margin:100px auto 0;
+/*		box-shadow:
+*/	}
+	.top{
+		height: 30%;
+		width:100%;
+		background-color: #f1ff11;
+		text-align:center;
+		font-size: 40px;
+		line-height: 80px;
+	}
+	.bottom{
+		height: 70%;
+		width: 100%;
+		background-color: #fff;
+		text-align: center;
+		font-size: 100px;
+		line-height: 180px;
+	}
+</style>
+<body>
+	<div class="box">	
+	<div class="top">三秒倒计时</div>
+	<div class="bottom">
+		3
+	</div>
+	</div>
+
+</body>
+<script>
+var bottom=document.getElementsByClassName('bottom')[0];
+	var num=3;
+	setInterval(function(){
+		num--;
+		bottom.innerHTML=num;
+		if(num<=0){
+			location.href='loca2.html'
+		}
+	},1000)
+
+</script>
+</html>

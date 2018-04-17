@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <div id="box">sdsds</div>
+	<div id="box">sdsdsd</div>
+	<div>dsdsdsdsd</div>
+	<form action="">
+		<input type="text" name="aa">
+	</form> -->
+	<!-- <div class="cla">dsfsdf</div>
+	<div class="cla" id="aa">rewrer</div>
+	<div class="cla">sdfsd</div> -->
+<!-- 	<div class="box"></div>
+<textarea name="" id="area" cols="30" rows="10"></textarea>
+<input type="button" value="提交"> -->
+
+全选：<input type="checkbox" id='quan'>
+	<hr>
+	水果：<br>
+	菠萝：<input type="checkbox" class='shui'><br>
+	柠檬：<input type="checkbox" class='shui'><br>
+	西瓜：<input type="checkbox" class='shui'><br>
+	苹果：<input type="checkbox" class='shui'><br>
+	脆梨：<input type="checkbox" class='shui'><br>
+	甜瓜：<input type="checkbox" class='shui'><br>
+	樱桃：<input type="checkbox" class='shui'><br>
+	荔枝：<input type="checkbox" class='shui'><br>
+	<div class="box"></div>
+
+
+
+</body>
+<script>
+/*var box=document.querySelector('.box');
+var area=document.getElementById('area');
+var input=document.getElementsByName('input')[0];
+input.onclick=function(){
+	var text=area.value;
+	box.innerText=text;
+	area.value='';
+}*/
+
+
+var box=document.querySelector('.box');
+box.setAttribute('class','bigbox');
+
+
+
+
+
+
+
+
+
+
+
+
+// 一，dom属性
+/*document.write('dawangkalatouzi')
+document.bgColor='red';
+document.fgColor='#000';
+document.title='我是大王';
+alert(document.URL)*/
+/*document.title='我是大王';
+document.bgColor='#ccc';
+document.fgColor='#c11';
+alert(document.URL)
+document.write('我是大王卡拉头子')*/
+// 二，方法
+/*var box=document.getElementById('box');					id
+box.style.height='100px';
+box.style.width='100px';
+box.style.backgroundColor='#ccc';*/
+/*var bigbox=document.getElementsByTagName('div');			标签
+bigbox[1].style.height='100px';
+bigbox[1].style.width='100px';
+bigbox[1].style.backgroundColor='#c11';
+alert(bigbox.length)*/
+/*var k=document.getElementsByTagName('div');
+for(var i=0;i<k.length;i++){
+	k[i].style.backgroundColor='#c11';
+}
+var aa=document.getElementsByName('aa')[0];					name
+aa.style.backgroundColor='red';
+aa.style.border='0px';*/
+
+/*var cla=document.getElementsByClassName('col');			class
+for(var i=0;i<cla.length;i++){
+	cla[i].style.backgroundColor='red';
+	cla[i].style.height='100px';
+	cla[i].style.width='100px';
+	cla[i].style.marginTop='10px';
+}*/
+
+/*function getClass(classname){
+	if(document.getElementsByClassName){
+		return document.getElementsByClassName(classname);
+	}else{
+		var tags=document.getElementsByTagName('*');
+		var arr=[];
+		for(var i=0;i<tags.length;i++){
+			if(
+				tags[i].className==classname){
+				arr.push(tags[i])
+			}
+				
+		}
+		return arr;
+	}
+}
+alert(getClass('cla').length)
+*/
+
+/*var bigbox=document.querySelector('.cla#aa');
+bigbox.style.backgroundColor='red';*/
+/*获取单个选择器
+var bigbox=document.querySelector('')*/
+/*var bigbox=document.querySelectorAll('.cla');
+for(var i=0;i<bigbox.length;i++){
+bigbox[i].style.backgroundColor='red';
+
+}
+document.querySelectorAll*/
+
+
+
+/*var box=document.querySelector('cla')
+var bigbox=document.querySelector('cla');
+var text=box.innerHTML;
+bigbox.innerHTML=text;*/
+</script>
+</html>

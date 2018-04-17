@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+.box{
+	height: 500px;
+	width: 500px;
+	border:1px solid #000;
+	box-shadow: 1px 10px 1px #ccc;
+	margin:50px auto;
+}
+.left{
+	height: 500px;
+	width: 400px;
+	float: left;
+}
+.right{
+	height: 500px;
+	width: 100px;
+	float: right;
+}
+.left img{
+	height: 100%;
+	width: 100%;
+	float: left;
+
+}
+.right img{
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+</style>
+<body>
+	<div class="box">
+		<div class="left">
+			<img src="image/133208587345.jpg@!420" alt="">
+		</div>
+		<div class="right">
+			<img src="image/133208587345.jpg@!420" alt="">
+			<img src="image/133208643099.jpg@!420" alt="">
+			<img src="image/133208645061.jpg@!420" alt="">
+			<img src="image/133208645835.jpg@!420" alt="">
+			<img src="image/133208649925.jpg@!420" alt="">
+		</div>
+	</div>
+</body>
+<script>
+/*var leftimg=document.querySelector('.left img');
+var rightimg=document.querySelectorAll('.right img');*/
+/*for(var i=0;i<rightimg.length;i++){
+	rightimg[i].index=i;
+	rightimg[i].onclick=function(){
+		var scr=rightimg[this.index].getAttribute('src');
+		leftimg.setAttribute('src',scr)
+	}*/
+// }
+var rightimg=document.querySelectorAll('.right img');
+var leftimg=document.querySelector('.left img');
+for(var i=0;i<rightimg.length;i++){
+	rightimg[i].index=i;
+	rightimg[i].onclick=function(){
+	var j=rightimg[this.index].getAttribute('src');
+	leftimg.setAttribute('src',j)
+ }
+}
+</script>
+</html>

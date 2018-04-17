@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+<allen xy="news" :show="true" :list="lovers"></allen>
+</div>
+<script type="text/x-template" id="h">
+    <div>
+        <span >{{xy}}</span>
+        <div v-if="show">heheda</div>
+        <ul>
+            <li v-for="v in list">
+                {{v.name}}
+            </li>
+        </ul>
+    </div>
+</script>
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:['xy','show','list'],
+    })
+    var echo = new Vue({
+        el:".echo",
+        data:{
+            lovers:[
+                {name:'echo'},
+                {name:'allen'},
+                {name:'json'},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

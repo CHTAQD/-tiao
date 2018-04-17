@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+// scrollTop/scrollleft:配合onscroll事件一起使用
+
+一.
+1,兼容的解决方法，调用scrollTop的对象
+2，获取scroll值
+var obj=document.body.scrollTop==0?document.documentElement:document.body;
+var objt=obj.scrollTop;
+
+二，直接兼容性获取scrollTop;
+var objt=document.body.scrollTop||document.documentElement.scrollTop;
+
+
+</script>
+</html>
+
+
+
+
+
+
+

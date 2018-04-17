@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div class="echo">
+<allen></allen>
+<allen></allen>
+<allen></allen>
+</div>
+<script>
+    var data={
+        type:'',
+        lovers:[
+            {name:'echo'},
+            {name:'allen'},
+            {name:'jack'},
+            {name:'json'}
+        ]
+    }
+    Vue.component('allen',{
+        template:' <div><ul><li v-for="v in lovers">{{v.name}}</li></ul><textarea name="pl" id="pL" cols="30" rows="10" @keyup.enter="haha" v-model="type"></textarea></div>',
+        data:function(){
+        return data;
+    },
+        methods:{
+            haha:function(){
+                console.log(this.type);
+                this.lovers.push({name:this.type});
+                this.type='';
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>
+git config -global user.name

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			position: relative;
+			margin: auto;
+		}
+		.wrap>img{
+			position: absolute;
+			border-radius: 5px;
+			padding: 10px;
+			border: 3px solid purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="../img/1.jpg" alt="">
+		<img src="../img/2.jpg" alt="">
+		<img src="../img/3.jpg" alt="">
+		<img src="../img/4.jpg" alt="">
+		<img src="../img/5.jpg" alt="">
+		<img src="../img/6.jpg" alt="">
+		<img src="../img/7.jpg" alt="">
+		<img src="../img/5.jpg" alt="">
+		<img src="../img/3.jpg" alt="">
+		<img src="../img/5.jpg" alt="">
+	</div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			var imgW = $('.wrap>img').outerWidth()+10;
+			//console.log(imgW)
+			var wW = Math.floor($(window).width()/imgW);
+			//console.log(wW)
+			var boxW = $('.wrap').width(wW*imgW);
+			var arr = [];
+			var p = 0;
+			function init(start,end){
+				for(var i=start;i<end;i++){
+					if(i<wW){
+						arr.push(0);
+						//console.log(arr);
+					}
+					var imgH = $('.wrap>img').eq(i).outerHeight()+10;
+					//console.log(imgH);
+					var minH = Math.min.apply(Math,arr);
+					var idx = $.inArray(minH,arr); 
+					$('.wrap>img').eq(i).animate({'left':idx*imgW,'top':minH},1500);
+					arr[idx]+=imgH;
+					//console.log(arr)
+					p++;
+				};
+			}
+			init(0,$('.wrap>img').length);
+			function renderImg(){
+				var data = {'dataImg':[
+							{'src':'../img/1.jpg'},
+							{'src':'../img/2.jpg'},
+							{'src':'../img/3.jpg'},
+							{'src':'../img/4.jpg'},
+							{'src':'../img/5.jpg'},
+							{'src':'../img/6.jpg'},
+							{'src':'../img/7.jpg'},
+							{'src':'../img/8.jpg'},
+							{'src':'../img/9.jpg'},
+							{'src':'../img/10.jpg'}
+				]};
+				$.each(data.dataImg,function(i,v){
+					//console.log(v);
+					$('<img src="" alt="" />').attr(v).appendTo('.wrap')
+				});
+				init(p,$('.wrap>img').length);
+			}
+			$(window).on('scroll',function(){
+				var top = $(this).scrollTop();
+				//console.log(top);
+				var view = $(document).height()-$(window).height();
+				if(top>=view){
+					renderImg();
+				}
+			})
+		})
+	</script>
+</body>
+</html>

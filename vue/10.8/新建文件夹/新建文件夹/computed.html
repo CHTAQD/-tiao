@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+<div class="el">
+    <input type="text" v-model="n1"/>+
+    <input type="text" v-model="n2"/>=
+    <input type="text" v-model="sum"/>
+</div>
+
+<script>
+    var app = new Vue({
+        el:".el",
+        data:{
+            n1:'1',
+            n2:'2'
+//            sum:'3'
+        },
+        computed:{
+            sum:function(){
+               return this.n1-0+this.n2*1
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

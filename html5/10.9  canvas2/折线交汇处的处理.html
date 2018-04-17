@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="can" height="400" width="800"></canvas>
+
+
+<script>
+    var can = document.querySelector('#can');
+    var cgx = can.getContext('2d');
+    cgx.moveTo(50,50);
+    cgx.lineTo(250,250);
+    cgx.lineWidth="8";
+    cgx.lineJoin='round';
+    cgx.lineCap='round';
+    cgx.stroke()
+</script>
+</body>
+</html>

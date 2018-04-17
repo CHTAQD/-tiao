@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav到一定地方就变固定定位</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+	.chift{
+		height: 70px;
+		width: 100%;
+		background: #c11;
+	}
+	.nav{
+		height: 50px;
+		width: 100%;
+		background: #000;
+
+	}
+	.bigbox{
+		height: 1000px;
+		width: 100%;
+		background: #ccc;
+	}
+</style>
+<body>
+	<div class="chift"></div>
+	<div class="nav"></div>
+	<div class="bigbox"></div>
+</body>
+<script>
+var nav=document.querySelector('.nav')
+var timer;
+	window.onscroll=function(){
+		clearTimeout(timer)
+		timer=setTimeout(function(){
+		var t=document.body.scrollTop||document.documentElement.scrollTop;
+		if(t>=70){
+			nav.style.position='fixed';
+			nav.style.top=0;
+			nav.style.left=0;
+		}else{
+			nav.style.position='static';
+		}
+	   },20)
+	}
+</script>
+</html>

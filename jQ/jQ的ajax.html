@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	#box{
+		height: 400px;
+		width: 600px;
+		border:1px solid #ccc;
+	}
+</style>
+<body>
+	<div id="box"></div>
+	<input type="button" value="获取" id="inp">
+
+
+
+
+<script src='jquery-3.2.1.js'></script>
+<script>
+$(function(){
+	$('#inp').on('click',function(){
+		$('#box').load('testst.html')
+	})
+})
+</script>
+</body>
+</html>

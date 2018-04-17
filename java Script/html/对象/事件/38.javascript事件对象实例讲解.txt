@@ -1,0 +1,48 @@
+javascript事件对象实例讲解
+
+一、事件对象
+    用来记录一些事件发生时的相关的信息的对象
+    特点：
+    1.只有当事件发生的时候才产生，只能在处理函数内部访问
+    2.处理函数运行结束后自动销毁。
+
+二、如何获取事件对象
+    IE：window.event
+    FF: 对象.on事件=function (e){}
+   例：
+          //(1)e
+         //IE:undefined  FF:object Event
+         // (2)window.event
+         //IE:object Event   FF:undefined
+             var ev=e||window.event; 
+三、事件对象的属性
+
+    1.关于鼠标事件的事件对象
+     （1）相对于浏览器位置的
+     clientX  当鼠标事件发生的时候，鼠标相对于浏览器X轴的位置
+     clientY  当鼠标事件发生的时候，鼠标相对于浏览器Y轴的位置
+
+     （2）相对于屏幕位置的
+     screenX   当鼠标事件发生的时候，鼠标相对于屏幕X轴的位置
+     screenY
+
+    （3）相对于事件源的位置
+      offsetX   当鼠标事件发生的时候，鼠标相对于事件源X轴的位置
+      offsetY
+    
+   2.关于键盘事件的事件对象
+   
+     keyCode  获得键盘码
+     空格:32   回车13  左上右下：37 38 39 40
+     altKey   判断alt键是否被按下  按下是true 反之是false   布尔值
+     ctrlKey
+     shiftKey
+     type   用来检测事件的类型   主要是用于多个事件通用一个事件处理程序的时候
+   
+
+
+
+
+   
+     
+

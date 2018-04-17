@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的第一个vue demo</title>
+    <script src="vue.js"></script>
+</head>
+<body id="grandFather">
+
+<div class="baba">
+    <h1>{{title}}</h1>
+    <h2 v-text="text"></h2>
+    <div v-html="mhy"></div>
+</div>
+
+<script>
+    //一般，我们把Vue实例化出来的对象叫做vue代码的主模块。
+    var model = new Vue({
+        el:".baba",
+        data:{
+            title:"我是爸爸",
+            text:"我是爸爸的爸爸",
+            mhy:"<h3>Echo I love you</h3>"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+对象的分类和内置Math对象
+
+一、对象的分类
+  1.内置对象：
+（1）概念
+指js语言自带的一些对象，供开发者使用，这些对象提供了一些常用的或最基本而必要的功能。
+（2）分类
+    Global（内置顶层）、Math、Array、Number、String、Boolean、Date、RegExp（正则）、JSON
+
+  2.宿主对象：
+（1）概念：
+指执行js语言所依赖的环境，一般指浏览器或操作系统等；
+（2）分类
+     DOM、BOM
+     
+  二、Math对象
+    1、常数PI                
+          Math.PI
+
+      格式: Math.方法(参数)  
+     2.取绝对值
+           Math.abs();
+     3.取近似整数
+           Math.round()  四舍五入
+           Math.floor()  对数进行下取舍
+           Math.ceil()  对数进行上取舍
+     4.取最大值或最小值
+          Math.max(参数....)
+          Math.min(参数.....)
+     5.取随机数
+          Math.random();
+
+     6、指数运算：Math.pow(x,y)【x的y次幂】
+      平方根：Math.sqrt(平方根的值)【解平方根】
+      自然对数：Math.log()【返回以e为底的自然对数值】
+      e的指数：Math.exp(x)【常数e的x次幂】
+
+   7、 Math.sin()：返回参数的正弦
+         Math.cos()：返回参数的余弦
+         Math.tan()：返回参数的正切
+
+

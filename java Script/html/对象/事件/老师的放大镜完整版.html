@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+	.box{
+		width:300px;
+		height:240px;
+		position: relative;
+		float: left;
+	}
+	.box img{
+		width:300px;
+		height: 240px;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	.mark{
+		width:100px;
+		height:80px;
+		position: absolute;
+		top:0;
+		left:0;
+		background-color: rgba(255,0,0,0.5);
+		display: none;
+		z-index: 9;
+	}
+	.bigbox{
+		width:600px;
+		height:480px;
+		float: left;
+		margin-left: 50px;
+		margin-top: -200px;
+		display: none;
+		position: relative;
+		overflow: hidden;
+		float: left;
+	}
+	.bigbox img{
+		width:1800px;
+		height:1440px;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	.btnbox{
+		width:300px;
+		height:60px;
+	}
+	.btn{
+		width:60px;
+		height:60px;
+		float: left;
+	}
+	.btn img{
+		width:60px;
+		height: 60px;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="img/1.jpg" alt="">
+		<div class="mark"></div>
+	</div>
+	<div class="btnbox">
+		<div class="btn"><img src="img/1.jpg" alt=""></div>
+		<div class="btn"><img src="img/2.jpg" alt=""></div>
+		<div class="btn"><img src="img/3.jpg" alt=""></div>
+		<div class="btn"><img src="img/4.jpg" alt=""></div>
+		<div class="btn"><img src="img/5.jpg" alt=""></div>
+	</div>
+	<div class="bigbox">
+		<img src="img/1.jpg" alt="">
+	</div>
+	<script>
+	var boxImg=document.querySelector('.box img');
+	var btnImg=document.querySelectorAll('.btn img');
+	var bigboxImg=document.querySelector('.bigbox img');
+	var box=document.querySelector('.box');
+	var mark=document.querySelector('.mark');
+	var bigbox=document.querySelector('.bigbox');
+	// 1、实现选项卡效果
+	for(var i=0;i<btnImg.length;i++){
+		btnImg[i].onmouseover=function(){
+			var src1=this.getAttribute('src');
+			boxImg.setAttribute('src',src1);
+			bigboxImg.setAttribute('src',src1)
+		}
+	}
+	// 2、鼠标移入，mark与bigbox出现，则反
+	box.onmouseover=function(){
+		mark.style.display='block';
+		bigbox.style.display='block';
+	}
+	box.onmouseout=function(){
+		mark.style.display='none';
+		bigbox.style.display='none';
+	}
+	// 3、让mark随鼠标移动
+	box.onmousemove=function(e){
+		var ev=e||window.event;
+		var l=ev.clientX-box.offsetLeft-mark.offsetWidth/2;
+		var t=ev.clientY-box.offsetTop-mark.offsetHeight/2;
+		if(l<0){
+			l=0;
+		}
+		if(l>box.offsetWidth-mark.offsetWidth){
+			l=box.offsetWidth-mark.offsetWidth
+		}
+		if(t<0){
+			t=0
+		}
+		if(t>box.offsetHeight-mark.offsetHeight){
+			t=box.offsetHeight-mark.offsetHeight
+		}
+		// 求mark与bigboxImg比例
+		var bl=l*(bigboxImg.offsetWidth-bigbox.offsetWidth)/(box.offsetWidth-mark.offsetWidth);
+		var bt=t*(bigboxImg.offsetHeight-bigbox.offsetHeight)/(box.offsetHeight-mark.offsetHeight);
+		bigboxImg.style.left=-bl+'px';
+		bigboxImg.style.top=-bt+'px';
+		mark.style.left=l+'px';
+		mark.style.top=t+'px';
+	}
+	</script>
+</body>
+</html>

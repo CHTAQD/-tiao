@@ -1,0 +1,211 @@
+思路：
+1、实现自动轮播函数，通过外面的变量num和计时器setInterval实现循环；
+2、实现小按钮与图片一一对应的选项卡；
+3、初始按钮设置颜色；
+4、点击时让小按钮变色
+5、自动轮播时让小按钮变色
+6、让自动轮播的小按钮与点击的小按钮统一；
+7、鼠标放到大盒子上，停止轮播，离开，再轮播；
+8、点左按钮，正常动，且让按钮跟随变色
+9、点右按钮，反方向动，且让按钮跟随变色
+10、解决左右按钮点击太快的bug
+滕老师 2017/7/10 15:21:19
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝轮播</title>
+	<script src="animate轮波动画.js"></script>
+	<style>
+	.box{
+		width:520px;
+		height:280px;
+		position: absolute;
+		top:0;left:0;right: 0;bottom: 0;
+		margin:auto;
+		/*overflow: hidden;*/
+	}
+	.innerbox{
+		width:3120px;
+		height:280px;
+	}
+	.inner{
+		width:520px;
+		height:280px;
+		float: left;
+	}
+	.btnbox{
+		width:90px;
+		height: 14px;
+		position: absolute;
+		bottom:20px;
+		left:225px;
+	}
+	.btn{
+		width: 14px;
+		height:14px;
+		margin:0 1px;
+		border-radius: 50%;
+		background: #ccc;
+		float: left;
+		cursor: pointer;
+	}
+	.left,.right{
+		width:40px;
+		height:60px;
+		font-size: 30px;
+		text-align: center;
+		line-height: 60px;
+		color:#666;
+		background: rgba(0,0,0,0.3);
+		position: absolute;
+		top:110px;
+		cursor: pointer;
+	}
+	.left{
+		left:0;
+	}
+	.right{
+		right:0;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="innerbox">
+			<div class="inner">1</div>
+			<div class="inner">2</div>
+			<div class="inner">3</div>
+			<div class="inner">4</div>
+			<div class="inner">5</div>
+			<div class="inner">6</div>
+		</div>
+		<div class="btnbox">
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+		</div>	
+		<div class="left">&lt;</div>
+		<div class="right">&gt;</div>
+	</div>
+	<script src='animate.js'></script>
+	<script>
+	var inner=document.querySelectorAll('.inner');
+	var innerbox=document.querySelector('.innerbox');
+	var btn=document.querySelectorAll('.btn');
+	var box=document.querySelector('.box');
+	var left=document.querySelector('.left');
+	var right=document.querySelector('.right');
+	// 下标变化初始值
+	var num=0
+
+	// 小按钮设置初始色
+	btn[0].style.backgroundColor='orange';
+
+	// 循环调用自动轮播函数
+	var t=setInterval(move,1000)
+
+	// 开关限制过快点击
+	var flag=true;
+
+	// 自动轮播函数
+	function move(){
+		if(flag){
+			flag=false;
+			num++
+			if(num>=inner.length-1){
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					innerbox.style.marginLeft=0;
+					num=0;
+					btnColor()
+					flag=true;
+				})
+			}else{
+				btnColor()
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+						flag=true;
+				})
+			
+			}
+		}
+	}
+
+
+
+	// 小按钮点击效果
+	for(var i=0;i<btn.length;i++){
+		btn[i].index=i;
+		btn[i].onclick=function(){
+			num=this.index
+			btnColor()
+			animate(innerbox,{marginLeft:-520*num},500)
+		}
+	}
+
+
+	// 小按钮变色函数
+	function btnColor(){
+		for(var j=0;j<btn.length;j++){
+					btn[j].style.backgroundColor='#ccc';
+		}	
+		btn[num].style.backgroundColor='orange';
+	}
+
+	// 鼠标放上来轮播停止，离开自动轮播
+	box.onmouseover=function(){
+		clearInterval(t)
+	}
+	box.onmouseout=function(){
+		t=setInterval(move,1000)
+	}
+
+	// 点击左按钮正常动
+	left.onclick=function(){
+		move()
+	}
+
+	// 点击右按钮反方向动
+	right.onclick=function(){
+		if(flag){
+			flag=false;
+			num--;
+			if(num<0){
+				innerbox.style.marginLeft=-520*(inner.length-1)+'px';
+				num=inner.length-2;
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					flag=true;
+				})
+
+				btnColor();
+			}else{
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					flag=true;
+				});
+				btnColor()
+			}
+		}
+	}
+
+
+
+
+
+/*思路：
+1、实现自动轮播函数，通过外面的变量num和计时器setInterval实现循环；
+2、实现小按钮与图片一一对应的选项卡；
+3、初始按钮设置颜色；
+4、点击时让小按钮变色
+5、自动轮播时让小按钮变色
+6、让自动轮播的小按钮与点击的小按钮统一；
+7、鼠标放到大盒子上，停止轮播，离开，再轮播；
+8、点左按钮，正常动，且让按钮跟随变色
+9、点右按钮，反方向动，且让按钮跟随变色
+10、解决左右按钮点击太快的bug*/
+
+
+
+	</script>
+</body>
+</html>

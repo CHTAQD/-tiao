@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pop/push/shift/unshift</title>
+</head>
+<script src="../../vue.js"></script>
+<body>
+    <div class="box">
+        <ul>
+            <li v-for="v in lovers">
+                {{v.name}}
+            </li>
+        </ul>
+
+        <textarea name="ck" id="" cols="30" rows="10">  </textarea>
+        <button v-on:click="">发表</button>
+        <button v-on:click="">置顶</button>
+        <button v-on:click="">删除第一条信息</button>
+        <button v-on:click="">删除最后一条信息</button>
+    </div>
+
+
+    <script>
+        var vi = new Vue({
+            el:'.box',
+            methods:{
+                submit:function(){
+
+                }
+            },
+            data:{
+                lovers:[
+                    {name:'ck',sex:'boy'},
+                    {name:'ch',sex:'boy'},
+                    {name:'oi',sex:'girl v-on:click="'},
+                    {name:'pp',sex:'girl'}
+                ]
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: red;
+		padding: 10px;
+	}
+</style>
+<body>
+	<div class="box"></div>
+</body>
+<script>
+var box=document.querySelector('.box');
+// box.style.height=200+'px';
+// box.style.width=200+'px';
+// box.style.background='#ccc';
+// alert(box.style.width)
+alert(getComputedStyle(box,null).width)				//设置宽高多少就是多少
+alert(box.offsetWidth)								//实际元素大小，连边框边距都算
+</script>
+</html>

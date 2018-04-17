@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+  		<script src="插件/vue-router/dist/vue-router.js"></script>
+  		<style>
+  			.a1{
+  				background: red;
+  			}
+  		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="content-nav">
+				<ul id='cnm'>
+					<li v-for='v in lovers' :class='v.class'@click='hehe(v.index)'><router-link :to='v.src'>{{v.name}}</router-link></li>
+				</ul>
+				<router-view></router-view>
+			</div>
+		</div>
+		
+	</body>
+	 <script type="text/x-template" id='mo'>
+       <h1>欢迎来到电影院</h1>
+    </script>
+    <script type="text/x-template" id='mu'>
+       <h1>欢迎来到音乐室</h1>
+    </script>
+    <script type="text/x-template" id='fi'>
+       <h1>欢迎来到图书管</h1>
+    </script>
+    <script type="text/x-template" id='ui'>
+       <h1>cbashcahc</h1>
+    </script>
+    
+	<script>	
+    const allen = {
+        template:'#mo'
+    }
+    const brain = {
+        template:'#mu'
+    }
+    const emily = {
+        template:'#fi'
+    }
+    const mily = {
+        template:'#ui'
+    }
+    const route = [
+        {path:'/movie',component:allen},
+        {path:'/music',component:brain},
+        {path:'/fiction',component:emily},
+        {path:'/ction',component:mily},
+    ]
+    var routes = new VueRouter({
+        routes:route
+    })
+    
+    var app=new Vue({
+    	el:".box",
+		data:{
+			lovers:[
+					{name:'综合资讯',class:'',index:0,src:'/movie'},
+					{name:'视频中心',class:'',index:1,src:'/music'},
+					{name:'赛事中心',class:'',index:2,src:'/fiction'},
+					{name:'活动中心',class:'',index:3,src:'/ction'}
+					]
+		},
+		router:routes,
+		methods:{
+			hehe:function(i){
+				for(var a=0;a<this.lovers.length;a++){
+					this.lovers[a].class=''
+				}
+				this.lovers[i].class='a1';
+			}
+		}
+    })
+    </script>
+</html>

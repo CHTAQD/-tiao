@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 300px;
+		width: 300px;
+		background-color: #ccc;
+		margin:100px auto;
+		position: relative;
+		border:1px solid #000;
+		overflow: hidden;
+	}
+	.innerbox{
+		width: 1800px;
+		height: 100%;
+		/*float: left;*/
+		/*position: absolute;*/
+	}
+	.inner{
+		height: 300px;
+		width: 300px;
+		float: left;
+	}
+	.innerbox img{
+		width: 300px;
+		height: 300px;
+		/*float: left;*/
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="innerbox">
+			<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+		 	<div class="inner"><img src="../image/133208643099.jpg@!420" alt=""></div>
+		 	<div class="inner"><img src="../image/133208645061.jpg@!420" alt=""></div>
+		 	<div class="inner"><img src="../image/133208645835.jpg@!420" alt=""></div>
+		 	<div class="inner"><img src="../image/133208649925.jpg@!420" alt=""></div>
+		 	<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+`	</div>
+</body>
+<script src='animate.js'></script>
+<script>
+/*var innerbox=document.querySelector('.innerbox');
+function */
+var innerbox=document.querySelector('.innerbox');
+	var inner=document.querySelectorAll('.inner');
+	var num=0;
+	setInterval(move,1000)
+	function move(){
+		num++
+		if(num>=inner.length-1){
+			animate(innerbox,{marginLeft:-300*num},500,function(){
+				num=0;
+				innerbox.style.marginLeft=0;
+			})
+		}else{
+			animate(innerbox,{marginLeft:-300*num},500)
+		}
+	}
+
+</script>
+</html>

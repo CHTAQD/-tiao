@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <script src="../vue.js"></script>
+    <script src="axios/dist/axios.js"></script>
+    <script src="lodash/lodash.js"></script>
+</head>
+<body>
+<div class="echo">
+    <input type="text" v-model="word"/>
+    {{result}}
+</div>
+
+<script>
+    var mhy = new Vue({
+        el:".echo",
+        data:{
+            word:"",
+            result:''
+        },
+        watch:{
+            word: _.debounce(
+                    function(newV,oldV){
+                        console.log(oldV+'==>'+newV);
+                        axios.get("echo.php?word="+newV).then(function(response){
+                            console.log(response);
+                            mhy.result = response.data;
+                        })
+                    },500
+            )
+
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<style>
+		.box{
+			height: 200px;
+			width: 500px;
+			background-color: #ccc;
+		}
+		.inner{
+			height: 200px;
+			width: 110px;
+			background-color: #000;
+			float: left;
+			margin-left: 2px;
+		}
+	</style>
+<body>
+		<div class="box">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+	
+
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	//1,事件绑定
+	 /* bind(type,[data],)
+	  type：事件类型，包括自定义事件
+	  data：传递的参数
+	  fn：绑定的处理函数
+	  unbind:移除bind绑定事件
+
+	  on(event,[delector],[data])
+	  events:  数据类型和命名空间
+	  selector:选择器字符串用于过滤器的触发事件的选择器元素的后代
+	  off:移除on绑定的事件
+
+	  one(event,[data],fn):只执行一次
+	  2,jQuery(enter,leaver)
+	  :相当于mouseenter，mouseleaver事件
+	  ps；注意于mouseover,mouseout的区别
+	  mouseenter,mouseleaver只触发当前绑定对象
+	  mouseover，mouseout当前元素和所有后代元素都可以触发
+	  toggle(fn1,fn2,fnN...)
+	  :模拟鼠标单击事件，轮番执行toggle内的函数
+	  3事件冒泡
+	  1，事件对象：event，只有事件处理函数才能访问到，事件处理函数执行完毕后，事件对象即被销毁
+	  	事件对象的方法：
+	  	1>event.type()获取事件的类型
+	  	2>event.target():获取到触发事件的目标元素
+	  	3>event.relatedTarget():
+	  	在mouseover中相当于IE浏览器的event.fromElement(),在mouseout中相当于IE浏览器的event.toElement().在特定事件中获取目标元素。
+	  	4>event.pageX().event.pageY()获取到光标相对于相对于页面的x坐标及Y坐标
+	  	5>event.which()
+	  	:鼠标单击事件中获取到其左（1）中（2）右键（3），键盘事件中获取到其键值。
+	  	PS：使用时event对象返回which不加（）
+	  	6>event.metaKey():获取ctrl键
+	  	7>event.originalEvent():返回初始对象
+	  2.阻止事件冒泡：event.stopPropagation()
+	  3.阻止默认行为：event.preventDefault()
+	4,事件捕获:jQuery不支持 
+	5,模拟操作：$('ele').trigger(type)
+	页面加载时自动执行要模拟的功能实现，亦可触发自定义的事件。
+		2.> $("ele").triggerHandler():触发当前绑定的事件，取消浏览器默认行为；
+
+
+
+
+
+
+
+
+
+
+
+
+	  */
+
+
+
+
+
+
+
+
+
+
+
+	/*  $('button').on('mouseover',function(){
+
+	  })
+*/
+	$(document).ready(function(){
+		$('.box').toggle(function(){
+			alert(1)
+		},function(){
+			alert(2)
+		})
+	})
+
+	/*  $(function(){
+	  	$('#pane1 h5.head').hover(function(){
+	  		$(this).next('div.content').show();
+	  	},function(){
+	  		$(this).next('div.content').hide();
+	  	})
+	  })*/
+	</script>
+</body>
+</html>

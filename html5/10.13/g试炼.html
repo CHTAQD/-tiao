@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #000;
+    }
+</style>
+<body>
+<canvas id="can" height="600" width="800"></canvas>
+<script>
+    var can = document.querySelector('#can');
+    var ctx = can.getContext('2d');
+    ctx.moveTo(50,50);
+    ctx.lineTo(50,150);
+    ctx.setLineDash([5]);
+
+    ctx.drawImage();
+
+    设置虚线setLineDash
+
+    线帽  LineCap
+
+    线折处理lineJoin
+
+    虚线的缩进lineDashOffset
+
+
+
+    clearRect
+
+
+    闭合路径closePath
+
+    创建新路径beginpath
+
+        设置保存前后
+        前:ctx.save()
+        后:ctx.restore()
+
+       画的圆设置缩进
+       scale
+
+
+
+
+    设置图片drawImage
+
+    获得当前画布的所有像素点getImageDash
+
+   创建新路径beginpath
+    closePath
+
+    ctx.stroke();
+    scale
+    drawImage
+    1468100995
+    \u0031\u0034\u0036\u0038\u0031\u0030\u0030\u0039\u0039\u0035
+</script>
+</body>
+</html>

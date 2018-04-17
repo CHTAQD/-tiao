@@ -1,0 +1,90 @@
+ javascript回调函数、递归函数
+一、回调函数
+    通过函数的指针来调用函数。
+    (把一个函数的指针做为另一个函数的参数，当调用这个参数的时候，这个函数就叫做回调函数。)
+
+1.通过指针来调用。
+function aa(n1,n2,fun){
+	return fun(n1,n2)
+}
+alert(aa(2,3,bb))
+function bb(x,y){
+   return (x*2+y*3-5)/4-1
+}
+
+2.通过匿名函数调用。
+function aa(num1,num2,fun) {
+     return fun(num1,num2)
+  }
+var result=aa(2,3,function bb(x,y){
+ return (x+y)*3-1;
+})
+alert(result)
+
+3.定义与执行同时进行（自调用）。
+((function aa (num1,num2,fun) {
+        return fun(num1,num2)
+    })(2,3,function  (num1,num2) {
+     return (num1+num2)*2
+   }))
+
+二、递归函数
+    在函数内部直接或间接的调用自己。
+ function aa(num){
+     if(num==1){
+      return num
+     }else{
+      return num*aa(--num)
+     }
+   }
+   alert(aa(5))    // 5！
+两步：
+1、承接结果的值（让函数停止的值）
+eg:if(a==1) return a;
+2、调用自己时，必须有变化的过程；
+eg:aa(n+1)
+
+三、内嵌函数(闭包)
+1、概念
+在一个函数的外边想要访问到它的局部变量，可以通过在此函数中内嵌一个函数，并且返回这个函数，在这个函数中会返回这个变量，那么这个内嵌函数就是一个闭包；
+function aa(){
+     var ee=123;
+     function bb(){
+           return ee;
+     }
+    return bb;
+}
+  var tep=aa()
+   alert(tep())
+2、特点
+（1）、函数b嵌套在函数a内部；
+（2）、函数a返回函数b。
+
+3、用途：
+（1）可以读取函数内部的变量
+（2）让这些变量的值始终保持在内存中。 
+function f1(){
+　　　　var n=9;
+　　　　f3=function(){n+=1}
+　　　　function f2(){
+　　　　　　alert(n);
+　　　　}
+　　　　return f2;
+}
+var result=f1();
+result(); // 9
+f3();
+result(); // 10
+
+
+
+
+
+
+
+
+
+
+
+
+     

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义属性值类型的判断</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen haha="true"></allen>
+</div>
+
+<script type="text/x-template" id="h">
+    <div>
+        <ul>
+            <li v-for="v in list">{{v.title}}</li>
+        </ul>
+        <div v-if="haha">
+            hahaha
+        </div>
+    </div>
+
+</script>
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:{
+            //定义属性的验证方式
+            haha:{
+                echo:function(v){
+        return v==1 || v==0
+    },
+                default:0
+            },
+            //定义属性的验证方式
+//            haha:{
+//                type:[Boolean,Number],
+//                default:true
+//            },
+            //指定必传的属性
+//            haha:{
+//                type:[Boolean,Number],
+//                required:true
+//            },
+            list:{
+                type:Array,
+                default:[{title:'echo'}],
+//                default:function(){
+//                    return [{title:'echo'}]
+//                }
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 400px;
+		width: 400px;
+		background: #c11;
+		transition: all 0.5s;
+	}
+</style>
+<body>
+	<div class="box"></div>
+</body>
+<script src='../轮波/animate.js'></script>
+<script>
+
+var box=document.querySelector('.box')
+mousewheel(box,function(){
+	animate(box,{height:600
+		,background:'green',width:600},500)
+},function(){
+	animate(box,{height:100,background:'#f1ff11',width:100},500)
+})
+
+
+
+
+
+
+
+
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+
+function mousewheel(obj,fun1,fun2){//fun1向上  fun2向下
+if(window.addEventListener){
+	document.addEventListener('mousewheel',scrollFn,false)
+	document.addEventListener('DOMMouseScroll',scrollFn,false)
+}else{
+	document.attachEvent('onmousewheel',scrollFn);
+}
+function scrollFn(e){
+	var ev=e||window.event;
+	if(ev.wheelDelta==120||ev.detail==-3){
+		fun1.call(obj)
+	}else if(ev.wheelDelta==-120||ev.detail==3){
+		fun2.call(obj)
+	}
+}
+}
+
+</script>
+</html>

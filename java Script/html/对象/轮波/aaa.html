@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 300px;
+		width: 300px;
+		background-color:#ccc;
+		border: 1px solid #000;
+		position: relative;
+		margin:100px auto;
+		/*overflow:hidden;*/
+	}
+	.innerbox{
+		height: 300px;
+		width: 1200px;
+		background:#c11;
+
+	}
+	.inner{
+		height:300px;
+		width: 300px;
+		float: left; 
+	}
+	img{
+		height: 300px;
+		width: 300px;
+	}
+	.left,.right{
+		height: 50px;
+		width: 20px;
+		background:rgba(0,0,0,0.2);
+		position: absolute;
+		margin-top: 150px;
+		text-align:center;
+		line-height: 50px;
+		font-size: 20px;
+		cursor:pointer;
+	}
+	.left{
+		left: 0;
+	}
+	.right{
+		right:0;
+	}
+	.left:hover,.right:hover{
+		background:rgba(0,0,0,0.5);
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="left">&lt;</div>
+		<div class="right">&gt;</div>
+		<div class="innerbox">
+			<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208643099.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645061.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645835.jpg@!420" alt=""></div>
+			
+		</div>
+	</div>
+</body>
+<script src='animate轮波动画.js'></script>
+<script src='../节点/function.js'></script>
+<script>
+var innerbox=document.querySelector('.innerbox');
+var box=document.querySelector('.box')
+// var t=setInterval(move,1000)
+var left=document.querySelector('.left');
+var right=document.querySelector('.right')
+var flag=true;
+t=setInterval(move,2000)
+function move(){
+	//if(flag){
+	//flag=false;
+
+animate(innerbox,{marginLeft:-300},500,function(){
+	var j=getFirst(innerbox);
+	innerbox.appendChild(j);
+	innerbox.style.marginLeft='0';
+	//flag=true;
+  })
+ //}
+} 
+box.onmouseover=function(){
+	clearInterval(t);
+ 
+}
+box.onmouseout=function(){
+	t=setInterval(move,1000)
+}
+//left.onclick=function(){
+//	move()
+//}
+//right.onclick=function(){
+//	if(flag){
+//		flag=false;
+//	var j=getLast(innerbox);
+//	var i=getFirst(innerbox);
+//
+//	innerbox.style.marginLeft=-300+'px';
+//	addBefore(j,i)
+//	animate(innerbox,{marginLeft:0},function(){
+//			flag=true;
+//	})
+//  }
+//}
+</script>
+</html>

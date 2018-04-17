@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// huidiao
+/*	function a(i,j,k){
+		return k(i,j)
+	}
+	a(1,10,b)
+	function b(l,o){
+		for(var q=l;q<o;q++){
+			document.write('*&nbsp;')
+		}
+	}
+*/
+	// 递归
+/*	function a(i){
+		if(i==1){
+			return i;
+		}else{
+			return a(i-1)+i
+		}
+	}
+	alert(a(5))*/
+
+	// 闭包
+	// function a(){
+	// 	var c=123;
+	// 	function b(){
+	// 		alert(c)
+	// 	}
+	// 	return b
+	// }
+	// /*alert(a())*/
+	// var i=a()
+	// i()
+
+
+
+	//变量存储
+/*	var aa=[90,80,70]
+	alert((aa[1]+aa[2]+aa[3]/3))*/
+	// 1.以对象的方式创建数组
+	// var a=new Array()
+	// 1.1直接赋值
+	/*var a=new Array(1,2,3)//任意数据类型
+	alert(a[0])
+	alert(a[2])*/
+
+	/*var a=new Array(1)//
+		alert(a.length)*/
+	// 当以对象形式声明的数组在直接赋值的时候，如果赋值为单个数值，那么它代表的是数组的长度
+	// 不是第一个值，他的值都为undefined，访问的时候要通过length属性来访问
+
+	/*// 1.2：先声明再赋值
+	var vv=new Array();
+	vv[0]=123;
+	vv[2]=456;
+	alert(vv)*/
+/*
+	2.隐式声明
+	var bb=[]
+	2.1直接赋值
+	var a=[1,2,3]
+	alert(a[0])
+	alert(a.length)*/
+
+/*	// 2.2：先声明再赋值、
+	var cc=[];
+	cc[0]=123;
+	cc[3]=456;
+	alert(cc)
+	alert(cc.length)
+*/
+
+// 数组的遍历
+// var a=[1,22222,3,4,5,6,7];
+/*for(var c=0;c<a.length;c++){
+	alert(a[c])
+}*/
+
+// var c=0;
+// while(c<a.length){
+// 	alert(a[c])
+// 	c++
+// }
+// for(var i in a){
+// 	alert(a[i])
+// }
+
+
+// var c=0;
+// for(var i=0;i<a.length;i++){
+// 	// alert(a[i])
+// 	c+=a[i];
+// }
+// alert(c)
+
+
+// var arr=[2,5,6,7,8,9];
+// var v=1;
+// for(var a=0;a<arr.length;a++){
+// 	v*=arr[a]
+// }
+
+// alert(v)
+
+
+/*var arr=[123,'222',true,null,23,25,'aaa']
+
+for(var a=0;a<arr.length;a++){
+	if(typeof arr[a]==='number'){
+		alert(arr[a])
+			}
+}*/
+
+
+// var aa=[1,123,4455,63,64,9,56]
+// var max=aa[0]
+// for(var a=0;a<aa.length;a++){
+// 	if(aa[a]>max){
+// 		max=aa[a]
+// 	}
+// }
+// alert(max)
+
+
+
+
+/*var a=[1,8,'sasa','asasas',6,]
+
+for(var b=0;b<a.length;b++){
+	if(typeof a[b]==='number'){
+		alert(a[b])
+	}
+}*/
+
+/*function a(){
+	var c=123;
+	function b(){
+		alert(c)
+	}
+	return b
+}
+var i=a()
+	i()
+
+
+for(var a=0;a<a.length;a++){
+	if(i[]!=最小值&&i[]!=最大值){
+		num+=a;
+		b
+	}
+}*/
+
+
+/*var aa=[];
+aa['sasas']='北京';
+aa['dsksmd']='上海';
+for(var j in aa){
+	alert(aa[j])
+}
+// for(var i in aa){
+// 	alert(aa[i])
+// }
+*/
+
+/*
+var aa=[11,8,2,8,953,456432,112]
+var bb=aa[0]
+var cc=aa[0]
+for(var a=0;a<aa.length;a++){
+	if(bb<aa[a]){
+		bb=aa[a]
+	}
+}
+// alert(bb)
+for(var i=0;i<aa.length;i++){
+	if(aa[i]<cc){
+		cc=aa[i]
+	}
+}
+// alert(cc)
+var x=0;
+for(var j=0;j<aa.length;j++){
+	if(aa[j]!=bb&&aa[j]!=cc){
+		x+=aa[j]
+	}
+}
+*/
+
+/*
+var a=[[12,34,565,343],[12,312,54,23,45]]
+
+alert(a[1][3])
+
+
+
+var aa=[[1,2,3],[4,5,6]]
+for(var i=0;i<aa.length;i++){
+	for(var j=0;j<aa[i].length;j++){
+		alert(aa[i][j])
+	}
+}
+*/
+// 谁最长
+
+/*
+var aa=[[1,2,3],[4,5,6,5],[7,8,9,10,11,13]];
+var bb=aa[0];
+    for(var a=0;a<aa.length;a++){
+        if(bb.length<aa[a].length){
+            bb=aa[a]
+        }
+    }
+    alert(bb);
+
+for(var a=0;a<aa.length;a++){
+	if(bb.length<aa[a].length){
+		bb=aa[a]
+	}
+}
+alert(aa[a])
+
+*/
+
+
+
+
+
+// var aa=[1,2,'true',[1,22,455],'aaa',false]
+
+// for(var a=0;a<aa.length;a++){
+// 	for(var c=0;c<aa[a].length;c++){
+// 		alert(aa[a][c])
+// 	}
+// }
+
+/*var aa=[1,2,'true',[1,22,455],'aaa',false];
+    for(i=0;i<aa.length;i++){
+    	if(typeof aa[i]==='object'){
+	    	for(j=0;j<aa[i].length;j++){
+	    		alert(aa[i][j])
+	    	}
+    	}else{
+    		alert(aa[i])
+    	}
+    }
+*/
+
+
+/*
+var aa=[1,2,,,,,,'asas','13',[1,2,3,56,45,45],true,,,,,,,,,'sasa']
+
+
+for(var a=0;a<aa.length;a++){
+	if(typeof aa[a]==='object'){
+		for(var i=0;i<aa[a].length;i++){
+			alert(aa[a][i])
+		}
+	}else{
+		if(typeof aa[a]!=='undefined'){
+		alert(aa[a])
+	}
+  }
+}
+*/
+
+
+
+
+
+
+
+
+/*for(var a=0;a<aa.length;a++){
+	if(typeof aa[a]==='object'){
+		alert(aa[a])
+		for(var i=0;i<aa[a].length;i++){
+			alert(aa[a][i])
+		}
+	}else{
+		alert(aa[a])
+	}
+}*/
+
+
+/*var aa=[1,2,,,,,,,,,,,,,,'true',[11,22,345,,,,,,],'aaaa',false]
+for(var i=0;i<aa.length;i++){
+	if(typeof aa[i]==='object'){
+		for(var j=0;j<aa[i].length;j++){
+			if(typeof aa[i][j]!=='undefined'){					//不知道什么意思
+				alert(aa[i][j])
+			}
+		}
+	}else{
+		if( aa[i]!==undefined){
+			alert(aa[i])
+		}
+	}
+}
+
+*/
+
+
+
+/*
+aa=[12,4,5,67,8,69,0]
+for(var i=0;i<aa.length;i++){
+	for(var j=0;j<aa.length;j++){
+		if(aa[i]>aa[j]){
+			var tep=aa[j];
+			aa[j]=aa[i]
+			aa[i]=tep
+		}
+	}
+}
+alert(aa)
+
+
+*/
+
+/*var aa=[12,454,84,21,656,65,32,48]
+
+for(var i=0;i<aa.length;i++){
+	for(var j=0;j<aa.length;j++){
+		if(aa[i]<aa[j]){
+			var c=aa[j];
+			aa[j]=aa[i]
+			aa[i]=c
+		}
+	}
+}
+
+alert(aa)
+*/
+
+
+
+/*for(var a=0;a<10;a++){
+	for(var i=10;i>a;i--){
+		document.write('&nbsp')
+	}r
+	for(var j=0;j<a;j++){
+		document.write('*&nbsp;')
+	}
+	document.write('<br>')
+}
+*/
+/*
+for(var a=1;a<10;a++){
+	for(var i=1;i<=a;i++){
+		document.write(a+'x'+i+'='+a*i+'&nbsp;')
+	}
+	document.write('<br>')
+}
+*/
+
+//回掉
+/*function a(i){
+	return i()
+}
+a(b)
+
+function b(){
+	alert(123)
+}
+*/
+//递归
+/*function a(i){
+	if(i==1){
+		return i
+	}else{
+		return a(i-1)+i
+	}
+}
+
+alert(a(5))*/
+
+//闭包
+/*function a(){
+	var aa=123;
+	function b(){
+		alert(aa)
+	}
+	return b
+}
+
+var i=a()
+i()
+
+*/
+
+
+//lianxi
+function a(i){
+	if(i==1){
+		return i
+	}else{
+		return a(i-1)+i
+	}
+}
+alert(a(6))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    #can{
+        border: 1px solid #000;
+
+    }
+</style>
+<body>
+    <canvas id="can" height="600" width="800"></canvas>
+
+    <script>
+        var can = document.querySelector('#can');
+        var ctx = can.getContext('2d');
+        //原点，x轴长度，y轴长度，箭头横向偏移量和纵向偏移量
+
+        var zbz=function(x,y,w,h,hp,zp){
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+w,y);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x,y-h);
+            ctx.stroke();
+
+            ctx.moveTo(x+w,y);
+            ctx.lineTo(x+w-zp,y-hp);
+            ctx.stroke();
+
+            ctx.moveTo(x+w,y);
+            ctx.lineTo(x+w-zp,y+hp);
+            ctx.stroke();
+
+
+            ctx.moveTo(x,y-h);
+            ctx.lineTo(x-hp,y-h+zp);
+            ctx.stroke();
+
+            ctx.moveTo(x,y-h);
+            ctx.lineTo(x+hp,y-h+zp);
+            ctx.stroke();
+
+        };
+        zbz(50,500,500,400,10,20)
+
+    </script>
+</body>
+</html>

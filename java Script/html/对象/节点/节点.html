@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点</title>
+	<style>
+	#box{
+		width:300px;height:300px;
+		background:#abcdef;
+	}
+	.inner,h1,a{
+		width:100px;
+		height:100px;
+		background: pink;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		盒子基本内容
+		<h1>标题标签</h1>
+		<div class="inner">
+			<span>内部盒子</span>
+		</div>
+		<!-- <em>注释</em> -->
+		<a href="">链接</a>
+	</div>
+	<script>
+	var box=document.getElementById('box');
+	// alert(box.parentNode)//body
+	// alert(box.childNodes.length)
+	// 兼容：ff 9  ie:6
+
+	/*alert(document.nodeValue)
+	alert(document.nodeName)
+	alert(document.nodeType)*/
+
+	var childs=box.childNodes;
+	// for(var i=0;i<childs.length;i++){
+		alert(childs[4].nodeType)
+		alert(childs[4].nodeName)
+		alert(childs[4].nodeValue)
+	// }
+
+	// childs[0]  盒子基本内容
+	 // childs[1]   h1
+	 // childs[2]  ff:空格  ie:div
+	 // 
+	 // 
+	 // 
+	 function getChilde(obj){
+	 	var childs=obj.childsNodes;
+	 	var arr=[];
+	 	for(var i=0;i<childs.length;i++){
+	 		if(childs[i].nodetype==3 && /^\s+&/.test(childs[i].nodeValue)){
+	 			continue;
+	 		}else{
+	 			arr.push(childs[i])
+	 		}
+	 	}
+	 	return arr;
+	 }
+
+
+	 	function getNext(obj){
+	 		var next=obj.nextSIbling;
+	 	}
+
+	 while(next.nodeType!=1){
+	 	var next=next.nexSibling;
+	 	if(next==null){
+	 		return null;
+	 	}
+	 }
+
+
+	</script>
+</body>
+</html>

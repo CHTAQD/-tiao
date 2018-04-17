@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+	html,body{
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+	.box{
+		width: 100%;
+		/*overflow: hidden;*/
+	}
+	.inner{
+		width: 100%;
+		line-height: 400px;
+		text-align: center;
+		color:#fff;
+		font-size: 100px;
+		font-weight: 700;
+	}
+	.inner:nth-child(1){
+		background: #666666;
+	}
+	.inner:nth-child(2){
+		background: #c11;
+	}
+	.inner:nth-child(3){
+		background: #f1ff11;
+	}
+	.inner:nth-child(4){
+		background: green;
+	}
+	.inner:nth-child(5){
+		background: #6ac75b;
+	}
+	.btnbox{
+		width:40px;
+		height:250px;
+		position:fixed;
+		top:190px;
+		right:40px;
+	}
+	.btn{
+		width:30px;
+		height:30px;
+		background: rgba(255,255,255,0.2);
+		border-radius: 50%;
+		cursor: pointer;
+		margin:10px 0;
+	}
+</style>
+<body>
+
+	<div class="box">
+		<div class="inner">1</div>
+		<div class="inner">2</div>
+		<div class="inner">3</div>
+		<div class="inner">4</div>
+		<div class="inner">5</div>
+	</div>
+	<div class="btnbox">
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+	</div>
+</body>
+<script src='../轮波/animate轮波动画.js'></script>
+<script>
+var box=document.querySelector('.box');
+var inner1=document.querySelectorAll('.inner');
+var h=document.documentElement.clientHeight;
+var btn=document.querySelectorAll('.btn')
+var btnbox=document.querySelector('.btnbox')
+var num=0;
+var flag=true;
+
+alert(1)
+
+
+
+
+for(var i=0;i<inner1.length;i++){
+	
+	inner1[i].style.height=h+'px';
+	box.style.height=h*inner1.length+'px';
+}
+
+
+	// 选项卡的实现
+	for(var i=0;i<btn.length;i++){
+		btn[i].index=i;
+		btn[i].onclick=function(){
+			num=this.index;
+			for(var j=0;j<btn.length;j++){
+				btn[j].style.backgroundColor='#61A2F3';
+			}
+			animate(box,{marginTop:-h*num},1000)
+			btn[num].style.backgroundColor='#C7E0FF';
+		}
+	}
+
+
+mousewheel(box,function(){
+	if(flag){
+		flag=false;
+		num--;
+		if(num<0){
+			num=0;                                                                                                                                                                                                                                                             
+		}
+		for(var j=0;j<btn.length;j++){
+				btn[j].style.backgroundColor='#61A2F3';
+			}
+		animate(box,{marginTop:-h*num},1000,function(){
+			flag=true;
+		})
+	}
+},function(){
+	if(flag){
+	flag=false;
+	num++;
+	if(num>inner1.length-1){
+		num=inner1.length-1;
+	}
+	animate(box,{marginTop:-h*num},1000,function(){
+		flag=true;
+	})
+}
+})
+</script>
+</html>
+
+
+
+
+思路：
+一、向下滚：
+1、animate动画marginTop值，动画的系数为h，
+2、只动一下的时候，应申明变量num，初始值为0；滚动时，让num++；让animate动画*num;
+3、限制num的大小，如果大于inner.length-1,则等于inner.length-1；
+4、发现滚动太快，加开关限制；
+二、向上滚：
+1、animate动画marginTop值，动画的系数为h，
+2、只动一下的时候，应申明变量num，初始值为0；滚动时，让num--；让animate动画*num;
+3、限制num的大小，如果小于0,则等于0；
+4、发现滚动太快，加开关限制；
+三、加按钮
+1、遍历每一个获取到的按钮，
+2、给每一个按钮添加点击事件，
+3、用animate动画指定的按钮对应的box盒子
+4、当发现点击与滚动无法对应时，使num与this.index相等，一一对应；
+5、设置按钮的颜色【用3次】{
+	（1）循环按钮的初始色
+	（2）对应按钮变色
+}
+<!-- <head>
+	<meta charset="UTF-8">
+	<title>全屏滚动</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	body,html{
+		overflow: hidden;
+	}
+	.box{
+		width:100%;
+	}
+	.inner{
+		width:100%;
+		font-size: 100px;
+		line-height: 400px;
+		text-align: center;
+		color:#000;
+	}
+	.inner:nth-of-type(1){
+		background: #4C9BF5;
+	}
+	.inner:nth-of-type(2){
+		background: #9462E0;
+	}
+	.inner:nth-of-type(3){
+		background: #6AC75B;
+	}
+	.inner:nth-of-type(4){
+		background: #FFF29B;
+	}
+	.inner:nth-of-type(5){
+		background: #FA5836;
+	}
+	.btnbox{
+		width:40px;
+		height:250px;
+		position:fixed;
+		top:190px;
+		right:40px;
+	}
+	.btn{
+		width:30px;
+		height:30px;
+		background: rgba(255,255,255,0.2);
+		border-radius: 50%;
+		cursor: pointer;
+		margin:10px 0;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">001</div>
+		<div class="inner">002</div>
+		<div class="inner">003</div>
+		<div class="inner">004</div>
+		<div class="inner">005</div>
+	</div>
+	<div class="btnbox">
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+		<div class="btn"></div>
+	</div>
+	<script src='../function.js'></script>
+	<script src='../animate.js'></script>
+	<script>
+	var box=document.querySelector('.box');
+	var inner=document.querySelectorAll('.inner');
+	var btn=document.querySelectorAll('.btn');
+	var h=document.documentElement.clientHeight;
+	var num=0;
+	var flag=true;
+	// 设置每一个inner的高度
+	for(var i=0;i<inner.length;i++){
+		inner[i].style.height=h+'px';
+		box.style.height=h*inner.length+'px';
+	}
+
+	// 选项卡的实现
+	for(var i=0;i<btn.length;i++){
+		btn[i].index=i;
+		btn[i].onclick=function(){
+			num=this.index;
+			for(var j=0;j<btn.length;j++){
+				btn[j].style.backgroundColor='#61A2F3';
+			}
+			animate(box,{marginTop:-h*num},1000)
+			btn[num].style.backgroundColor='#C7E0FF';
+		}
+	}
+
+
+
+	// 全屏滚动页面开始k
+	mousewheel(box,function(){
+		if(flag){
+			flag=false;
+			num--;
+			if(num<0){
+				num=0;
+			}
+			for(var j=0;j<btn.length;j++){
+				btn[j].style.backgroundColor='#61A2F3';
+			}
+			btn[num].style.backgroundColor='#C7E0FF';
+			animate(box,{marginTop:-h*num},1000,function(){
+				flag=true;
+			})
+		}
+	},function(){
+		if(flag){
+			flag=false;
+			num++;
+			if(num>inner.length-1){
+				num=inner.length-1;
+			}
+			for(var j=0;j<btn.length;j++){
+				btn[j].style.backgroundColor='#61A2F3';
+			}
+			btn[num].style.backgroundColor='#C7E0FF';
+			animate(box,{marginTop:-h*num},1000,function(){
+				flag=true;
+			})
+		}
+	})
+ -->

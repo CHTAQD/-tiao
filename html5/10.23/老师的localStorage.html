@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+
+    <meta charset="UTF-8">
+
+    <title></title>
+
+    <style>
+
+        .baba{
+
+            margin-top: 100px;
+
+            margin-left: 300px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="baba">
+
+    <p class="set-data">
+
+        键：<input type="text" class="key"/>
+
+        值：<input type="text" class="val"/>
+
+        <input type="button" value="设置" class="set"/>
+
+    </p>
+
+
+
+    <p class="read-data">
+
+        值：<span class="val"></span>
+
+        键：<input type="text" class="key"/>
+
+        <input type="button" value="读取" class="read"/>
+
+    </p>
+
+
+
+    <p class="remove-data">
+
+        键：<input type="text" class="key"/>
+
+        <input type="button" value="删除" class="del"/>
+
+    </p>
+
+
+
+    <p class="clear-data">
+
+        <input type="button" value="清空" class="clear"/>
+
+    </p>
+
+</div>
+
+
+
+</body>
+
+<script src="jquery-3.2.1.js"></script>
+
+<script>
+
+    //设置
+
+    $(".set").on("click",function(){
+
+        var key = $(".set-data").find(".key").val();
+
+        var val = $(".set-data").find(".val").val();
+
+        console.log(key+":"+val);
+
+        sessionStorage.setItem(key,val);
+
+    })
+
+    //读取
+
+    $(".read").on("click",function(){
+
+        var key = $(".read-data").find(".key").val();
+
+        //在localStorage缓存下来的数据中进行查找，
+
+        // 找到对应键名的键值，并获取
+
+        var val = sessionStorage.getItem(key);
+
+        $(".read-data").find(".val").html(val);
+
+    })
+
+    //移除
+
+    $(".del").on("click",function(){
+
+        var key = $(".remove-data").find(".key").val();
+
+        sessionStorage.removeItem(key)
+
+    })
+
+    //清空
+
+    $(".clear").on("click",function(){
+
+        sessionStorage.clear();
+
+    })
+
+
+
+    var length = sessionStorage.length;
+
+    console.log(length);
+
+
+
+</script>
+
+</html>

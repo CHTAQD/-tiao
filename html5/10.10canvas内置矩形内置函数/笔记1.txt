@@ -1,0 +1,62 @@
+canvas内置矩形方法
+
+1.ctx.rect(x,y,w,h)注：不完善方法
+
+2.ctx.fillRect(x,y,w,h)绘制填充矩形
+
+3.ctx.strokeRect(x,y,w,h)绘制描线矩形
+
+
+arc
+
+1.ctx.arc(x,y,r,sAngle，eangle，)注：不完善的方法需要描边
+ 	x:圆心横坐标
+	y：圆心纵坐标
+	r:半径
+	sangle：初始弧度
+	eangle:结束弧度
+	counterclockwise:用来确定是否为逆时针绘图
+	值为  true  false
+	
+	如果值为true  就表示逆时针绘图，如果值为false就表示顺时针绘图（默认值为false）
+	在js中，弧度为0的点，在三点钟方向
+
+闭合路径
+closepath
+
+把扇形动画自己做一遍
+把虚线函数封装一下
+
+
+
+
+
+2.ctx.arc
+
+
+角度另外一种表达方式
+
+度   deg360 是圆
+
+绘制0圆弧的所在的起点位置是三点钟方向
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+.box{
+	height: 300px;
+	width: 200px;
+	background-color: #ccc;
+	margin:100px auto;
+	border:1px solid #000;
+	overflow: hidden;
+}
+.innerbox{
+	height: 300px;
+	width: 200px;
+
+}
+.inner{
+	height:300px;
+	width: 200px;
+
+}
+img{
+	height: 300px;
+	width: 200px;
+}
+</style>
+<body>
+	<div class="box">
+		<div class="innerbox">
+			<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208643099.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645061.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645835.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208647378.jpg@!420" alt=""></div>
+		</div>
+	</div>
+</body>
+<script src='animate.js'></script>
+<script src='../节点/function.js'></script>
+<script>
+var innerbox=document.querySelector('.innerbox');
+function move(){
+var i=getLast(innerbox);
+var j=getFirst(innerbox);
+i.style.height=0;
+addBefore(i,j);
+animate(i,{height:300},500)
+}
+setInterval(move,1000)
+</script>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+        <script>
+        // var a=30;
+        // if(a<20){
+        // 	alert('今天是晴天');
+        // }else{
+        // 	alert('今天是阴天');
+        // }
+
+        // var a=10;
+        // if(a>=20){
+        // 	alert('成年了')
+        // }else{
+        // 	alert('未成年')
+        // }
+
+        // var a=101;
+        // if(a<60){
+        // 	alert('未及格')
+        // }else if(a>60&&a<80){
+        // 	alert('中等');
+        // }else if(a>80&&a<100){
+        // 	alert('上等');
+        // }else{
+        // 	alert('很棒');
+        // }
+        // 最后不细分  else就是所有的反之
+
+        // var a=100;
+        // if(a<10){
+        // 	alert('冬');
+        // }else if(a>10&&a<16){
+        // 	alert('春');
+        // }else if(a>20&&a<36){
+        // 	alert('夏');
+        // }else if(a>16&&a<20){
+        // 	alert('秋');
+        // }else{
+        // 	alert('热死你');
+        // }
+
+
+
+        // 1.4嵌套分支
+
+        // var a=100;
+        // if(a<=100){
+        // 	if(a<60){
+        // 		alert('中等');
+        // 	}else if(a>60&&a<90){
+        // 		alert('还行')
+        // 	}else{
+        // 		alert('很棒')
+        // 	}
+        // }
+
+        // 单路分支
+        // var a=3;
+        // if(a>2){
+        // 	alert('asa')
+        // }
+        // 双路分支
+        // var a=20;
+        // if(){
+
+        // }else{
+
+        // }
+        // 多路分支
+        // var a=50;
+        // if(){
+
+        // }else if(){
+
+        // }else if(){
+
+        // }else{
+
+        // }
+        // 嵌套分支
+        // var a=30;
+        // if(满足条件显示下面的){
+        // 	if(){
+
+        // 	}else if{
+
+        // 	}else()
+
+        // }
+
+        // var a=prompt('输入成绩','');
+        // if(a>=18&&a<100){
+        // 	if(a<=50){
+        // 		alert('可进')
+        // 	}else if(a>50&&a<80){
+        // 		alert('可伸筋')                    一定范围
+        // 	}else if(a>80&&a<100){
+        // 		alert('太好了')
+        // 	}else{
+        // 		alert('错误')
+        // 	}
+        // }
+        // var a=61;
+        // if(a>30){
+        // 	if(a>40){
+        // 		if(a>50){                           筛选嵌套
+        // 			if(a>60){
+        // 				alert('错误')
+        // 			}
+        // 		}
+        // 	}
+        // }
+        // var a=prompt('shiyan','');
+        // switch(a){                                     一对一个
+        // 	case '60':alert('及格');
+        // 	break;
+        // 	case '40':alert('还好');
+        // 	break;
+        // 	case '90':alert('henhao ');
+        // 	break;
+        // 	default:alert('以上条件都不满足');//所有条件都不满足时显示
+        // }
+
+        // var a=prompt('今天星期几','');
+        // switch(a){
+        // 	case '一':alert('星期一');
+        // 	break;
+        // 	case '二':alert('星期二');
+        // 	break;
+        // 	case '三':alert('星期三');   	break;
+        // }
+
+
+        // var a=100;
+        // if(a>20){
+        // 	alert('对');
+        // }else{
+        // 	alert('错')
+        // }
+
+        // var a=[1,2,3];
+        // 	alert(a.toString())
+
+
+        // parseInt()
+        // parseFloat()
+        // valueOf()                                        转变数值类型
+        // toString()
+
+
+            // var a=2;
+            // if(a>1){
+            // 	alert('弟');
+            // }else if(){
+            // 	alert('sasas');
+            // }
+
+            // var a=3;
+            // if(){
+            // 	alert()                         筛选一定范围    多路   单路  双路  嵌套
+            // }else if(){
+            // 	alert()
+            // }
+
+        // var b=prompt('今天星期几','');
+        // switch(b){                               特定一个数值
+        // 	case '一''1':alert('星期一');
+        // 	break;
+        // }
+
+
+        // for(var a=1;a<10;++a){               循环
+        // 	alert(a)
+        // }
+
+        // //2
+
+        // //3
+
+        // //4    5
+
+
+        // for(var a=2;a<=100;a++){
+        // 	if(a%2==0){
+        // 	alert(a)
+        // 	}
+        // }
+
+
+
+
+        // for(var a=100;a<201;a++){
+        // 	if(a%2==1){
+        // 		document.write(a+'&nbsp');
+        // 	}else{											10*     100内的奇数
+        // 	// document.write(a+'&nbsp');
+        // 	}
+
+        // }
+
+        // var num=0;
+        // for(var a=0;a<=10;a++){
+        // 	num+=a;
+        // }
+        // alert(num)
+
+        // var num=0;
+        // for(var a=0;a<=100;a++){
+        // 	if(a%2==0){                         100内依次弹出的偶数
+        // 	num+=a
+        // 	}
+        // }
+        // alert(num)
+
+
+        // var num=0;
+        // for(var a=0;a<=10;a++){
+        // 	num+=a//0+0=0     1+0=1     1+2=3
+        // 	3+3=6   4+6=10
+
+        // 	7+21
+        // 	8+28
+        // 	9+36
+        // 	10+45=55
+        // }
+        // alert(num);
+
+//        var a=0;
+//        for(var c=0;c<=10;c++){               一定顺序数值的总和
+//
+//                a+=c
+//
+//        }
+//        alert(a)
+
+
+
+
+
+
+        // for(var a=0;a<=100;a++){
+        // 	if(a%3==0&&a%5==0){
+        // 		document.write(a+'&nbsp');          3和5的公倍数
+        // 	}
+        // }
+        // for(var a=1;a<10;a++){
+        // 	alert(a)
+        // }
+
+
+        // document.write('<table border=1>')
+
+        // for(var a=0;a<10;a++){
+        // 	document.write('<tr>')
+        // 		for(var b=0;b<10;b++){
+        // 			document.write('<td>123</td>')          表格10行是列
+        // 		}
+        // 	document.write('</tr>')
+
+        // }
+        // document.write('</table>')
+
+        //var i=prompt('请输入几行','')
+        //var j=prompt('请输入几列','')                  自定几行列
+        //for(var a=0;a<i;a++){
+        //	for(var c=0;c<j;c++){
+        //		document.write(a+'&nbsp')
+        //	}
+        //	document.write('<br>')
+        //}
+
+
+
+        // a=0   a<10  a++   4}{  c=0  c<10 c++  0  c=1<10  c++  0    。。。
+        // 	  }
+        // 	  <br>  a=1<10
+
+        //for(var a=0;a<10;a++){
+        //	alert(a);
+        //}
+        //var a=prompt('今天星期几','')
+        //switch(a){
+        //    case '1':alert('星期一');
+        //        break;
+        //}
+        //switch(){
+        //    case '':alert();                                  特定一个值
+        //        break;
+        //}
+
+            // for(var a=0;a<10;a++){
+            //     for(var b=0;b<10;b++){
+            //         document.write(a+'&nbsp')                 10行10列
+            //     }
+            //     document.write('<br>')
+            // }
+//    var i=prompt('有几行','');
+//    var j=prompt('有几列','');
+//     for(var a=0;a<i;a++){
+//       for(var c=0;c<j;c++){
+//           document.write(a+'&nbsp');                         10行10列
+//       }
+//         document.write('<br>');
+//     }
+
+//  for(var a=0;a<100;a++){
+//      if(a%3==0&&a%5==0){
+//          document.write(a+'&nbsp')                       3和5的公倍数
+//      }
+//  }
+//for(var i=1;i<10;i++){
+//    for(var j=1;j<=i;j++){
+//        document.write(i+'x'+j+'='+i*j+'&nbsp&nbsp')
+//    }                                                     乘法表
+//    document.write('<br>')
+//}
+
+//
+//for(var a=1;a<=4;a++){
+//    for(var b=4;b>a;b--){
+//        document.write('&nbsp')
+//    }
+//    for(var i=1;i<=a;i++){                                  金字塔
+//        document.write('*&nbsp')
+//    }
+//    document.write('<br>')
+//}
+
+//for(var i=1;i<10;i++){
+//    for(var a=1;a<=i;a++){
+//        document.write(i+'x'+a+'='+a*i+'&nbsp&nbsp')
+//    }
+//    document.write('<br>')
+//}
+
+
+//for(var a=1;a<10;a++){
+//    for(var i=1;i<=a;i++){
+//        document.write(a+'x'+i+'='+a*i+'&nbsp&nbsp')
+//    }
+//    document.write('<br>')
+//}
+
+//for(var a=1;a<5;a++){
+//    for(var c=5;c>a;c--){
+//        document.write('&nbsp')
+//    }
+//    for(var i=0;i<a;i++){
+//        document.write('*&nbsp')
+//    }
+//    document.write('<br>')
+//}
+
+
+/*for(var a=1;a<10;a++){
+    for(var i=1;i<=a;i++){
+        document.write(a+'x'+i+'='+a*i+'&nbsp&nbsp')
+    }
+    document.write('<br>')
+}*/
+
+//var a=prompt('请输入几行几列','');
+//var b=prompt('请输入几列','');
+//  for(var i=1;i<=Number(a);i++){
+//      for(var k=1;k<=Number(a)-i;k++){
+//          document.write('<span>')
+//      }
+//  }
+//var c=0;
+//var i=0;
+//while(i<10){
+//    c+=i;
+//    i++;
+//}
+//alert(c)
+//
+//            document.write('<table border=1>');
+//        var a=0;
+//          while(a<10){
+//              document.write('<tr>');
+//               var c=0;
+//                 while(c<10){
+//                   document.write('<td>gggg</td>');
+//                     c++;
+//              }
+//              document.write('</tr>');
+//            a++;
+//          }
+//        document.write('</table>')
+//
+
+
+
+//    var i=0;
+// var a=1;
+//    while(a<10){
+//        i+=a;
+//        a++;
+//    }
+//        document.write(i+'&nbsp');
+//
+//
+//for(var i=1;i<10;i++){
+//    for(var j=1;j<=i;j++){
+//        document.write(i+'x'+j+'='+i*j+"&nbsp")
+//    }
+//    document.write("<br>")
+//}
+//
+//for(var a=1;a<5;a++){
+//    for(var c=5;c>a;c--){
+//        document.write('&nbsp')
+//    }
+//    for(var o=0;o<a;o++){
+//        document.write('*&nbsp')
+//    }
+//    document.write("<br>")
+//}
+
+//var a=1;
+//     while(a<10){
+//         var i=1;
+//         while(i<=a){
+//             document.write(a+'x'+i+'='+i*a+'&nbsp');
+//             i++
+//         }
+//         document.write("<br>");
+//         a++
+//     }
+
+
+//            var a=1;
+//           do{
+//            document.write(a);
+//            a++;
+//        } while(a>1)
+//            for(var a=0;a<10;a++){
+//                if(a==3){
+//                    break;
+//                }
+//                document.write(a+'&nbsp;')
+//            }
+//        document.write("<br>")
+//        for(var i=0;i<10;i++){
+//            if(i==3){
+//               continue
+//            }
+//            document.write(i+'&nbsp;')
+//        }
+for(var a=0;a<10;a++){
+    for(var i=1;i<10;i++){
+        document.write(a+'&nbsp;')
+    }
+    document.write("<br>")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+	
+</body>
+</html>

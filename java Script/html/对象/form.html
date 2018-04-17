@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <form action="1.html" name="aa" id="c">
+		<input type="text" name="cc" value="请输入关键字" >
+	</form> -->
+	<!-- <form action="" name="aa">
+		<input type="radio" name="sex" value="man">
+		<input type="radio" name="sex" value="voman">
+		
+	</form> -->
+<!-- <form action="" name='myform'>
+		菜品：<br>
+		宫保鸡丁：<input type="checkbox" name='menu'><br>
+		红烧肉：<input type="checkbox" name='menu'><br>
+		鱼香肉丝：<input type="checkbox" name='menu'><br>
+		糖醋里脊：<input type="checkbox" name='menu'><br>
+		孜然羊肉：<input type="checkbox" name='menu'><br>
+		剁椒鱼头：<input type="checkbox" name='menu'><br>
+		北京烤鸭：<input type="checkbox" name='menu'><br>
+		韭菜炒鸡蛋：<input type="checkbox" name='menu'><br>
+		疙瘩汤：<input type="checkbox" name='menu'><br>
+		<hr>
+		全选：<input type="radio" name='quan'>
+		全不选：<input type="radio" name='quan'>
+		反选：<input type="radio" name='quan'>
+	</form>
+ -->
+<!--  <form action="" name="myform" >
+	<input type="text" name="dan" value="100">
+	<input type="button" value="*">
+	<select name="index" id="">
+		<option value="green">1</option>
+		<option value="blue">2</option>
+		<option value="yellow">3</option>
+
+	</select>
+<input type="button" value="=" name="dan">
+<input type="text" name="he" value="100">
+
+</form> -->
+<!-- <div class="box">
+	最多输入40个字，已输入0个，剩余40个字
+</div>
+<form action="" name="myform">
+	<textarea name="area" id="" cols="30" rows="10"></textarea>
+</form>
+ -->
+<form action="" name="myform">
+		姓名：<input type="text" name="text1">
+		<input type="submit" name="sub">
+</form>
+</body>
+<script>
+/*1.通过定位来获取var forms=document.getElementById('c');
+2.*//*var forms=document.form;
+var a=document.forms[0];
+var a=document.form['c'];*/
+/*var a=document.form.aa;
+alert(a.action)
+3.通过name来获取*/
+/*var a=document.aa;
+alert(a)
+3.var a=document.aa.cc;
+2.var a=document.aa.elements;
+var a=document.aa.elements[0];
+var a=document.aa.elements['cc']
+var a=document.aa.elements.cc;*/
+
+/*var text=document.aa.elements.cc;
+text.onfocus=function(){
+	if(text.value=='请输入关键字'){
+		text.value='';
+	}
+}															1
+text.onblur=function(){
+	if(text.value==''){	
+		text.value='请输入关键字';
+
+	}
+
+}*/
+
+/*var sex=document.aa.elements.sex;
+if(sex)
+*/
+
+/*var menu=document.myform.menu;
+	var quan=document.myform.quan;
+	quan[0].onclick=function(){
+		for(var i=0;i<menu.length;i++){
+			menu[i].checked=true;
+		}
+	}
+	quan[1].onclick=function(){
+		for(var i=0;i<menu.length;i++){
+			menu[i].checked=false;
+		}
+	}
+	quan[2].onclick=function(){
+		for(var i=0;i<menu.length;i++){
+			if(menu[i].checked==true){
+				menu[i].checked=false;
+			}else{
+				menu[i].checked=true;
+			}
+			
+		}
+	}
+*/
+
+/*var dan=document.getElementsByName('dan');
+var index=document.myform.index;
+var he=document.myform.elements.he;
+index.onchange=function(){
+	var val=parseInt(dan.value);
+	var xb=index.selectedIndex+1;
+	he.value=val*xb;
+	document.bgColor=index[this.selectedIndex].value;
+}
+*/
+/*box=document.querySelector('.box');
+area=document.myform.area;
+
+area.onkeydown=area.onkeyup=function(){
+	var val=area.value;
+	var lens=val.length;
+	var num=40;
+	if(lens>40){
+		area.value=val.substring(0,40);
+		lens=40;
+	}
+	box.innerHTML='最多输入'+num+'几个字,已输入'+lens+'个字，剩'+(num-lens)+'个'
+}
+*/
+text1=document.myform.text1;
+myform=document.myform;
+myform.onsubmit=function(){
+	if(text1.value==''){
+		alert('内容不能为空')
+	}
+}
+
+
+
+</script>
+</html>

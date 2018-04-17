@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>局部自定义指令</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <h1 v-star.abc='"green"'>hahahahahahaha</h1>
+    <input type="text" v-model='type' v-echo/>
+</div>
+
+<script>
+    new Vue({
+        el:'.echo',
+        data:{
+            type:'I love you Echo!!!'
+        },
+        directives:{
+            star:{
+                //绑定
+                bind:function(el,bind){
+                   console.log(el);
+                    console.log(bind)
+                }
+            },
+            echo:{
+                //上传
+                update:function(el,bind){
+                    console.log('I love you Echo!!!!')
+                }
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

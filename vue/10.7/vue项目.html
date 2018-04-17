@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='vue.js'></script>
+</head>
+<body>
+    <div class="box" >
+            <div v-html='uu'></div>
+        <h1 v-text='us'></h1>
+    </div>
+
+
+    <script>
+
+   var i = new Vue({
+       el:'.box',
+       data:{
+           uu:' <h1>12306</h1>'
+       }
+   })
+    </script>
+</body>
+</html>

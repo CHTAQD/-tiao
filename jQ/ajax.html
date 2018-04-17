@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: #c11;
+	}
+</style>
+<body>
+	<div class="box"></div>
+
+	
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(function(){
+		$('.box').hover(function(event){
+			$(this).html('我是大王')
+			this.stoppropagation()
+		},function(){
+			$(this).text('woshi dawang')
+		})
+	})
+	
+	$('div').click(function())
+
+	</script>
+</body>
+</html>
+
+ajax
+1>概念：异步的javascript和XML，不是一种单一的技术，是交互式网页的结合体
+2>步骤1：创建一个核心对象XMLHTTPRequest()
+	2:链接服务器open()
+	3：发送一个请求send()
+	4：服务器返回请求，成功,          bbbbbbbbccc接收返回值
+3>优势：
+	1，不需要插件的支持
+	2.优秀的用户体验
+	3.提高web程序的性能
+	4.减轻服务器和宽带负担
+4>缺点：
+	1.浏览器对核心对象XMLHttpRequest()支持不足
+	2.破坏浏览器前进，后退按钮
+	3.对搜索引擎的支持不足
+	4，开发，调试工具的缺失
+5.核心对象XMLHttpRequest()作用
+	ajax的关键步骤实现，如发送异步请求，接受响应，执行回调依靠其实现。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

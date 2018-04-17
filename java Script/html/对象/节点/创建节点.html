@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+// 注意：对象.getAttribute(属性名)
+// 	对象.setAttribute(属性名,属性值)
+// 	对象.getAttributeNode(属性名)
+// 	对象.setAttributeNode(属性名)
+
+//创建节点
+//1>创建节点元素
+/*var div=document.createElement('div')
+div.className='a1';
+innerHTML='box盒子'
+var text=document.createTextNode('box盒子2')；
+div.appendChild(text)
+document.body.appendChild(div);*/
+/*var a=document.createElement('a');
+a.className='a1';
+a.href='#'
+a.style.width='100px';
+a.innerHTML='a标签'*/
+
+
+
+
+
+
+//将a添加到b的前面
+function addBefore(a,b){
+	var parent=bparentNode;
+	parent.inseryBefore(a,b)
+}
+//将a添加到b 的后边
+function addAfter(a,b){
+	var parent=b.parentNode;
+	var next=getNext(b);
+	if(next==null){
+		parent.appendChild(a);
+	}else{
+		parent.insertBefore(a,next)
+	}
+}
+
+// 替换
+function relpaceObj(newobj,oldobj){
+	var parent=oldobj.parentNode;
+	parent.replaceChild(newobj,oldobj);
+}
+
+// 删除obj节点
+
+box.removeChild(h1)
+h1=null;
+
+function removeObj(obj){
+	var parent=obj.parentNode;
+	parent.removeChild(obj);
+	obj=null;
+}
+
+// ..5克隆
+a.cloneNode(false);
+a.cloneNode(true);
+for(var i=0;i<5;i++){
+	var a1=a.cloneNode(false);
+	box.appendChild(a1)
+}
+
+function cloneObj(){
+	var bull=false||bull;
+	 return obj.cloneNade(bull)
+}
+
+
+
+
+
+
+
+
+</script>
+</html>

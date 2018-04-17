@@ -1,0 +1,15 @@
+1、表单对象属性过滤选择器:
+   :enabled 选取所有可用的元素
+   :disabled 选取所有不可用的元素
+   :input 选取所有的<input>、<textarea></textarea>、<select>、<button>
+2、val() 获取、设置表单元素的值
+   text() 获取、设置下拉列表的文本值
+3、选择器名称中特殊符号的处理:
+   含有. # () [] {}等特殊字符都需要转义,加反斜杠(\\)。
+4、document.getElementsBySelector()衍生出JQ选择器的方法
+5、cssQuery()衍生出JQ样式的方法
+6、QuerySelectorAll()浏览器原生的方法来重构JQ选择器
+7.attr第一个值获取属性，第二个设置属性
+8.prop（）获取设置属性，返回布尔值
+
+

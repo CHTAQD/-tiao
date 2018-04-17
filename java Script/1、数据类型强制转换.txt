@@ -1,0 +1,77 @@
+javascript数据类型强制转换
+一、转换为数值类型
+   1、 Number(参数): 把任何的类型转换为数值类型;
+    A.如果是布尔值，false为0，true为1
+    B.如果是数字，转换成为本身。将无意义的后导0去掉。
+    C.如果Null转换为0；
+    D.如果是undefined 转换为NaN（not a number）；
+    E.如果转对象，则会先调用对象的valueOf()方法，然后再调用对象的toString()方法。
+eg:
+Number({
+  valueOf: function () {
+    return 2;
+  }
+})
+// 2
+
+Number({
+  toString: function () {
+    return 3;
+  }
+})
+// 3
+
+Number({
+  valueOf: function () {
+    return 2;
+  },
+  toString: function () {
+    return 3;
+  }
+})
+// 2
+
+    F.如果是字符串
+       （1）如果字符串当中只有数字，转换为10进制(忽略前导0和后导0)；
+       （2）如果是有效的规范的浮点型，转换为浮点值(忽略前导0和后导0)；
+       （3）如果是空字符串，则转换为0；
+       （4）如果是其他的值，返回NaN；
+   
+   2、 parseInt(参数1，参数2)：将字符串转换为整数；
+      A.如果一个字符串只包含数字，则以10进制的方式转换为整型。
+      B.如果字符串包含空格，那么会自动忽略空格，去找字符串中的第一个值，如果是数字，一直向下找，直到不是数字的值为止，其他情况返回NaN(除了-)。
+      D.参数意义解析：
+      参数1:
+八进制	  十进制    十六进制
+以0开头，后面的数字不能超过7	0-9    0x  0-9  a-f
+     参数2:
+控制解析模式  2-32
+      
+   3、 parseFloat() 将字符串转换为浮点数
+     A.字符串当中的.只有第一个小数点有效，其他的都是无效的。
+     B.如果字符串是一个有效的整数，他返回的是整数，不会返回浮点数。   
+  
+二、转换为字符串类型
+   1. String(参数)：可以将任何的类型转换为字符串;
+   null和undefined:  也都会转换为字符串，分别是 null和undefined 
+      布尔类型:会返回true 和false
+      数值类型:本身的字符串
+
+2.toString()：作用是将对象以字符串的方式来表示调用的格式  对象.toString()
+方法	结果
+array.toString()	由，分割的字符串
+Boolean.toString()	两个值  true false
+String.toString()	返回本身
+Number.toString(参数)
+参数： 控制输出模式 ：2-32
+	返回本身的字符串形式
+注意：null和undefined没有toString()方法
+
+三、转换为布尔类型
+    1、Boolean()  可以将任何类型的值转换为布尔值;
+      转换为假:  ""、 0、 NaN 、undefined、 false、 null;
+      其他的全部都转换为真。
+
+
+
+

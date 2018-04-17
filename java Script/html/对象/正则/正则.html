@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+// var st='Hello world!Hello kitty';
+// var reg=new RegExp('hello','i','g');
+// alert(reg.test(st));
+// //字面量
+// var srt='Hello world!Hello kitty';
+// var res=/hello/ig;
+// alert(res.exec(srt));
+
+// var srt='Hello world!Hello kitty';
+// var ree=/hello/ig;
+// alert(srt.match(ree)) 
+
+var srt='Hello world!Hello kitty';
+var reg=/hello/ig;
+alert(srt.search(reg));	//从下标0开始正则里面的第几个下标有Hello
+// alert(srt.replace(reg,'hehe'))
+// alert(srt.split(reg))
+
+
+
+	// var reg=/^..o$/ig;
+	// var str='ano';
+	// alert(str.match(reg))
+
+/*	var reg='sooosi';
+	var str=/o+/g;*/
+	// alert(reg.replace(str,'123'));
+/*	alert(reg.match(str)); 	
+	alert(reg.match(str).length)*/
+
+	// alert(reg.match())s
+
+	// var a='ammmmmmm'
+	// var reg=/^{1,}.m$/
+	// alert(a.match(reg))
+
+	// var b='Ck3l'
+	// var reg=/[^0-9a-z].{3,}/g
+	// alert(b.match(reg));
+
+
+/*	var reg=/\d+/g;
+	var c='8612dfvc4';
+	alert(c.match(reg))*/
+
+	// var reg=/^1[3578]\d{9}/
+	// var phone=18335834444;
+	// alert(reg.test(phone));
+
+
+	// var reg=/^[1-9][0-9]{4,14}/;
+	// var a=1437491084;
+	// alert(reg.test(a));
+
+ 
+
+	// var reg=/^\s+/g;
+	// var a='           odm'
+	// alert(a.match(reg))
+	// alert(a.replace(reg,'8'))
+
+	// var str='tengtengqinqin.qq.com';
+	// var reg=/\w+/
+	// var str='htmlhtmlhhhtml';+
+	// var reg=/(html)+/g;
+	// alert(str.match(reg))
+
+	// var str='hello world';
+	// var reg=/(\w+)\s(\w+)/g;
+	// alert(str.match(reg))
+
+	var phone='17622326666';
+	var reg=/(\d{3})\d{4}(\d{4})/g;
+	alert(phone.replace(reg,'$1****$2'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</html>

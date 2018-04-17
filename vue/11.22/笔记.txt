@@ -1,0 +1,45 @@
+在transition标签中以事件的形式添加动画控制属性
+
+在事件处理函数中引入el和done形参，el表示使用当前事件的元素，
+
+done是用来告知Velocity 插件 事件当前动画 已经结束了
+
+事件处理函数中的代码
+
+Velocity(el,{属性，属性值}，{duration：n毫秒，complete})
+
+
+
+
+局部自定义指令
+
+在根组件中写入driectives是一个对象类型（是一个对象类型）
+
+在directives属性中写入指令名称
+
+directives：{
+
+指令名：{
+	
+}
+
+}
+
+3.自定义指令中写入bind或update（bind值）这两者是用来定义指令触发方式的，bind是在指令绑定在元素指令上的时候就会触发该指令，update是在元素的值，发生改变的时候才会触发该指令。
+
+directives：{
+
+指令名：{
+	bind/update:function(){
+		
+ }
+}
+
+}
+
+
+
+4.bind/update 函数中可以传入两个参数 el bind 
+
+el表示使用当前指令的元素对象，bind表示当前指令在指令对象
+

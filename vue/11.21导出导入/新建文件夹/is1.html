@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>:is</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <header :is='form'></header>
+    <input type="radio" value='allen' v-model='form' name='choose'/>allen
+    <input type="radio" value='emily' v-model='form' name='choose'/>emily
+</div>
+
+<script>
+    //定义a和e组件
+    var a = {
+        template:'<div><input type="text"/></div>'
+    }
+    var e = {
+        template:'<div><textarea name="" id="" cols="30" rows="10"></textarea></div>'
+    }
+    var echo = new Vue({
+        el:'.echo',
+        //在这里，将a和e引入为局部组件
+        components:{
+            allen:a,
+            emily:e
+        },
+        data:{
+            //指定默认组件是allen组件
+            form:a
+        }
+    })
+</script>
+</body>
+</html>

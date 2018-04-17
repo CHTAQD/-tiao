@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src='vue.js'></script>
+<body>
+<div class="box">
+    <input v-model='j'>+
+
+    <input v-model='k'>=
+
+    <input v-model='num'>
+</div>
+<script>
+    var i = new Vue({
+        el: '.box',
+        data: {
+            j: '1',
+            k: '2'
+        },
+       computed:{
+           num:function(){
+               return this.j*1+this.k*1
+           }
+       },
+       watch:{
+           num:function(j,k){
+               console.log(k+'>'+j)
+           }
+       }
+    }
+    )
+
+</script>
+</body>
+</html>

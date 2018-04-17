@@ -1,0 +1,108 @@
+javascript-节点属性详解
+
+根据 DOM，HTML 文档中的每个成分都是一个节点。
+DOM 是这样规定的：
+整个文档是一个文档节点 
+每个 HTML 标签是一个元素节点 
+包含在 HTML 元素中的文本是文本节点 
+每一个 HTML 属性是一个属性节点 
+注释属于注释节点 
+
+一、如何获得节点引用
+    1.旧的获取节点引用方式
+      getElementById()
+      getElementsByTagName()
+      getElementsByName()
+******************************************
+劣势：【整个文档查询】
+  (1).浪费内存
+  (2).逻辑性不强
+******************************************
+
+2.通过节点  关系属性 获得节点的引用
+对象.parentNode  获得父节点的引用
+对象.childNodes  获得子节点的集合   //兼容 对象.firstChild  获得第一个子节点       //兼容
+对象.lastChild   获得最后一个子节点 //兼容
+对象.nextSibling 获得下一个兄弟节点的引用   //兼容
+对象.previousSibling 获得上一个兄弟节点的引用      //兼容
+******************************************
+劣势:兼容性不好。
+******************************************
+      
+二、节点的信息(属性)
+节点类型        节点名字           节点值
+ nodeType(数值)  nodeName   nodeValue
+元素节点         1                标签名           null   
+属性节点         2                属性名        属性值
+文本节点         3                 #text         文本
+注释节点         8    		#comment     注释的文字
+文档节点         9       	#document       null
+
+验证属性节点的方法：
+eg：a.getAttributeNode('href')
+
+
+三、兼容性的方法
+//获得所有子节点
+function getChilds(obj){
+  var childs=obj.childNodes;
+  var arr=[];
+  for(var i=0;i<childs.length;i++){
+    if(childs[i].nodeType==3&&/^\s+$/.test(childs[i].nodeValue)){
+      continue;
+    }else{
+      arr.push(childs[i])
+    }
+  }
+  return arr;
+}
+
+//获得某个对象中的第一个子元素
+function getFirst(obj) {
+  return getChilds(obj)[0];
+}
+
+//获得某个对象中的最后一个子元素
+function getLast(obj) {
+  return getChilds(obj)[getChilds(obj).length - 1]
+}
+
+//获得某个对象的下一个兄弟元素
+function getNext(obj) {
+  var next = obj.nextSibling;
+  if (next == null) {
+    return null;
+  }
+  while (next.nodeType != 1) {
+    next = next.nextSibling;
+    if (next == null) {
+      return null;
+    }
+  }
+  return next;
+}
+
+//获取某个对象的上一个兄弟元素
+function getPrevious(obj) {
+  var pre = obj.previousSibling;
+  if (pre == null) {
+    return null;
+  }
+  while (pre.nodeType != 1) {
+    pre = pre.previousSibling;
+    if (pre == null) {
+      return null;
+    }
+  }
+  return pre;
+}
+//获取某个对象的父元素
+
+function getParent(obj) {
+  return obj.parentNode;
+}
+
+
+      
+
+

@@ -1,0 +1,28 @@
+
+
+
+
+
+
+H5是对前端的增强包括对html的增强这就是h5的新增语义化标签
+
+对css的增强(css3的一些新增样式)，以及对dom的增强  如：querySelector    querySelectorAll
+
+
+h5==  html增强  +  css增强+  dom增强
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 200px;
+		width: 600px;
+		border:1px solid #000;
+	}
+	.a{
+		height: 90px;
+		width:90px;
+		border:1px solid #000;
+		float: left;
+		margin-top: 50px;
+		margin-left: 70px;
+	}
+	.anniu{
+		height: 50px;
+		width: 50px;
+		background-color: #c11;
+	}
+</style>
+<body>
+	
+	<div class="box">
+		<div class="a"></div>
+		<div class="a "></div>
+		<div class="a "></div>
+	</div>
+
+
+
+	<div class="anniu" ></div>
+	
+
+
+
+	<script>
+	var a=document.querySelectorAll('.a');
+	var anniu=document.querySelector('.anniu')
+
+	
+
+
+	anniu.onclick=function eae(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=callBack;
+	xhr.open('get','caidanJson.json',true);
+	xhr.send();
+	function callBack(){
+		if(xhr.status==200){
+			if(xhr.readyState==4){
+				/*var tate=JSON.parse*/alert(xhr.responseText)
+				// console.log(tate)
+			}
+		}
+	}
+
+}
+
+
+
+
+
+	</script>
+
+</body>
+</html>

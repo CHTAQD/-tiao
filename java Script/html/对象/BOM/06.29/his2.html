@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<a href="06.29.html">我是2页面</a>-->
+<h1>我是列表页</h1>
+<input type="button" value="后退" id="ht">
+<input type="button" value="刷新" id="sx">
+<script>
+//    alert(window.history.length);
+    var ht=document.getElementById('ht');
+    var sx=document.getElementById('sx');
+    ht.onclick=function(){
+//        history.back();   //后退
+        history.go(-1);     //后退
+    }
+    sx.onclick=function(){
+        history.go(0);   //刷新
+    }
+</script>
+
+</body>
+</html>

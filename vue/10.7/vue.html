@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .nav{
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+    }
+    .body{
+        width: 100%;
+        height: 400px;
+        background-color: #fff;
+    }
+    .boot{
+        width: 100%;
+        height: 200px;
+        background-color: #000099;
+    }
+</style>
+<body>
+<div class="nav">
+    <a href="#/n">n</a>
+    <a href="#/a">a</a>
+    <a href="#/v">v</a>
+
+</div>
+<div class="body"></div>
+<div class="boot"></div>
+
+
+<script src='jquery-3.2.1.js'></script>
+<script>
+   事件监听 addEventListener 监听 hashchange这个事件
+    addEventListener    hashchange
+    2.获取当前是在哪个锚点
+    location.hash     location.hash
+   设置 url接收数据的变量
+    3.判断 是在哪个锚点里边  然后导入对应的url json文件
+
+   4.ajax调用后台数据写入 要改的板块里面的内容 url调用url
+    注：json文件必须是双冒号才可以，不然无法显示
+</script>
+</body>
+</html>

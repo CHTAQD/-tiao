@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div class="el">
+    <!--<input type="text" v-model="age"/>-->
+    <!--<span v-if="age<20">小孩</span>-->
+    <!--<span v-else-if="age<30">青年</span>-->
+    <!--<span v-else-if="age<50">中年</span>-->
+    <!--<span v-else="age>=50">老年</span>-->
+
+
+    <input type="checkbox" v-model="isTrue"/>接受协议
+    <br/>
+    <span v-if='!isTrue'>请接收协议</span>
+    <br/>
+    <button v-if="isTrue">注册</button>
+
+</div>
+
+
+
+<script>
+    var app = new Vue({
+        el:'.el',
+        data:{
+            age:0,
+            isTrue:false
+        }
+    })
+</script>
+
+</body>
+</html>

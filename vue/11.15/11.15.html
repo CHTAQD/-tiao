@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div class="box">
+    <jaccy>
+    </jaccy>
+    <chen></chen>
+</div>
+<script>
+
+   Vue.component('jaccy',{
+       template:'    <input type="text"/>'
+
+   })
+    var i = new Vue({
+        el:'.box',
+        data:{
+
+        },
+        components:{
+            chen:{
+                template:'        <h1>sdsdsaa</h1>'
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

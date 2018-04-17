@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src='../vue.js'></script>
+<body>
+<div class="box">
+   <bodi :show='lovers'></bodi>
+    <!-- 在自定义属性里 不能写内容-->
+    <!--<bodi :modou="lovers">{{v.name}}</bodi>-->
+
+</div>
+<script type="text/x-template" id="h">
+    <div>
+        <ul>
+            <li v-for="v in show">{{v.name}}</li>
+        </ul>
+    </div>
+</script>
+
+<script>
+    Vue.component('bodi',{
+        template:'#h',
+        props:['show']
+    })
+    var i = new Vue({
+        el:'.box',
+        data:{
+            lovers:[
+                {name:'joriy'},
+                {name:'joriy'},
+                {name:'joriy'},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

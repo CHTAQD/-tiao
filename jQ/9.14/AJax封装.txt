@@ -1,0 +1,15 @@
+
+
+原型链
+
+portotype
+
+构造函数找原型
+
+constructor
+
+原型找构造函数
+
+--porto--
+
+对象找原型

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-for循环对象</title>
+    <script src="../../vue.js"></script>
+    <style>
+        table,tr{
+            border: 1px solid #000;
+            width: 100%;
+        }
+        td{
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="echo">
+    <ul>
+        <li v-for="(value,key,index) in girlFriend">
+            {{index}}-{{key}}-{{value}}
+        </li>
+    </ul>
+
+    <table>
+        <tr v-for="echo in 25">
+            <td v-for="v in 5">{{v}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            girlFriend:{
+                name:'echo',
+                age:19,
+                sex:'godness',
+                say:'I love you Allen!!!'
+            }
+        }
+    })
+</script>
+</body>
+</html>

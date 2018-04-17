@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/jquery.min.js'></script>
+	<script src='js/template-native.js'></script>
+</head> 
+  <style>
+        table{
+            width: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align:center;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 15px 5px;
+        }
+    </style>
+<body>
+	<table>
+
+		<thead>
+
+			<tr>
+
+				<td>序号</td>
+
+				<td>图片地址</td>
+
+				<td>现价</td>
+
+				<td>原价</td>
+
+			</tr>
+
+		</thead>
+
+	<tbody>
+
+		<tr>
+
+			<td colspan="4">加载数据中.......</td>
+
+		</tr>
+
+	</tbody>
+
+	</table>
+
+	<script type='text/template' id="ccc">
+	  <%for(var i=0;i<WE.length;i++){%>
+		<%var j=WE[i]%>
+
+		<tr>
+			<td><%=i+1 %></td>
+			<td><%=j.url %></td>
+			<td><%=j.nowPrice %></td>
+			<td><%=j.oldPrice %></td>
+		</tr>
+
+		<%}%>
+	</script>
+
+	<script>
+
+	    var data = [
+        {
+            "url": "images/detail01.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        },
+        {
+            "url": "images/detail02.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        },
+        {
+            "url": "images/detail03.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        }
+    ];
+
+    var html = template('ccc',{WE:data})
+    console.log(html)
+    $('tbody').html(html)
+   
+	</script>
+</body>
+</html>

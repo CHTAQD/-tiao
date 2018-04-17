@@ -1,0 +1,289 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 50px;
+		width:250px;
+		border:1px solid #ccc;
+		float: right;
+		margin-right: 200px;
+		margin-top: 100px;
+		/*position: relative;*/
+	}
+	.text{
+		height: 47px;
+		width: 0px;
+		background: #c11;
+		float: right;
+		}
+	
+	
+	  
+	.submit{
+		height: 50px;
+		width: 50px;
+		background: #f1ff11;
+		float: right;
+	
+	}
+	.box hover: .submit{
+		background:red;
+	}
+</style>
+<body>
+  <div class="box">
+	
+	<div class="submit">
+		<a href=""></a>
+	</div>
+	<input type="text" class="text">
+  </div>
+</body>
+<script src='../../java Script/html/对象/轮波/animate.js'></script>
+<script>
+var submit=document.querySelector('.submit');
+var box=document.querySelector('.box');
+var text=document.querySelector('.text')
+var flag=true;
+
+box.onmouseenter=function(){
+		animate(text,{display:"block"},500,function(){
+			animate(text,{width:200},500)
+
+		})
+		
+	
+	}
+box.onmouseleave=function(){
+	animate(text,{width:0},500,function(){
+		animate(text,{display:"none"},500)
+	})
+	
+	}
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .box{
+            width: 100%;
+            height: 50px;
+            background: #000;
+        }
+        .box>ul{
+            width: 1000px;
+            height: 50px;
+            /*background: sandybrown;*/
+            margin: 0 auto;
+        }
+        .box>ul>li{
+            width: 92px;
+            height: 50px;
+            background: #000;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            border-right: 1px solid #fff;
+            position: relative;
+        }
+        .box>ul>li:last-child{
+            width: 163px;
+            height: 50px;
+            border: 0;
+        }
+        .box ul li span:first-of-type{
+            width: 100%;
+            height: 100%;
+            display: block;
+            color: #fff;
+            position: absolute;
+            background: #000;
+            z-index: 1;
+        }
+        .box ul li span:last-of-type{
+            width: 100%;
+            height: 100%;
+            display: block;
+            color: #fff;
+            position: absolute;
+            background: #000;
+            z-index: -1;
+        }
+        .box ul li:hover span:last-child{
+            z-index: 1;
+            background: red;
+        }
+        .bix{
+            width: 100%;
+            height: 0;
+            background: greenyellow;
+            position: absolute;
+            top: 50px;left: 0;
+            border-bottom: 3px solid #000;
+            display: none;
+            overflow: hidden;
+        }
+        .inbix{
+            width: 1000px;
+            height: 280px;
+            background: yellow;
+            position: absolute;
+            top:0;
+            left: 50%;
+            margin-left: -500px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <a href="">
+                <span>首页</span>
+                <span>HOME</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>时装趋势</span>
+                <span>FASHION</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>嘉人美妆</span>
+                <span>BEAUTY</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>嘉人观点</span>
+                <span>VIEW</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>珠宝腕表</span>
+                <span>LUXURY</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>生活</span>
+                <span>LIFE</span>
+            </a>
+        <>
+        <li>
+            <a href="">
+                <span>杂志</span>
+                <span>MAGAZINE</span>
+            </a>
+        <>
+        <li>
+            <a href="">
+                <span>专题</span>
+                <span>FEATURE</span>
+            </a>
+        <>
+        <li>
+            <a href="">
+                <span>嘉人SHOW</span>
+                <span>SHOW</span>
+            </a>
+        <>
+        <li class="inbox">
+            <a href="">
+                <span>嘉人美妆精英学院</span>
+                <span>BEAUTY ELITE</span>
+            </a>
+        <>
+    </ul>
+    <div class="bix">
+        <div class="inbix" style="background: yellowgreen;z-index: 1"></div>
+        <div class="inbix" style="background: turquoise"></div>
+        <div class="inbix" style="background: seagreen"></div>
+        <div class="inbix" style="background: purple"></div>
+        <div class="inbix" style="background: powderblue"></div>
+        <div class="inbix" style="background: palevioletred"></div>
+    </div>
+</div>
+
+<script>
+var inbox=document.querySelectorAll('.inbox');
+var inbix=document.querySelectorAll('.inbix');
+var bix=document.querySelector('.bix');
+for(var i=0;i<inbox.length;i++){
+    inbox[i].index=inbix[i].index=i;
+    inbix[i].onmouseenter=inbox[i].onmouseenter=function(){
+        for(var j=0;j<inbix.length;j++){
+            inbix[j].style.zIndex=1;
+        }
+        bix.style.display='block';
+        animate(bix,{height:290},500);
+        inbix[this.index].style.zIndex=2;
+    };
+    inbix[i].onmouseleave=inbox[i].onmouseleave=function(){
+        animate(bix,{height:0},500,function(){
+            bix.style.display='none'
+        })
+    }
+}
+</script>
+
+
+
+</html>
+
+/*
+.bob{
+	height: 280px;
+	width: 100%;
+	background: #c11;
+}
+.index{
+	height: 280px;
+	width: 1000px;
+	background: #f1ff11;
+	position: absolute;
+	top: 120px;
+	left:50%;
+	margin-left: -500px;
+}
+*/
+
+
+	<!-- 	<div class="bob">
+			<div class="index"></div>
+			<div class="index"></div>
+			<div class="index"></div>
+			<div class="index"></div>
+			<div class="index"></div>
+		</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+		list-style: none;
+		text-decoration: none; 
+		font-family: "Microsoft YaHei", 微软雅黑, Arial, SimHei;
+	}
+	.nav{
+		width:100%;
+		height:50px;
+		background: #000;
+	}
+	.nav ul{
+		width:1000px;
+		height: 50px;
+		margin:0 auto;
+	}
+	.nav ul li{
+		width:92px;
+		height:50px;
+		border-right:1px solid #fff;
+		float: left;
+		line-height:50px;
+		text-align: center;
+		position: relative;
+	}
+	.nav ul li:last-of-type{
+		width:160px;
+		border-right: none;
+	}
+	.nav ul li span{
+		display: block;
+		width:100%;
+		height:100%;
+		color:#fff;
+		background: #000;
+	}
+	.nav ul li span:nth-of-type(2){
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: -1;
+		background: red;
+	}
+	.nav ul li:hover span:nth-of-type(2){
+		z-index:0;
+	}
+	.con{
+		width:100%;
+		height:0;
+		border-bottom: 3px solid #000;
+		position:absolute;
+		top:50px;
+		left:0;
+		display: none;
+		overflow: hidden;
+	}
+	.inner{
+		width:100%;
+		height:0;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	.inner:nth-of-type(1){
+		background: purple;
+	}
+	.inner:nth-of-type(2){
+		background: green;
+	}
+	.inner:nth-of-type(3){4
+		background:yellow;
+	}
+	.inner:nth-of-type(4){
+		background:red;
+	}
+	.inner:nth-of-type(5){
+		background:blue;
+	}
+	.inner:nth-of-type(6){
+		background:orange;
+	}
+	.sminner{
+		width:1000px;
+		height:280px;
+		margin:0 auto;
+		border:1px solid pink;
+	}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="">
+					<span>首页</span>
+					<span>HOME</span>
+				</a>
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>时装趋势</span>
+					<span>FASHION</span>
+				</a>4
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>嘉人美妆</span>
+					<span>BEAUTY</span>
+				</a>
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>嘉人观点</span>
+					<span>VIEW</span>
+				</a>
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>珠宝腕表</span>
+					<span>LUXURY</span>
+				</a>
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>生活</span>
+					<span>LIFE</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span>杂志</span>
+					<span>MAGAZINE</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span>专题</span>
+					<span>FEATURE</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span>嘉人SHOW</span>
+					<span>SHOW</span>
+				</a>
+			</li>
+			<li class='hov'>
+				<a href="">
+					<span>嘉人美妆精英学院</span>
+					<span>BEAUTY ELITE</span>
+				</a>
+			</li>
+		</ul>
+		<div class="con">
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+			<div class="inner">
+				<div class="sminner"></div>
+			</div>
+		</div>
+	</div>
+	<div class="box" style='width:100%;height:1000px;background:pink;'></div>
+	<script src='animate.js'></script>
+	<script>
+	var hov=document.querySelectorAll('.hov');
+	var inner=document.querySelectorAll('.inner');
+	var con=document.querySelector('.con');
+	for(var i=0;i<hov.length;i++){
+		hov[i].index=inner[i].index=i;
+		inner[i].onmouseenter=hov[i].onmouseenter=function(){
+			for(var j=0;j<inner.length;j++){
+				inner[j].style.zIndex=1;
+			}
+			con.style.display='block';
+			animate(con,{height:290},300)
+			inner[this.index].style.height=280+'px';
+			inner[this.index].style.zIndex=2;
+		}
+		inner[i].onmouseleave=hov[i].onmouseleave=function(){
+			animate(con,{height:0},300,function(){
+				con.style.display='none'
+			})
+		}
+	}
+	</script>
+</body>
+</html>

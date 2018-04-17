@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<input type="checkbox" value="" >
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+
+
+	
+	<div class="box">
+
+	<button>全选</button>
+	<button>全不选</button>
+	<button>反选</button>
+</div>
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$('.box>button:eq(0)').click(function(){
+		$(':checkbox').prop('checked',true)
+	})
+	$('.box>button:eq(1)').click(function(){
+		$(':checkbox').prop('checked',false)
+	})
+	/*$('.box>button:eq(2)').click(function(){
+		for(var i=0;i<$(':checkbox').length;i++){
+			if($(':checkbox:eq('+i+')').prop('checked')){
+				$(':checkbox:eq('+i+')').prop('checked',false);
+			}else{
+				$(':checkbox:eq('+i+')').prop('checked',true);
+			}
+		}
+	})*/
+	$($(':checkbox')).each(function(q){
+		$(this).prop('checked',!$(this).prop('checked'));
+	})
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$('.box>button:eq(0)').click(function(){
+		$(':checkbox').prop('checked',true);
+	});
+
+	$('.box>button:eq(1)').click(function(){
+		$(':checkbox').prop('checked',false);	//attr
+	});
+	$('.box>button:eq(2)').click(function(){
+		for(var i=0;i<$(':checkbox').length;i++){
+			if($(':checkbox:eq('+i+')').prop('checked')){
+				$(':checkbox:eq('+i+')').prop('checked',false)
+	 		}else{
+				$(':checkbox:eq('+i+')').prop('checked',true)
+			}
+			
+		}
+	})
+
+</body>
+</html>

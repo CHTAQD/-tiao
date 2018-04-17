@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+
+	<script>
+		$(function(){
+			$.ajax()
+				//$是jQuery里面涵盖范围最大的一个对象，全局变量
+				//判断  形参potions是否接收到了用户传入的实参
+				//如果接收到了，就证明用户传入了实参对象，就可以继续执行后续代码逻辑
+				//如果没接收到，就证明用户没有传入实参，或者用户传入的实参不是对象类型，就可以直接结束代码的执行了
+				//如果options没接收到实参 它的值是       ！	options的值是fals  
+e
+				//如果传入的实参不是对象类型，那么后面的值是true				//就会进入If判断，就结束执行
+				//第一个值是用户输入的url地址，那么如果用户输入了，第一个值就是true那么就取第一个值，
+				//如果用户没有输入地址，第一个值就是False，那么就取第二个值
+				//默认请求方法是get  那么get方法中前端后台传输必要数据写在url地址
+				//for遍历的语法格式
+				//发送请求前的回掉函数
+				//如果用户输入了beforesend这个属性，那么options.beforeSend值为true
+				//反之options.beforeSend值为false
+				//判断我们获取到的contentType是按照什么语法格式进行解析的
+				//如果是按照xml格式进行解析的，那么就把返回的数据转换成xml格式的数据
+				//这个后台返回的数据是不是按照json格式进行解析的
+				//如果是就进入if判断
+		})
+	</script>
+</body>
+</html>

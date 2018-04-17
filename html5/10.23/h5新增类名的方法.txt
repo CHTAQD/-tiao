@@ -1,0 +1,14 @@
+      添加类名
+
+	给谁加.classList.add（'要加的类名'）;
+
+       删除类名
+	给谁删.classList.remove（"要删除的类名"）
+
+	如果当前有指定类名，就移除该类名，如果没有就添加类名
+	classList.toggle("")
+
+
+	classList.contains("类名")
+
+contains表示显示当前元素有没有指定的类名如果有就返回true，如果没有就返回false

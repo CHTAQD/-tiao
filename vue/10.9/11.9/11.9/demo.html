@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .green{
+            color:green;
+        }
+        .red{
+            color:red;
+        }
+        .hehe{
+            font-size: 50px;
+        }
+        .size{
+            font-size: 100px;
+        }
+        .echo{
+            color:yellow;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div class="app">
+    <div class="hehe" v-bind:class="{'green':true,red:true,'size':true}">
+        heheda
+    </div>
+    <div v-bind:class="[color,fontSize]">intelligence</div>
+    <div v-bind:class='echo'>intelligence</div>
+    <div class="red" v-if="H">hahaha</div>
+    <div class="green" v-else="H">hahaha</div>
+</div>
+
+<script>
+    var app = new Vue({
+        el:'.app',
+        data:{
+            color:'green',
+            fontSize:'size',
+            echo:'green',
+//            echo:{
+//                green:true,
+//                size:true,
+//            },
+            H:true,
+        }
+    })
+</script>
+</body>
+</html>

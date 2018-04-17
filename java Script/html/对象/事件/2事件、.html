@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: #ccc;
+	}
+</style>
+<body>
+	<div class="box"
+	>
+、
+	</div>
+</body>
+<script>
+var box=document.querySelector('.box');
+// box.onclick=aa;
+function aa(){
+	// box.style.backgroundColor='green';
+	alert('D')
+}
+box.addEventListener('click',aa,false)
+box.removeEventListener("click",aa,false);
+
+
+
+
+
+
+
+/*var box=document.getElementById('box');
+  box.addEventListener("click",function(){aa('hello')},false) 
+  // box.addEventListener("click",aa,false) 
+  // box.removeEventListener("click",function(){alert(2)},false)
+  function aa(i){
+    alert(i)
+  }
+  function bb(){
+    alert('第二次点击')
+  }
+*/
+</script>
+</html>

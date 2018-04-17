@@ -1,0 +1,26 @@
+// 解决类名兼容性函数,classname为形参
+function getClass(classname){
+	// 判断浏览器对获取类名方法的支持情况
+	// 如果浏览器支持获取类名的方法
+	if(document.getElementsByClassName){
+		// 返回用这个方法获取的类名
+		return document.getElementsByClassName(classname)
+		// 否则
+	}else{
+		// 获取所有的标签名
+		var tags=document.getElementsByTagName('*');
+		// 建立一个新数组，放筛选到的标签
+		var arr=[];
+		// 遍历获取到的标签集合
+		for(var i=0;i<tags.length;i++){
+			// 判断每一个标签里的类名和实际传入的类名是否一致
+			if(tags[i].className==classname){
+				// 如果一致，将选择好的标签放入空数组
+				arr.push(tags[i])
+			}	
+		}
+		// 选择完毕，返回数组
+		return arr;
+	}
+}
+alert(getClass('aa').length)

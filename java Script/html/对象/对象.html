@@ -1,0 +1,494 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+/*	function aa(){
+		this.color='red',
+		this.brand='huawei',
+		this.call=function(){					
+			return '打电话'
+		}
+	}
+	var i=new aa();
+	alert(i.color)
+*/
+/*	创建对象
+	2.1，构造函数的方法*/
+	/*function aa(){}			类
+	var i=new aa();
+	alert(typeof i)
+	*/
+
+	// 2.2 Object方法
+/*	var aa=new Object()
+	alert(typeof aa)
+
+	// 2.3 json方法
+	var a={}
+
+	*/
+
+// 3.如何添加属性和方法
+
+/*	// A.声明的时候添加
+	function ren(){
+		this.height='180cm',
+		this.width='40m',
+		this.aa=function{
+			return '跑步'
+		},
+
+	}
+	var i=new ren();
+	alert(i.aa())
+
+*/
+
+	// B.声明以后再添加
+	/*function ren(){};
+	var aa=new ren();
+	aa.name='陈',
+
+	alert(aa.name)
+*/
+
+/*	Object 
+	A.声明以后再添加*/
+/*	var aa=new Object()
+	aa.name='123';
+	aa.ear=function(){
+		return '456'
+	}
+	alert(aa.name)
+	alert(aa.ear())
+*/
+	/*json
+	声明时候添加*/
+/*	var aaa={
+		name:123,
+		c:564,
+		m:function(){
+			return 'duix'
+		}
+	}
+	alert(aaa.m())
+*/
+	// 声明后添加
+	/*var a={}
+	a.name='laohan',
+	a.exe=function(){
+		return 'haha'
+	}
+
+	alert(a.exe())
+
+*/
+
+	//人为清除
+
+/*	function a(){
+		this.name='123'
+	}1
+	
+	function b(){
+		this.xxx='456',
+		this.aa=function(){
+			return 'asas'
+		}
+	}
+
+	var i=new a()
+	var j=new b()
+	i=null;
+	// delete i.name;
+	alert(j.aa())
+
+	alert(i.name)
+	*/
+
+	/*var a={
+		name:'123',
+		xx:'258',
+		c:function(){
+			return '11111'
+		}
+	}
+	for(var i in a){
+		alert(i)
+		alert(a[i])
+	}
+*/
+
+	/*function a(){
+		this.aa='123',
+		this.cc='5555'
+	}
+
+	function b(){
+		this.bb='456'
+	}
+	var i=new a();
+	var j=new b();
+	// delete i.aa;
+	j=null;
+	
+	alert(j.bb)
+
+	for(var o in i)
+	alert(o)
+	*/
+ 
+ // 工厂
+/* function aa(a,b,c,d){
+ var ren={
+ 	name:a,
+ 	height:b,
+ 	age:c,
+ 	play:function(){
+ 		return d
+ 	}
+ }
+ return ren;
+}
+alert(aa('xiaomig','160','18','玩').name)
+*/
+/*function AA(a,b,c,d){
+	function j(){
+		this.name=a,
+		this.age=b,
+		this.height=c,
+		this.cc=function(){
+			return d
+		}
+	  }
+  	var i=new j();
+  	return i;
+}
+var ij=new AA('xiaowang',24,180,'玩');
+// alert(AA('xiaowang',24,180,'玩').name)
+
+for(var o in AA()){
+	alert(AA[o])
+}
+*/
+/*
+function a(i,j,k,l){
+	this.name=i,
+	this.height=j,
+	this.eag=k,
+	this.blay=function(){
+		return l
+	}
+}
+var q=new a()
+
+*/
+
+//gouzaohanshu创建
+
+/*function beizi(i,j,m,l){
+	this.name=i,
+	this.age=j,
+	this.height=m,
+	this.blay=function(){
+		return l;
+	}
+}
+var k=new beizi('sunyu',24,180,'paobu')
+
+	alert(k.name)
+*/
+/*function aa(j,o,k,l){
+   function beizi1(){ 
+   	  this.name=j,
+	  this.height=o,
+	  this.eag=k,
+	  this.blay=function(){
+	 	  return l;
+	  }
+	}
+ 	  var i=new beizi1()
+ 	 
+	  return i
+}
+var e=new aa(1,2,3,4)
+alert(e.name)
+*/
+
+
+/*function aa(l,j,k){
+	this.name=l,
+	this.eag=j,
+	this.color=k
+}
+aa.prototype.blay=function(){
+	return 'dianshi'
+}
+
+var i=new aa();
+alert(i.blay())
+
+*/
+
+
+/*function notsbook(color,size,height){
+	this.color=color,
+	this.size=size,
+	this.height=height
+}
+notsbook.prototype.play=function(){
+	return '折纸'
+}
+notsbook.prototype.write=function(){
+	return '写字'
+}
+
+var i=new notsbook('#ccc',15,180);
+
+alert(i.play())
+*/
+
+
+/*function aa(){
+	this.name=1,
+	this.color=2,
+	this.height=3
+}
+function bb(){
+	this.name=1
+}
+bb.prototype=new aa();
+var i=new bb();
+alert(i.color)
+
+*/
+
+// function aa(j,k){
+// 	this.name=j,
+// 	this.height=k
+// }
+// aa.prototype.blay=function(){
+// 	return 'sishenglunhui'
+// }
+// var i=new aa();
+// alert(i.blay())
+/*
+function aa(){
+	this.name='123',
+	this.height=180,
+	this.width=10
+}
+function bb(){
+	this.name='hh'
+}
+bb.prototype=new aa();
+var i=new bb();
+alert(i.height)
+
+*/
+
+
+/*function aa(){
+	this.name=j,
+	this.height=k,
+}
+aa.prototype.blay=function(){
+	return 123
+}
+
+*/
+
+// math对象
+/*// 常数PI
+var a=Math.PI;
+alert(a)*/
+
+// 2.绝对值
+/*var a=-123;
+alert(Math.abs(a))
+
+*/
+// 3.取整数
+// 四舍五入
+// var a=2.15521;
+// alert(Math.round(a))
+/*//向下取整
+	var a=-12.1;
+	alert(Math.floor(a))
+//向上取整
+	var b=-12.1;
+	alert(Math.ceil(b)
+*/
+// 取最大值和最小值
+// 
+/*var a=Math.max(12,5,54,8,313,65,6,21)
+alert(a)
+var b=Math.min(21,548,51,3213,284,65)
+alert(b)
+*/
+// 随机数
+/*var a=Math.random()*30+4;
+alert(a)*/
+
+/*function random(max,min){
+	return Math.floor(Math.random()*(max-min+1)+min)				
+}
+alert(random(10,7))
+function aa(max,min){
+	return Math.floor(Math.random()*(max-min+1)+min)
+}*/
+/*var a=Math.pow(3,3);
+alert(a)
+*/
+
+/*var a=Math.sqrt(22);
+alert(a)
+*/
+/*var a=Math.log(Math.E);
+alert(a)
+*/
+
+/*var a=Math.exp(2)
+alert(a)
+*/
+
+/*var a=Math.sin(Math.PI/6)
+alert(a)
+
+var a=Math.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// 数组
+/*var a=[12,5,484,23]
+alert(a.length)
+alert(a.constructor)//返回数组的构造函数
+
+
+2.
+a.删除或添加
+var a=[1,5,2,1,4]
+var b=a.push(45,87,95)
+alert(a.length)
+0
+var a=[321,5,31,32,654,2,654];
+var a1=a.push(1,2,3);
+var a2=a.unshift(4,5,6);
+var a3=a.pop();
+var a4=a.shift()
+alert(a3)
+alert(a4)
+alert(a[0])
+
+
+
+var a=[1,5,45,62,12,34];
+var b=a.splice(2)
+alert(a)
+
+var a='dkjfhdkfjk';
+var b=a.split([]);
+alert(b)
+alert(b[0])
+
+var a=[1,5,2,3,6];
+var b=a.join(['^'])
+alert(b)
+*/
+
+
+/*var a=[1,2,3,4,5,6,7,8,9];
+var b=a.slice(2,-2)
+alert(b)
+*/
+
+/*var a=[1,2,3,4,5,6,7,8,9];
+var b=a.sort(function(i,j){										
+	return i>j;
+})
+alert(b)*/
+
+// 数组的链接
+/*var a=[1,2,3,4,5];
+var b=[7,8,9];												
+var c=a.concat(b)
+alert(c)*/
+
+
+
+
+
+
+// string
+/*var a='sdfdfdf';
+alert(a.length)
+alert(a.constructor)
+*/
+/*
+var a='dfdfsklnsnsvsd';
+alert(a.charAt(3))
+alert(a.charAt(a.length-1))
+*/
+/*var a='sknmxkjsnxc';
+alert(a.charCodeAt(0))
+*/
+/*var a='小破鞋';
+for(var i=0;i<a.length;i++){
+	document.write(a.charCodeAt(i)+'&nbsp')
+}
+var a=String.fromCharCode(55);
+alert(a)
+*/
+
+/*var a='dfjhsssncbvnbssscxckjsss';
+alert(a.indexOf('sss'))
+alert(a.lastIndexOf('sss'))
+*/
+
+/*var a='我是超人';
+var b=a.match('超')
+var c=a.replace('超','坏')
+alert(c)
+*/
+
+/*var a='khsjdncxcnj';
+alert(a.toLowerCase())
+alert(a.toUpperCase())
+alert(a.substring(2,1))
+alert(a.substr(3,5))
+document.write(a.fontcolor('red'))
+*/
+
+
+
+
+
+/*2*/
+/*var a=[1,2,5,6,3,23,45];
+var b=a.sort(function(i,j){
+	return i>j
+})
+alert(b3)
+*/
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义属性传入复杂类型值</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen></allen>
+</div>
+<script type="text/x-template" id="brain">
+    <div>
+        <ul>
+            <li v-for="v in list">
+                {{v.name}}
+            </li>
+        </ul>
+    </div>
+</script>
+<script>
+    Vue.component('allen',{
+        template:'#brain',
+        props:{
+            list:{
+                type:Array,
+                default(){
+                    return [
+                        {name:'jason'},
+                        {name:'elbert'}
+                    ]
+                }
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            lovers:[
+                {name:'echo'},
+                {name:'allen'},
+                {name:'emily'},
+                {name:'brain'},
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

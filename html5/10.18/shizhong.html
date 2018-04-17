@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+     var myCanvas = document.getElementById('myCanvas');
+     var c = myCanvas.getContext('2d');
+     function clock(){
+        //清除画布内容
+         c.clearRect(0,0,300,300);
+         var data = new Date();
+         var sec =data.getSeconds();
+         var min =data.getMinutes();
+         var hour=data.getHours();
+
+         c.save();
+         //save的是初始状态
+         c.translate(130,130);
+         //rotate主要是为了使表盘的0弧度旋转到12点钟方向 
+         c.rotate(-Math.PI/2);
+         //分钟刻度线
+         for(var i=0;i<60;i++){    //画12个刻度线
+             c.beginPath();
+             c.strokeStyle = "black";
+             c.lineWidth = 1 ;
+             c.moveTo(105,0);
+             c.lineTo(110,0);
+             c.stroke();
+             c.rotate(Math.PI/30); //每个6deg画一个时钟刻度线
+             c.closePath();
+         }
+         //时钟刻度线
+         for(var i=0;i<12;i++){    //画12个刻度线
+             c.beginPath();
+             c.strokeStyle = "#000";
+             c.lineWidth = 2 ;
+             c.moveTo(100,0);
+             c.lineTo(110,0);
+             c.stroke();
+             c.rotate(Math.PI/6); //每个30deg画一个时钟刻度线
+             c.closePath();
+         }
+         //外表盘
+         c.beginPath();
+         c.arc(0,0,110,0,2*Math.PI);
+         c.lineWidth = 1 ;
+         c.stroke();
+         c.closePath();
+
+         //画时针
+         hour = hour>12?hour-12:hour;
+//                console.log(hour);
+         c.beginPath();
+         c.save();
+         c.rotate(Math.PI/6*hour+Math.PI/6*min/60+Math.PI/6*sec/3600);
+         c.strokeStyle = "yellowgreen";
+         c.lineWidth = 5 ;
+         c.moveTo(-23,0);
+         c.lineTo(70,0);
+         c.stroke();
+         c.restore();
+         c.closePath();
+
+
+         //画分针
+//               console.log(min);
+         c.beginPath();
+         c.save();
+         c.rotate(Math.PI/30*min+Math.PI/30*sec/60);
+         c.strokeStyle = "springgreen";
+         c.lineWidth = 3 ;
+         c.moveTo(-20,0);
+         c.lineTo(88,0);
+         c.stroke();
+         c.restore();
+         c.closePath();
+
+
+         //画秒针
+         c.beginPath();
+         c.save();
+         c.rotate(Math.PI/30*sec);
+         c.strokeStyle = "red";
+         c.lineWidth = 1 ;
+         c.moveTo(-25,0);
+         c.lineTo(98,0);
+         c.stroke();
+         c.restore();
+         c.closePath();
+         c.restore();
+     }
+     //函数的调用
+     clock();
+      setInterval(clock,100);
+ </script>
+</html>

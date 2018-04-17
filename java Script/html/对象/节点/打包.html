@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉列表</title>
+	<style>
+    *{
+    	margin: 0;padding: 0;list-style: none;
+    }
+    .box{
+    	width: 200px;height:auto;background: #ccc;line-height: 40px;
+    }
+    .lis{
+    	width: 200px;height:40px;font-size: 20px;text-align: center;background: #aaa;cursor: pointer;
+    }
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li class="lis">水果</li>
+		<li>
+			<ul>
+				<li>苹果</li>
+				<li>香蕉</li>
+				<li>菠萝</li>
+			</ul>
+		</li>
+	</ul>
+	<ul class="box">
+		<li class="lis">干果</li>
+		<li>
+			<ul>
+				<li>核桃</li>
+				<li>开心果</li>
+				<li>杏仁</li>
+			</ul>
+		</li>
+	</ul>
+	<ul class="box">
+		<li class="lis">糖果</li>
+		<li>
+			<ul>
+				<li>奶糖</li>
+				<li>巧克力</li>
+				<li>水果糖</li>
+			</ul>
+		</li>
+	</ul>
+	<script src='function.js'></script>
+	<script>
+	var lis=getClass('lis');
+	for(var i=0;i<lis.length;i++){
+		lis[i].onclick=function(){
+			var next=getNext(this);
+			if(next.style.display==''){
+				next.style.display='none'
+			}else{
+				next.style.display=''
+			}
+		}
+	}
+	</script>
+</body>
+</html>
+
+

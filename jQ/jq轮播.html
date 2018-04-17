@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	list-style: none;
+
+}
+	.box{
+		height: 400px;
+		width: 400px;
+		border:1px solid #000;
+		margin:100px auto;
+		position:relative;
+	}
+	.inner{
+		height: 400px;
+		width: 400px;
+		position:absolute;
+		color: #000;
+		font-size: 200px;
+		text-align: center;
+		line-height: 400px;
+	}
+</style>
+<body>
+	
+
+	<div class="box">
+		<div class="inner" style="background: #c11">1</div>
+		<div class="inner"  style="background: #ccc">2</div>
+		<div class="inner" style="background: #666">3</div>
+		<div class="inner" style="background: #c33">4</div>
+		<div class="inner" style="background: #c22">5</div>
+	</div>
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(document).ready(function(){
+		var timer=null,num=0;
+		$('.box>.inner:not(:eq(0))').hide();
+		timer=setInterval(function(){
+			num++;
+			if(num>$('.box>img').length-1)num=0;
+
+			$('.box>.inner:eq('+num+')').show().siblings().hide();
+		},1000);
+	})
+	</script>
+</body>
+</html>

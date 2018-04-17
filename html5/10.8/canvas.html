@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #ccc;
+        background-color: #65ca00;
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<body>
+<canvas id="can" height="300px" width="300px">
+    
+</canvas>
+   <!-- 1.设置canvas画布
+    2.定义画布大小，并且给画布制定对应的ID
+    3.在js中获取我们canvas画布对象
+    4.通过canvas对象的getContext("2d") 的方法来获取canvas 的上下文对象
+    之后我们就可以在canvas画布上绘制图片了
+
+    绘制canvas线段的具体步骤
+    通过定义起点和终点并在两点中描线即可绘制出一条线段
+
+    所有绘图的过程使用的都是canvas的绘图上下文对象
+
+
+
+
+    -->
+<script>
+    //首先获取canvas对象（在js中拿到canvas这块画布）
+    var canvas=document.querySelector('#can')
+    //通过canvas的get。context()方法获取canvas上下文对象
+    //表示调用canvasd 2d上下文，也就是用来绘制平面图形
+    //从画布左上角为原点，width表示横向可用像素  height表示纵向可用像素
+    var ctx = canvas.getContext("2d")
+    //在canvas中，绘制线段也是通过设置起点和终点来实现的
+    //设置起点
+    //canvas默认以像素为单位，在坐标中不需要写单位
+//    ctx.moveTo(50,50);
+//    ctx.lineTo(50,250);
+    ctx.strokeRect()
+    ctx.stroke()
+</script>
+</body>
+</html>

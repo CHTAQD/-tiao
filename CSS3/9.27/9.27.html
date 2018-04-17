@@ -1,0 +1,147 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Document</title>-->
+<!--</head>-->
+<!--<style>-->
+    <!--.box{-->
+        <!--width: 300px;-->
+        <!--height: 300px;-->
+        <!--margin: 0 auto;-->
+        <!--margin-top: 100px;-->
+        <!--perspective: 2000px;-->
+
+    <!--}-->
+    <!--.box>img{-->
+        <!--transition:all 5s linear;-->
+    <!--}-->
+    <!--.box:hover img {-->
+        <!--transform: rotateX(180deg) rotateY(180deg) rotateZ(180000deg) translateZ(-100px);-->
+    <!--}-->
+    <!--.big{-->
+        <!--width: 300px;-->
+        <!--height: 40px;-->
+        <!--/*background-image:linear-gradient(to top,#ccc,#fff);*/-->
+        <!--background-image:radial-gradient(#ccc,#fff)-->
+        <!--animation:-->
+    <!--}-->
+<!--</style>-->
+<!--<body>-->
+
+    <!--<div class="big">没错我就是无敌大转盘</div>-->
+    <!--<div class="box">-->
+        <!--<img src="../9.26/img/puke.png" alt=""/>-->
+    <!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper.css"/>
+    <script src="swiper.js"></script>
+
+</head>
+<style>
+    .box{
+        height: 10px;
+        width: 10px;
+        background-color: #c11;
+        /*transition:all 0s linear;*/
+        animation: bodi 3s linear infinite;
+    }
+    @keyframes bodi {
+
+
+        100%{
+            transform:rotateZ(180deg);
+
+        }
+    }
+    .swiper-slide{
+        height: 300px;
+        height: 300px;
+        background-color: #ccc;
+    }
+
+    .swiper-pagination-bullet{
+        height: 20px;
+        width: 50px;
+        background-color: #c11;
+        background: url(3.png) no-repeat center center;
+        background-size:100% 100%;
+    }
+</style>
+<body>
+
+<div class="box"></div>
+
+<div class="haha"></div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script language="javascript">
+    var box = document.querySelector('.box')
+    var mySwiper = new Swiper('.swiper-container',{
+        pagination: {
+            el: '.swiper-pagination',
+            bulletElement : 'div',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">'  + '</span>';
+            },
+
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

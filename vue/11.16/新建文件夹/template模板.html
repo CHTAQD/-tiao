@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>template模板</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen></allen>
+    <allen></allen>
+    <moon></moon>
+    <moon></moon>
+</div>
+
+<script type="text/x-template" id="h">
+    <div>
+        <ul>
+            <li v-for="v in lovers">{{v.name}}</li>
+        </ul>
+        <textarea name="echo" cols="30" rows="10" v-on:keyup.enter="heheda" v-model="type"></textarea>
+        <input type="text"/>
+    </div>
+</script>
+
+
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        data:function(){
+        return {
+            type:'',
+            lovers:[
+                {name:'echo'},
+                {name:'allen'},
+                {name:'emily'},
+                {name:'brain'}
+            ]
+        }
+    },
+    methods:{
+        heheda:function(){
+            this.lovers.push({name:this.type})
+        }
+    }
+    });
+    Vue.component('moon',{
+        template:'#h',
+        data(){
+        return {
+            type:'',
+            lovers:[
+                {name:'echo'},
+                {name:'allen'},
+                {name:'emily'},
+                {name:'brain'}
+            ]
+        };
+    }
+    })
+    var echo = new Vue({
+        el:'.echo'
+    })
+</script>
+</body>
+</html>

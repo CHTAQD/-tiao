@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Object.defineProperty后台数据流</title>
+</head>
+<body>
+
+<input type="text" id = "Echo"/>
+
+<script>
+var obj = {
+    name : 'echo'
+}
+var tempName = '';
+//es5新增的方法
+    Object.defineProperty(obj,'name',{
+        //设置
+        set:function(newV){
+            console.log("后台数据设置了指定属性");
+            tempName = newV;
+            document.querySelector("#Echo").value = newV;
+        },
+        //获取
+        get:function(){
+            console.log("后台数据被获取到了");
+            return tempName;
+        }
+    })
+</script>
+
+</body>
+</html>

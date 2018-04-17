@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box1{
+            height: 40px;
+            width:160px;
+            background: #c11;
+            position:absolute;
+            font-size: 40px;
+            line-height:40px;
+        }
+        .left,.right{
+            height:320px;
+            width:40px;
+            font-size: 40px;
+            position:absolute;
+            background: #c11;
+            line-height:40px;
+        }
+    </style>
+<body>
+<div class="box1">天下无双</div>
+<div class="left">万夫莫开我为王</div>
+<div class="right">到是不是你弄湾</div>
+
+
+
+
+
+<script>
+    var box=document.querySelector('.box1');
+    var left=document.querySelector('.left');
+    var right=document.querySelector('.right');
+    var w=document.documentElement.clientWidth;
+    var bw=box.offsetWidth;
+    var lw=left.offsetWidth;
+    var rw=right.offsetWidth;
+    box.style.left=w/2-bw/2+'px';
+    window.onresize=function(){
+        var w=document.documentElement.clientWidth;
+        var bw=box.offsetWidth;
+        var lw=left.offsetWidth;
+        var rw=right.offsetWidth;
+        left.style.left=w/4-lw/2+'px';
+        right.style.left=w*3/4-rw/2+'px';
+        box.style.left=w/2-bw/2+'px';
+    }
+</script>
+</body>
+</html>

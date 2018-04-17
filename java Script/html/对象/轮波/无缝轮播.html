@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width: 520px;
+		height: 280px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin:auto;
+		overflow: hidden;
+	}
+	.innerbox{
+		width: 3120px;
+		height: 280px;
+	}
+	.inner{
+		float: left;
+	}
+	.inner img{
+		width: 520px;
+		height: 280px;
+	}
+	.btnbox{
+		width: 90px;
+		height: 14px;
+		position: absolute;
+		bottom: 10px;
+		left: 225px;
+	}
+	.btn{
+		width: 14px;
+		height: 14px;
+		background: #CCC;
+		box-shadow: 0 0 red 20px;
+		border-radius: 50%;
+		margin:0 2px;
+		float: left;
+		cursor: pointer;
+	}
+	.left,.right{
+		width: 25px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		color: #fff;
+		background: rgba(100,100,100,0.7);
+		position: absolute;
+		font-size: 20px;
+		top: 110px;
+		cursor: pointer;
+	}
+	.left{
+		left: 0;
+	}
+	.right{
+		right: 0;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="innerbox">
+			<div class="inner"><img src="img/20170105110152487.jpg" alt=""></div>
+			<div class="inner"><img src="img/20170120100233174.jpg" alt=""></div>
+			<div class="inner"><img src="img/20170425052852868.jpg" alt=""></div>
+			<div class="inner"><img src="img/20170503012725569.jpg" alt=""></div>
+			<div class="inner"><img src="img/dd155ab23f237edf031a35d5317a2d63.jpg" alt=""></div>
+			<div class="inner"><img src="img/20170105110152487.jpg" alt=""></div>
+		</div>
+		<div class="btnbox">
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+			<div class="btn"></div>
+		</div>
+		<div class="left">&lt;</div>
+		<div class="right">&gt;</div>
+	</div>
+	<script src='animate.js'></script>
+	<script>
+	var inner=document.querySelectorAll('.inner');
+	// alert(inner.length);
+	var innerbox=document.querySelector('.innerbox');
+	//1.实现自动轮播函数，通过外面的变量num和计时器setInterval实现循环；
+	var num=0;
+	//10.解决左右按钮点击太快的bug*/
+	//10.1声明一个开关按钮
+	var flag=true;
+	function move(){
+		//10.2把开关按钮包裹所有的函数
+		if(flag){
+			//10.3当执行完动画动画以后随手关闭
+			flag=false;
+			//1.2每移动一张图加一个marginLeft，是图片轮回
+			num++;
+			//1.3当移动到第六张，出现空白，需要进行控制
+			if(num>=inner.length-1){
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					//1.4轮播到最后一张的时候切换到第一张图
+					innerbox.style.marginLeft=0;
+					//1.5初始num，让num重新1-5图轮播
+					num=0;
+					//5.2特殊情况，轮播按钮变色
+					btnColor();
+					//10.4当执行完动画动画以后随手打开
+					flag=true;
+				})
+			}else{
+				//5.1正常轮播，变换颜色
+					btnColor();
+				//1.1实现动画向左移动
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					//10.5当执行完动画动画以后随手打开
+					flag=true;
+				});
+			}
+		}	
+	}
+	// 1.6连续调用函数
+	// setInterval(move,1000);
+	// 7.2给setInterval变量
+	var t=setInterval(move,1000);
+	//2.实现小按钮与图片一一对应的选项卡；
+	var btn=document.querySelectorAll('.btn');
+	//2.1遍历小按钮
+	for(var i=0;i<btn.length;i++){
+		//2.4存储i值
+		btn[i].index=i;
+		//2.2为按钮添加点击事件
+		btn[i].onclick=function(){
+			//6.1把点击的index赋值给num
+			num=this.index;
+			// 4.3把变换颜色函数引入点击事件
+			btnColor();
+			//2.3点击哪张图片，显示那个图片
+			// animate(innerbox,{marginLeft:-520*this.index},500);
+			//6.2把this.index换成num，实现图片与按钮同步
+			animate(innerbox,{marginLeft:-520*num},500);
+		}
+	}
+	//3.初始按钮设置颜色；
+	//给第一个按钮初始颜色
+	btn[0].style.backgroundColor='orange';
+	//4.点击时让小按钮变色
+	function btnColor(){
+		for(var i=0;i<btn.length;i++){
+			//4.2给每个按钮初始化颜色
+			btn[i].style.backgroundColor='#ccc';
+		}
+		//4.1点击时给按钮橘色，点击一遍后所有按钮都变成橘色了？
+		btn[num].style.backgroundColor='orange';
+	}
+	//5.自动轮播时让小按钮变色
+	//6.让自动轮播的小按钮与点击的小按钮统一；
+	//7.鼠标放到大盒子上，停止轮播，离开，再轮播；
+	//7.1声明大盒子
+	var box=document.querySelector('.box');
+	// 7.3鼠标浮动上去的事件
+	box.onmouseover=function(){
+		//7.4清除事件
+		clearInterval(t);
+	}
+	//7.5鼠标浮动出来发生的事件
+	box.onmouseout=function(){
+		// 7.6让事件继续执行
+		t=setInterval(move,1000);
+	}
+	// 8.点左按钮，正常动，且让按钮跟随变色
+	//8.1获取左按钮
+	var left=document.querySelector('.left');
+	left.onclick=function(){
+		// 8.2图片正常移动，调用函数
+		move();
+	}
+	//9.点右按钮，反方向动，且让按钮跟随变色
+	//9.1声明变量right
+	var right=document.querySelector('.right');
+	right.onclick=function(){
+		// 10.6把开关按钮包裹所有的函数
+		if(flag){
+			flag=false;
+			//9.2图片往回运动，所以减减
+			num--;
+			//9.4当图片推到第一张的时候出现空白，需要判断
+			if(num<0){
+				//9.5瞬间推到最后一张，最后一张和第一张相同
+				innerbox.style.marginLeft=-520*(inner.length-1);
+				//9.6从最后一张让图片向后运动一张图，显示为第五张图
+				num=inner.length-2;
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					// 10.7当执行完动画动画以后随手打开
+					flag=true;
+				});
+			}else{
+				//9.3动画变化
+				animate(innerbox,{marginLeft:-520*num},500,function(){
+					// 10.8当执行完动画动画以后随手打开
+					flag=true;
+				});
+			}
+		}
+	}
+	</script>
+</body>
+</html>

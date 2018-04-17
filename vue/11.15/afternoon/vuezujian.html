@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue组件</title>
+    <script src="../../vue.js"></script>
+</head>
+<style>
+    .echo{
+        font-size: 100px;
+        background-image:linear-gradient(to top,#ccc,red);
+    }
+</style>
+<body>
+<div class="echo">
+    sldfhsdkhskfs
+    <allen></allen>
+    <brain></brain>
+    <brain></brain>
+    <brain></brain>
+    <brain></brain>
+    <emily></emily>
+</div>
+
+<script>
+//定义全局组件
+Vue.component('allen',{
+    template:'<input type="text"/>',
+})
+Vue.component('brain',{
+    template:'<div><h1>hahaha</h1><h1>hahaha</h1></div>',
+})
+    var echo = new Vue({
+        el:'.echo',
+//        template:'<div>hahaha<div class="hehe">heheda</div></div>',
+        data:{
+            type:''
+        },
+        //局部组件
+        components:{
+            emily:{
+                template:'<input type="text"/>'
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

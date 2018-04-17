@@ -1,0 +1,156 @@
+正则：
+1、概念
+（1）正则：一个用来描述或者匹配一系列符合某个语法规则的字符串的语言；
+（2）正则表达式（regular expression）常常用作按照“给定模式”匹配文本的工具。比如，正则表达式给出一个Email地址的模式，然后用它来确定一个字符串是否为Email地址。
+（3）应用场合：
+       数据验证、文本替换、内容检索与过滤等
+
+2、创建正则表达式：
+（1）使用RegExp构造函数。
+    var reg= new RegExp('hello');
+   还可以接受第二个参数，表示修饰符，有i(不区分大小写)、   g(全局匹配)、m(多行匹配)；
+    var reg= new RegExp('hello', "i");
+
+（2）是使用字面量，以斜杠表示开始和结束。
+    var regex = /hello/;
+
+3、正则对象的方法：
+注：匹配的都为对应的字母，不是单词
+（1）test() : 表示当前模式是否能匹配参数字符串,返回值为一个布尔值。
+     格式：将字符串作为参数，例reg.test()(str)。
+例：var reg=/hello/i;
+       var str="Hello World,Hello Kitty";
+       alert(reg.test(str))
+
+（2）exec()：返回值为匹配的结果。如果发现匹配，就返回一个数组，成员是每一个匹配成功的子字符串，否则返回null。
+ 例：var reg=/hello/i;
+        var str="Hello World,Hello Kitty";
+        alert(reg.exec(str))
+
+4、字符串对象的方法
+字符串对象的方法之中，有4种与正则对象有关。
+（1）match()：返回一个数组，成员是所有匹配的子字符串。
+        格式：将正则对象作为参数，例str.match(reg)。
+      【默认只返回第一个匹配的字符串】
+注：
+字符串的match方法与正则对象的exec方法非常类似：匹配成功返回一个数组，匹配失败返回null。
+如果正则表达式带有g修饰符，则该方法与正则对象的exec方法行为不同，会一次性返回所有匹配成功的结果。
+例：var reg=/hello/ig;
+       var str="Hello World,Hello Kitty";
+       alert(str.match(reg))
+
+（2）search()：返回第一个和正则表达式匹配的字符串的位置。如果没有任何匹配，则返回-1
+例：var reg=/hello/i;
+       var str="Hello World,Hello Kitty";
+       alert(str.search(reg))   //0
+注：在search方法中，全局g无意义；
+
+（3）replace()：按照给定的正则表达式进行替换，返回替换后的字符串。
+【默认只替换第一个符合正则表达式的字符串】
+例：var reg=/hello/i;
+       var str="Hello World,Hello Kitty";
+       alert(str.replace(reg,"hehe"))
+
+（4）split()：按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。
+例：var reg=/hello/ig;
+       var str="Hello World,Hello Kitty";
+       alert(str.split(reg))
+
+5、匹配规则:
+（1）  .    ^   $     
+.  匹配除回车（\r）、换行(\n) 、行分隔符（\u2028）和段分隔符（\u2029）以外的所有字符。
+^ 表示字符串的开始位置
+$ 表示字符串的结束位置
+例： var reg=/^b..k$/
+        var str="book123";
+        alert(reg.test(str)) 
+
+（2）？    *     +
+？：出现0次或1次； 【贪婪模式】     
+ * ：出现0次或多次；【贪婪模式】     
+ +：出现1次或多次；【贪婪模式】
+*?：匹配出现0次或多次【非贪婪模式】
++?：匹配出现1次或多次【非贪婪模式】
+例：var reg=/bo*k/或/o+/
+       var str="booooooooook";
+      alert(reg.test(str))
+例：var reg=/o+?/
+       var str="booooooooooooookbok";
+       alert(reg.exec(str))
+
+（3）{m,n}    {m,}    {m}
+{m,n}：至少出现m次，最多出现n次；
+{m,}：至少出现m次；
+{m}：正好出现m次；
+例：var reg=/o{2,4}/
+       var str="booooooooooooookbok";
+      alert(reg.exec(str))
+
+（4）[]:限定某一位上字符的取值范围，
+         [^]:限定某一位上不能取的值；
+例：var reg=/[a-zA-Z0-9]ook/;
+       var str="7ook";
+       alert(reg.exec(str))
+例：var reg=/[^a-zA-Z]ook/;
+       var str="book";
+       alert(reg.exec(str))
+
+（5）\d等价于[0-9]
+         \D等价于[^0-9]
+         \w等价于[a-zA-Z0-9_]
+         \W等价于[^a-zA-Z0-9_]
+例：var reg=/\Wook/;
+       var str="$ook";
+       alert(reg.exec(str))
+
+（6）\s：匹配空白字符、空格、制表符和换行符；
+例：var reg=/\sook/;
+       var str="      ook";
+       alert(reg.exec(str))
+
+（7）\  表示转义符
+         |  表示或关系
+例： var reg=/js|html|css/;
+        var str="study html";
+        alert(reg.exec(str))
+
+（8）()分组
+例： var reg=/html{1,4}/
+        var str="htmllll"
+        alert(reg.test(str))
+例：var reg=/(html){2,4}/
+       var str="htmlhtmlll"
+       alert(reg.test(str))
+       alert(RegExp.$1)    //html
+例： var reg=/(.*)\s(.*)/;
+        var str="hello world";
+        alert(reg.exec(str))
+        alert(str.replace(reg,"$2 $1"))
+
+（9）贪婪与惰性
+贪婪：+   *   ?  {m,n}  {m,}  {m}【取最大匹配的字符串】
+惰性：+?   *?    ??   {m,n}?   {m,}?   {m}?【与上反】
+例：var reg=/6(.*)6/
+       var str="6aa6 6bb6 6cc6"
+       alert(str.replace(reg,"$1"))
+例： var reg=/6(.*?)6/
+       var str="6aa6 6bb6 6cc6"
+       alert(str.replace(reg,"$1"))
+例：var reg=/6(.*?)6/g
+       var str="6aa6 6bb6 6cc6"
+       alert(str.replace(reg,"$1"))
+
+练习：验证手机号：/^1[3578]\d{9}$/
+练习：匹配身份证，旧版15位，新版18位   /^\d{18}|\d{15}$/
+练习：把手机号中间4位显示为****
+       var reg=/(\d{3})\d{4}(\d{4})/;
+       var phone="18334444609";
+      alert(phone.replace(reg,"$1****$2"))
+练习：验证是否是压缩文件：
+   var reg=/\w+\.rar|zip|gz/
+    var file="test.rar";
+    alert(reg.test(file))
+练习：验证邮箱
+var reg=/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9_\.\-]+\.[a-zA-Z]+$/;
+var email="xiaoming.he-he@163.com";
+alert(reg.test(email))

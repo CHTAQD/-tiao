@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src='../vue.js'></script>
+<body>
+<div class="box">
+    <ul>
+        <li v-for="v in li">
+            {{v}}
+        </li>
+
+    </ul>
+    <input type="date"/>
+    <input type="number"/>
+</div>
+    <script>
+        var i = new Vue({
+            el:'.box',
+            data:{
+                li:{
+                    name:"echo",
+                    age:19,
+                    sex:"godness",
+                    say:"I love you!!!"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

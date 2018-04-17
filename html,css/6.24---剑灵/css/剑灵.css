@@ -1,0 +1,258 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.nav{
+    width:1300px;
+    height:30px;
+    background:#F7F7F9;
+    margin:0 auto;
+}
+.left{
+    width:170px;
+    height:30px;
+    /*background: pink;*/
+    margin-left:310px;
+    float: left;
+    position: relative;
+}
+.nav>.left>.tu1{
+    width:170px;
+    height:30px;
+}
+.left>.tu2{
+    margin-top:-34px;
+    margin-left: 170px;
+    width:135px;
+    height:30px;
+    position: absolute;
+}
+.nav>.right{
+    width:239px;
+    height:30px;
+    /*background: pink;*/
+    float: right;
+    margin-right: 245px;
+    position: relative;
+}
+.nav>.right>.zi{
+    width:49px;
+    height:30px;
+    /*background: blueviolet;*/
+    float: left;
+    padding-top:3px;
+}
+.nav>.right>.zi>a{
+    font-size: 11px;
+    text-decoration: none;
+    color:#000;
+}
+.nav>.right>.zi>a:hover{
+    color:deeppink;
+}
+.nav>.right>.xian{
+    color:#ccc;
+    padding-left:12px;
+}
+.nav>.right>.xian{
+    width:15px;
+    height:30px;
+    /*background: red;*/
+    float: left;
+    padding-top: 3px;
+}
+.nav>.right>.an{
+    width:95px;
+    height:20px;
+    border:2px solid #ccc;
+    float: left;
+    margin-left: 152px;
+    margin-top: -29px;
+    border-radius: 10px
+    /*background: #cfcfcf;*/
+}
+.nav>.right>.an>a{
+    font-size:13px;
+    text-decoration: none;
+    padding-left: 5px;
+    color:#000;
+    line-height: 20px;
+}
+.nav>.right>.an:hover{
+    border:2px solid deeppink;
+}
+.nav>.right>.an>a:hover{
+    color:deeppink;
+}
+.bigbox{
+    width:1300px;
+    /*background:blue;*/
+    height:500px;
+    margin:0 auto;
+    position: relative;
+}
+.bigbox>img{
+    width:1300px;
+    height:500px;
+}
+.bigbox>.shang{
+    width:172px;
+    height:60px;
+    /*background: cyan;*/
+    margin-top: -503px;
+    margin-left: 370px;
+    position: absolute;
+}
+.bigbox>.shang>.one{
+    width:75px;
+    height:100%;
+    /*background:pink;*/
+}
+.bigbox>.shang>.one>img{
+    width:75px;
+    height:100%;
+}
+.bigbox>.shang>.two{
+    width:85px;
+    height:30px;
+    /*background:mediumpurple;*/
+    margin-left: 87px;
+    margin-top: -47px;
+}
+.bigbox>.shang>.two>img{
+    width:85px;
+    height:32px;
+}
+.bigbox>.zhong{
+    width:212px;
+    height:36px;
+    background-color:rgba(0,0,0,0.5);
+    margin-top:-189px ;
+    margin-left: 553px;
+    position: absolute;
+    border-radius: 30px;
+    border:1px solid #ccc;
+}
+.bigbox>.zhong>a{
+    color:#fff;
+    font-size: 12px;
+    text-decoration: none;
+    padding-left: 5px;
+    line-height: 34px;
+    text-align: center;
+}
+.bigbox>.zhong:hover{
+    background:#FD7176;
+    border:0px solid;
+}
+.bigbox>.san{
+    width:537px;
+    height:44px;
+    /*background:blue;*/
+    margin-left: 390px;
+    margin-top: -139px;
+    position: absolute;
+}
+.bigbox>.san>li{
+    width:170px;
+    height:44px;
+    /*background:pink;*/
+    margin-left:9px;
+    float: left;
+}
+.bigbox>.san>li>a>img{
+    width:170px;
+    height:44px;
+}
+.bigbox>.san>li>a>img:hover{
+    transform-origin: 85px 22px;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+.bigbox>.san>li:nth-of-type(1){
+    margin-left: 0;
+}
+.bigbox>.xia{
+    width:307px;
+    height:17px;
+    /*background:blue;*/
+    position: absolute;
+    margin-left:670px;
+    margin-top: -40px;
+}
+.bigbox>.xia>li{
+    color:#fff;
+    font-size: 12px;
+    float:left;
+}
+.bigbox>.xia>li>a{
+    margin-left: 10px;
+    color:#FFA200;
+}
+.bigbox>.xia>li>a:hover{
+    color:#5bc0de;
+    text-decoration: none;
+}
+.box{
+    width:1300px;
+    height:115px;
+    background:#010101;
+    margin:0 auto;
+}
+.box>.foot{
+    width:653px;
+    height:60px;
+    /*background: red;*/
+    margin:0 auto;
+    padding:30px 30px;
+}
+.box>.foot>.one{
+    width:100%;
+    height:15px;
+    /*background:blue;*/
+}
+.box>.foot>.one>li{
+    font-size:12px;
+    color:#ccc;
+    float: left;
+    margin-left:6px;
+}
+.box>.foot>.one>li:nth-of-type(1){
+    margin-left: 0;
+}
+.box>.foot>.two{
+    width:365px;
+    height:17px;
+    /*background: pink;*/
+    margin-left: 133px;
+}
+.box>.foot>.two>li{
+    color:#ccc;
+    font-size: 12px;
+    float: left;
+    margin-left: 13px;
+}
+.box>.foot>.two>li:nth-of-type(1){
+    margin-left: 0;
+}
+.box>.foot>.three{
+    width:110px;
+    height:20px;
+    /*background:blue;*/
+    margin-left: 255px;
+}
+.box>.foot>.three>li{
+    color:#ccc;
+    font-size: 12px;
+    margin-left: 10px;
+    float: left;
+}
+.box>.foot>.three>li:nth-of-type(1){
+    margin-left: 0;
+}
+
+
+
+
+

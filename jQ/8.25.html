@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div class="box">sdsds</div>
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+
+	<ul>
+		<li></li>
+	</ul>
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	// $('.box').click(function(){
+	// 	$(this).toggle(function(){
+	// 		$(this).hide()
+	// 	})
+	// })
+	// alert($('div').hasClass('box'))
+/*	$('.box').text('woaini')
+	$('input').eq(1).val('woshi大男孩')
+*/
+
+	/*$('input').eq(0).ofcus(function(){
+		if($(this).val==('')){
+			$(this).val('woshi大男孩')
+		}
+
+	})
+	$('input').eq(0).blur(function(){
+		var $val = $(this).val;
+		if($val.val==('')){
+			$(this).val('woshi大男孩')
+		}
+	})*/
+	// $('input:not(:eq(0))').css('background','#c11')
+	$('ul li').click(function(){
+		$(this).clone().appendTo('ul')
+	})
+	
+	$(function(){
+		$.get('url',{
+			aa:$('#box').val()
+			bb:$('sdsdisl').val()
+		})
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+window.onload=function(){
+
+	var box=document.getElementById('box');
+	box.onclick=function(){
+		this.style.backgroundColor='rgb('+floor(0,255)+','+floor(0,255)+','+floor(0,255)+')';
+	}
+
+
+
+	function floor(max,min){
+		return Math.floor(Math.random()*(max-min-1)+min-1);
+	}
+}
+</script>
+<style>
+#box{
+	height: 400px;
+	width: 400px;
+	background-color: #c11;
+	transition:all 0.3s;
+}
+</style>
+<body>
+	<div id="box"></div>
+</body>
+</html>

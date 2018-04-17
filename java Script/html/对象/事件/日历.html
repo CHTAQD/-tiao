@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+.box{
+	height: 150px;
+	width: 300px;
+	background: #c11;
+	font-size: 20px;
+	line-height: 120px;
+	margin:100px auto;
+}
+</style>
+<body>
+	<div class="box"></div>
+	<div class="inner"></div>
+</body>
+<script>
+/*	var date1=new Date();
+	//返回本地时间
+	var date2=new Date('小时/分钟/秒 月:日:年')
+	var date3=new Date('同上颠倒过来');
+	var date4=new Date(年,月,日,小时,分钟,秒);
+	var a1=date1.getDate();
+	var a2=date1.getDay();
+	var a3=date1.getFullYear();
+	var a4=date1.getMonth();
+	var a5=date1.getHours();
+	var a6=date1.getMinutes();
+	var a7=date1.getTimezoneOffset();*/
+		var box=document.querySelector('.box');
+ 	var inner=document.querySelector('.inner');
+ 	var a;
+ 	var date1=new Date(2017,9,1,7,00)
+ 	var date0=new Date('14:38:40 8/2/2017')
+	function getdate(obj,b){
+ 
+ 	var date=new Date();
+ 	//获得中间的差
+ 	var cha=b-date;
+ 	// alert(cha)	//获得他的天数
+ 	var mia=Math.floor(cha/1000/60/60/24);
+ 	// alert(mia)//	获得他的小时 
+ 	var shi=Math.floor(cha/1000/60/60%24);
+ 	// alert(shi)	//获得分钟数
+ 	var fen=Math.floor(cha/1000/60%60);
+ 	// alert(fen)	//获得秒数
+ 	var miao=(cha/1000%60).toFixed(1);
+ 	obj.innerHTML=mia+'日'+shi+'时'+fen+'分'+miao+'秒';
+ 	if(mia==0&&shi==0&&fen==0&&miao==0){
+ 		clearInterval(t)
+ 		alert('我是大王')
+ 	}
+ 	}
+ 	// a=getdate();//调用函数就不会延迟
+ 	var t=setInterval(function(){
+ 	getdate(box,date1)
+ 		//上面有参数，所以调用的时候也要有，所以写个函数包起来
+ 	},100)
+ 	getdate(box,date1)
+ 	// 调用函数不会卡顿
+ 	getdate(inner,date0)
+ 	var t=setInterval(function(){
+ 	getdate(inner,date0)
+ 		//上面有参数，所以调用的时候也要有，所以写个函数包起来
+ 	},10)
+ 	
+</script>
+</html>

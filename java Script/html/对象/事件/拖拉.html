@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" class="aa" value='点击'>
+
+</body>
+<script>
+
+var but=document.querySelector('.aa');
+but.onclick=function(){
+
+	var box=document.createElement('div');
+	box.style.height=200+'px';
+	box.style.width=200+'px';
+	box.style.position='absolute';
+	box.style.backgroundColor='#ccc';
+	document.body.appendChild(box);
+	box.onmousedown=function(e){
+			var ev=e||window.event;
+			var ox=ev.offsetX;
+			var oy=ev.offsetY;
+		document.onmousemove=function(e){
+			var ev=e||window.event;
+			var cx=ev.clientX;
+			var cy=ev.clientY;
+			box.style.top=cy-oy+'px';
+			box.style.left=cx-ox+'px';
+		} 
+		document.onmouseup=function(){
+			document.onmousemove=null;
+		}
+	}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

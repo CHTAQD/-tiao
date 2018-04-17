@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{ 
+			margin: 0; 
+			padding: 0
+		}
+		.list{
+			list-style: none;
+		}
+		.list>li,.return{
+			width: 120px;
+			margin-top: 2px;
+			color: #fff;
+			
+			padding: 10px 30px;
+			background: #ff4878;
+			margin-left: 100px;
+		}
+		.list>li>span{
+			display: none;
+		}
+		.wrap{
+			width: 179px;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			display: none;
+		}
+		.floor{
+			width: 72%;
+			margin: auto;
+		}
+		.floor>.f1{
+			background: red;
+			line-height: 900px;
+		}
+		.floor>.f2{
+			background: blue;
+			line-height: 500px;
+		}
+		.floor>.f3{
+			background: yellow;
+			line-height: 700px;
+		}
+		.floor>.f4{
+			background: green;
+			line-height: 780px;
+		}
+		.floor>.f5{
+			background: #f4f;
+			line-height: 650px;
+		}
+		.floor>.f6{
+			background: #4f4;
+			line-height: 880px;
+		}
+		.floor>div{
+			text-align: center;
+			font-size: 100px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="wrap" id="wrap">
+			<ul class="list" id="list">
+				<li>1F<span>-副食百货</span></li>
+				<li>2F<span>-至尊男鞋</span></li>
+				<li>3F<span>-精美女装</span></li>
+				<li>4F<span>-电动游戏</span></li>
+				<li>5F<span>-优雅餐厅</span></li>
+				<li>6F<span>-商务会议</span></li>
+			</ul>
+			<div class="return" id="return">
+				^
+			</div>
+		</div>
+		<div class="floor" id="floor">
+			<div class="f1">
+				F1
+			</div>
+			<div class="f2">
+				F2
+			</div>
+			<div class="f3">
+				F3
+			</div>
+			<div class="f4">
+				F4
+			</div>
+			<div class="f5">
+				F5
+			</div>
+			<div class="f6">
+				F6
+			</div>
+		</div>
+	</div>
+	<script src="jquery-3.2.1.js"></script>
+
+
+	<script>
+	$(function(){
+		var arr=[];
+		$(window).on('scroll',function(){
+		
+			var t1 = $(this).scrollTop();
+			if(t1>=200){
+				$('#wrap').show();
+			}else{
+				$('#wrap').hide();
+			}
+
+			$('#floor>div').each(function(){
+				arr.push($(this).offset().top);
+			
+			})
+			$.each(arr,function(i,v){
+				if(t1>=v){
+					$('#list>li').eq(i).stop().animate({'margin-left':0},1000)
+					.find('span')
+					.show().end().siblings().stop().animate({'margin-left':100},1000)
+					.find('span').hide();
+				}
+			})
+
+
+		})
+		$('#list').on('click','li',function(){
+			var idx=$(this).index();
+			$('body').animate({'scrollTop':arr[idx]},600)
+		});
+		$('#return').on('click',function(){
+			$('body').animate({'scrollTop':0},1000)
+		})
+
+
+
+	})
+
+	</script>
+</body>
+</html>

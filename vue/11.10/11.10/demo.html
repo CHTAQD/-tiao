@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>key和template</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div class="hahaha">
+    <template v-if="reg=='phone'" key="phone">
+        手机<input type="text"/>
+    </template>
+    <template v-else key="email">
+        邮箱<input type="text"/>
+    </template>
+    <br/>
+    <input type="radio" value="phone" name="regesiter" v-model="reg"/>手机注册
+    <input type="radio" value="email" name="regesiter" v-model="reg"/>邮箱注册
+</div>
+
+<script>
+    var app = new Vue({
+        el:'.hahaha',
+        data:{
+            reg:"email"
+        }
+    })
+</script>
+</body>
+</html>

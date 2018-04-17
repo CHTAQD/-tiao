@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        height: 300px;
+        width: 300px;
+        background-color: #cc1111;
+
+        transition:all 15s;
+        display:none;
+    }
+</style>
+<body>
+<div class="box"></div>
+
+<script>
+    var box = document.querySelector('.box');
+    window.onclick=function(){
+        box.style.display='block';
+        box.style.transition='all 1s';
+        console.log(onclick.length)
+    }
+</script>
+</body>
+</html>

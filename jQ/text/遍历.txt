@@ -1,0 +1,27 @@
+1、切换样式:
+   toggleClass() 添加、删除样式间的切换
+   toggle() 元素显示、隐藏相当于show()、hide()间的切换
+2、判断是否有某个class类:
+   hasClass() 返回值为布尔值
+3、设置、获取HTML、文本、值:
+   1>html() === innerHTML
+     html() 可用于XHTML文档,不能用于XML文档。
+   2>text() === innerText
+     text() 对XHTML文档、XML文档都有效
+   3>表单值的获取,设置,select、checkbox、radio选项的选中: val()
+	 val() === value
+4、遍历节点:
+   children() 取得匹配元素的子元素的集合
+   find() 向下查找直到找到元素为止
+   parent() 向上查找父级元素
+   parents() 向上查找直到找到元素为止
+   closest() 先就近查找匹配元素,不匹配时向上查找父级元素
+   next() 取得匹配元素后面紧邻的同辈元素
+   nextAll() 取得匹配元素后面所有的同辈元素
+   prev() 取得匹配元素前面紧邻的同辈元素
+   prevAll() 取得匹配元素前面所有的同辈元素
+   siblings() 取得匹配元素前后所有的同辈元素
+   filter() 筛选出与指定函数匹配的集合
+5、offset() 相对偏移量,返回top或left
+   position() 相对于祖父元素定位的偏移量,返回top或left
+   

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 环境{
+	// 宿主环境（浏览器）
+	// 执行环境（作用域）{
+	// 全局环境：在代码的任何位置都能访问到；
+	// 局部环境:只能在代码片段中（函数中）访问得到；
+	// }
+	// }
+
+	//  作用域链
+	
+// var a=10;
+//    function aa(){
+//        var b=5;
+
+//     function bb(){
+//     	var a=3;
+//     	alert(a)
+//     }bb()
+//     }
+//    aa()
+// 	alert(b)
+	
+	alert(b) 
+	var b=123;
+	alert(b)
+	function a(){
+		alert( 'as')
+	} 
+	alert(a)
+	var a=333;
+	alert(a)
+	function a(){
+		alert(444)
+	}
+	alert(a)
+	
+	
+/*
+10:12:43
+滕老师 2017/6/8 10:12:43
+	<script>*/
+	/*var a=456;
+	var a=234;
+	function aa(a){
+	
+		function bb(){
+			alert(a)
+		}
+		bb()
+	}
+	aa()*/
+
+/*	环境{
+		宿主环境（浏览器）
+		执行环境（作用域）{
+			全局环境(全局作用域)：在代码的任何位置都能访问到；
+			局部环境(局部作用域、函数作用域)：只能在代码片段中（函数中）访问到；
+		}
+	}*/
+	// 作用域链：
+		/*var a=123;	
+		function aa(){
+			var a=456;
+			a=789;
+			alert(a)			
+		}
+		aa()
+		alert(a)//123
+*/
+
+/*alert(a)
+var a=123;
+alert(a)
+
+aa()
+function aa(){
+	alert(1)
+}
+*/
+
+/*alert(a)
+var a=123;
+alert(a)
+var a=456;
+alert(a)
+var a=789;
+alert(a)*/
+
+/*alert(a)
+var a=123;
+function a(){
+	var a=456;
+}
+alert(a)*/
+
+/*1、预解析（var、function）
+2、var undefined 整个；
+3、正常解析*/
+/*alert(a) //444
+var a=111;
+alert(a) ///111
+function a(){
+	alert(222)
+}
+alert(a)  //111
+var a=333;
+alert(a)  //333
+function a(){
+	alert(444)
+}
+alert(a) //333
+a()  //报错
+*/
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

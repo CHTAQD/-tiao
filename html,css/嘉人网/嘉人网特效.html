@@ -1,0 +1,308 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 50px;
+		width:200px;
+		border:1px solid #ccc;
+		float: right;
+		margin-right: 200px;
+		margin-top: 100px;
+	}
+	.text{
+		height: 47px;
+		width: 0px;
+		background: #c11;
+		float: right;
+		border:1px solid #ccc;
+		display: none;
+	}
+	.submit{
+		height: 50px;
+		width: 50px;
+		background: #f1ff11;
+		float: right;
+	
+	}
+</style>
+<body>
+  <div class="box">
+	
+	<div class="submit">
+		<a href=""></a>
+	</div>
+	<input type="text" class="text">
+  </div>
+</body>
+<script src='../../java Script/html/对象/轮波/animate.js'></script>
+<script>
+var submit=document.querySelector('.submit');
+var box=document.querySelector('.box');
+var text=document.querySelector('.text')
+var flag=true;
+var timer;
+submit.onmouseover=function(){
+	clearTimeout(timer)
+	timer=setTimeout(function(){
+	if(flag){
+		flag=false;
+		animate(text,{display:'block'},10,function(){
+			animate(text,{width:148},100,function(){
+				flag=true;
+			})
+		}) 
+ 	 }
+ 	
+},40)
+}
+box.onmouseout=function(){
+	clearTimeout(timer)
+	timer=setTimeout(function(){
+	if(flag){
+		flag=false;
+		animate(text,{width:0},100,function(){
+			animate(text,{display:'none'},10,function(){
+				flag=true;
+			})
+		})
+ 	}
+ 	 },40)
+}
+</script>
+</html>
+ -->
+
+
+
+
+
+<!-- 轮波 -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width: 690px;
+		height: 520px;
+		margin:30px auto;
+	}
+	.topbox{
+		width:690px;
+		height:430px;
+		position: relative;
+		margin-bottom: 13px;
+	}
+	.inner{
+		width:690px;
+		height: 430px;
+		position: absolute;
+		top:0;
+		left: 0;
+	}
+	.inner:first-of-type{
+		z-index: 1;
+	}
+	.botbox{
+		width:690px;
+		height:60px;
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+	}
+	.left{
+		width:21px;
+		height:60px;
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		font-size: 21px;
+		color: #000;
+		background: #fff;
+		line-height: 60px;
+		text-align: center;
+		cursor: pointer;
+		margin-left: 26px;
+		float:left;
+	}
+	.left:hover{
+		color:#fff;
+		background: red;
+	}
+	.right{
+		width:21px;
+		height:60px;
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		font-size: 21px;
+		color: #000;
+		background: #fff;
+		line-height: 60px;
+		text-align: center;
+		cursor: pointer;
+		margin-right: 26px;
+		float:right;
+	}
+	.right:hover{
+		color:#fff;
+		background: red;
+	}
+	.btnbox{
+		width:552px;
+		height:40px;
+		margin: 10px 20px;
+		float:left;
+	}
+	.btn{
+		width:69px;
+		height:43px;
+		float: left;
+	}
+	.btn img{
+		width:100%;
+		height:100%;
+		opacity: 0.5;
+	}
+	/*.btn img:first-of-type{
+		opacity: 1;
+	}*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="topbox">
+			<div class="inner"><img src="img/1.jpg" alt=""></div>
+			<div class="inner"><img src="img/2.jpg" alt=""></div>
+			<div class="inner"><img src="img/3.jpg" alt=""></div>
+			<div class="inner"><img src="img/4.jpg" alt=""></div>
+			<div class="inner"><img src="img/5.jpg" alt=""></div>
+			<div class="inner"><img src="img/6.jpg" alt=""></div>
+			<div class="inner"><img src="img/7.jpg" alt=""></div>
+			<div class="inner"><img src="img/8.jpg" alt=""></div>
+		</div>
+		<div class="botbox">
+			<div class="left">&lt;</div>
+			<div class="btnbox">
+				<div class="btn"><img src="img/1.jpg" alt=""></div>
+				<div class="btn"><img src="img/2.jpg" alt=""></div>
+				<div class="btn"><img src="img/3.jpg" alt=""></div>
+				<div class="btn"><img src="img/4.jpg" alt=""></div>
+				<div class="btn"><img src="img/5.jpg" alt=""></div>
+				<div class="btn"><img src="img/6.jpg" alt=""></div>
+				<div class="btn"><img src="img/7.jpg" alt=""></div>
+				<div class="btn"><img src="img/8.jpg" alt=""></div>
+			</div>
+			<div class="right">&gt;</div>
+		</div>
+	</div>
+	<script src='animate.js'></script>
+	<script>
+	var inner=document.querySelectorAll('.inner');
+	var btn=document.querySelectorAll('.btn');
+	var img1=document.querySelectorAll('.btn img');
+	var left=document.querySelector('.left');
+	var right=document.querySelector('.right');
+	var box=document.querySelector('.box');
+	img1[0].style.opacity=1;
+	// 8、解决按钮点击太快的问题
+	var flag=true;
+
+	var num=0;
+	// 循环调用
+	var t=setInterval(move,2000)
+	//1、实现自动轮播
+	function move(){
+		if(flag){
+			flag=false;
+		num++;
+		if(num>inner.length-1){
+			num=0
+		}
+		for(var i=0;i<inner.length;i++){
+			animate(inner[i],{opacity:0,display:'none'},1000)
+		// 2、图片配合轮播效果
+			img1[i].style.opacity=0.5;
+		}
+		animate(inner[num],{opacity:1,display:'block'},1000,function(){
+			flag=true;
+		})
+		img1[num].style.opacity=1;
+		}
+	}
+
+	// 3、实现btn选项卡点击效果
+	for(var i=0;i<btn.length;i++){
+		btn[i].index=i;
+		btn[i].onclick=function(){
+			// 5、轮播与选项卡一一对应
+			num=this.index;
+			for(var j=0;j<inner.length;j++){
+				animate(inner[j],{opacity:0,display:'none'},1000);
+				img1[j].style.opacity=0.5;
+			}
+			animate(inner[num],{opacity:1,display:'block'},1000)
+			img1[num].style.opacity=1;
+		}
+	}
+
+
+// 4、鼠标放在大盒子上动画停止
+box.onmouseenter=function(){
+	clearInterval(t)
+}
+box.onmouseleave=function(){
+	t=setInterval(move,2000)
+}
+
+// 6、左按钮点击效果
+left.onclick=function(){
+	if(flag){
+		flag=false;
+		num--;
+		if(num<0){
+			num=inner.length-1
+		}
+		for(var i=0;i<inner.length;i++){
+			animate(inner[i],{opacity:0,display:'none'},1000)
+		// 2、图片配合轮播效果
+			img1[i].style.opacity=0.5;
+		}
+		animate(inner[num],{opacity:1,display:'block'},1000,function(){
+			flag=true;
+		})
+		img1[num].style.opacity=1;
+	}
+}
+
+// 7、右按钮点击效果
+right.onclick=function(){
+	move()	
+}
+
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

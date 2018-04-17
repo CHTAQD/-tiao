@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>变色</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+<div class="echo">
+    <button @click='ha'>切换</button>
+    <h1 v-star="'green'">hhhh</h1>
+</div>
+<script>
+    var echo = new Vue({
+        el: '.echo',
+        directives: {
+            star: {
+                bind: function (el,bind) {
+                    console.log(bind.value)
+                    //默认字体颜色
+                    var color = bind.value?bind.value:'red';
+                    el.style.cssText='color:'+color;
+                }
+            }
+        },
+        methods:{
+            ha:function(){
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

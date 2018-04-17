@@ -1,0 +1,54 @@
+javascript-节点的增、删、改、查实例讲解
+
+一、创建节点
+    1>创建元素节点
+      document.createElement("元素标签名");
+    2>创建属性节点
+       document.createAttribute("属性名");  （了解）
+       对象.属性="属性值"； （设置常用属性）
+       对象.setAttribute(属性名,属性值)（可设置任何属性）
+       对象.getAttribute(属性名)  （只能获取setAttribute属性名）
+    3>创建文本节点
+       对象.innerHTML="";
+       document.createTextNode("文本");
+ 
+注意：
+对象.getAttribute(属性名)
+对象.setAttribute(属性名,属性值)
+对象.getAttributeNode(属性名)
+对象.setAttributeNode(属性名)
+ 案例：为inner添加类名
+       var cla=document.createAttribute("class");
+       cla.value='bb';
+       inner.setAttributeNode(cla)
+
+二、追加到页面当中（插入）
+
+    父对象.appendChild(追加的对象)  插入到最后
+    父对象.insertBefore(要插入的对象,之前的对象) 
+ 插入到之前的对象前面
+
+三、修改(替换)节点
+
+   父对象.replaceChild(要替换的对象,被替换的);
+
+四、删除节点
+
+   父对象.removeChild(删除的对象)
+如果确定要删除节点，最好也清空内存  对象=null;
+
+五、克隆节点
+   克隆对象.cloneNode(bull) 
+      //参数bull  true克隆全部包扩内部元素
+      //  false  仅克隆元素节点  
+
+打包函数：
+1)创建元素节点    createObj()
+2)将obj添加到父对象中   appendObj()
+3)将a添加到b的前面   addBefore()
+4)将a添加到b的后面    addAfter()
+5)删除某个元素节点     removeObj()
+6)将newobj替换oldobj    repalceObj()
+7)克隆obj(bull默认为false，代表只克隆obj本身；true代表克隆obj内部所有的东西)   cloneObj()
+
+案例：点击登陆按钮，弹出登录框，点击关闭，关闭登陆框

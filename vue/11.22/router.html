@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+<div class="box">
+    <bodi :list='lovers'>
+        <template scope='v'>
+                <ul>
+                   <li>
+                    <slot >{{v.a.name}}</slot>
+                    </li>
+                </ul>
+        </template>
+        </bodi>
+    </div>
+
+
+<script type="text/x-handlebars-template" id="h">
+    <div>
+
+
+                <slot v-for='v in list' :a='v'></slot>
+
+
+    </div>
+</script>
+
+<script >
+    Vue.component('bodi',{
+        template:'#h',
+        props:['list']
+    })
+    var i = new Vue({
+        el:'.box',
+        data:{
+                lovers:[
+            {name:'hahah'},
+            {name:'hahah'},
+            {name:'hahah'},
+        ]
+        }
+    })
+</script>
+</body>
+</html>

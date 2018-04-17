@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<canvas width="600" height="300" id="can"></canvas>
+<script>
+
+    //宽高
+    //在绘制一个矩形的时候，我们需要的数据其实就三个
+    //起点，宽，高
+    var can = document.querySelector('#can');
+    var cxt = can.getContext('2d');
+    cxt.strokeStyle='#c11';
+    //在设置描线颜色的时候，css中的颜色表示法都适用;
+    var x = function(x,y,w,h){
+        cxt.moveTo(x,y)
+        cxt.lineTo(x+w,y)
+        cxt.lineTo(x+w,y+h)
+        cxt.lineTo(x,y+h)
+        cxt.lineTo(x,y)
+        cxt.stroke()
+    }
+
+
+</script>
+</body>
+</html>

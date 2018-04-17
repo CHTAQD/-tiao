@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义属性的验证方法</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen :show-de="true"></allen>
+</div>
+
+<script type="text/x-template" id="h">
+    <div>
+        <div v-if="show">hahaha</div>
+        <div v-if="showDe">hahaha</div>
+    </div>
+</script>
+
+<script>
+    Vue.component('allen',{
+        template:'#h',
+        props:{
+            showDe:{
+                type:[Boolean,Number],
+                default:false
+            },
+            show:{
+                type:[Boolean,Number],
+                required:true,
+                default:function(){
+                    return [{name:'hahaha'}]
+                }
+            }
+        }
+    })
+    var echo = new Vue({
+        el:'.echo',
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <style>
+        .red{
+           color:red;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+    <script src="../../vue.js"></script>
+<body>
+<div id="echo">
+    <div v-bind:class='j'> 多冷啊，我在东北玩泥巴 </div>
+</div>
+
+<script>
+    var haha = new Vue({
+        el:"#echo",
+        data:{
+            isRed:false,
+            j:"red",
+            green:"green",
+            da:{red:'true'}
+        }
+    })
+</script>
+</body>
+</html>

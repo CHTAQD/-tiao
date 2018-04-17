@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*function aa(n1,n2,fun){
+		return fun(n1,n2)
+	}
+	aa(2,3,xx)
+	function xx(n1,n2){
+		alert((n1+n2)*4-9)
+	}
+	function cc(n1,n2){
+		alert((n1+n2)*5-3)
+	}
+	function i(n1,n2){
+		alert((n1+n2)*9-5)
+	}*/
+	// 把一个函数名当另一个函数的参数来用就叫回调函数
+	// 指针调用
+	/*function aa(i,j,o){
+		return o(i,j)
+	}
+	aa(2,10,xx)
+	function xx(i,k){
+		for(var a=i;a<k;a++){
+			document.write('*&nbsp;')
+		}
+		document.write('<br>')
+	}*/
+	// document.write(aa) 
+	// 2.匿名函数来调用
+	// function en(i,k,j){
+	// 	return j(i,k)
+	// }
+	// en(1,10,function xx(i,k){
+	// 	for(var a=i;a<k;a++){
+	// 		document.write('*&nbsp;')
+	// 	}
+	// 	document.write('<br>')
+	// })
+	
+	// 自调用
+	// function en(i,k,j){
+	// 	return j(i,k)
+	// }
+	
+/*	function qian(i){
+		return i()
+	}
+	qian(mai1)
+	qian(cun)
+	function mai1(){
+		alert("买东西")
+	}
+
+	function qian(i){
+		return i()
+	}
+	qian(function cun(){
+		alert('存起来')
+	})
+
+	(function en(n){
+		return n()
+	})(function mai2(){
+		alert('买用的')
+	})
+	*/
+	
+
+/*	function en(i,k,o,j){
+		return i(k,o,j)
+	}
+	en(xx,1,10,6)
+
+	function xx(k,o,j){
+		for(var a=k;a<6;a++){
+			for(var c=j;c>a;c--){
+				document.write('*&nbsp')
+			}
+			document.write('<br>')
+		}
+	}
+*/
+
+
+/*for(var a=1;a<5;a++){
+	for(var c=5;c>a;c--){
+		document.write('&nbsp')
+	}
+	for(var d=1;d<a;d++){
+		document.write('*&nbsp')
+	}
+	document.write('<br>')
+}
+*/
+/*function en(){
+setTimeout('document.write("我出现了哈哈哈")',5000)
+}
+en()*/
+
+/*function en(i,j,fun){
+	return fun(i,j)
+}
+en(1,10,c)
+function c(i,j){
+	for(var a=i;a<j;a++){
+		document.write('*&nbsp')
+	}
+	
+}*/
+// function en(b){
+// 	return b()
+// }
+// en(i)
+// function i(){
+// 	alert(123)
+// }
+
+
+
+
+
+
+
+
+
+
+
+											//回掉函数
+//练习
+// 											s通过指针调用
+/*function a(i){
+	return i()
+}
+a(b)
+function b(){
+	alert(123)
+}*/
+
+
+//匿名函数来调用
+
+// function a(i){
+// 	return i()
+// }
+// a(function(){
+// 	alert(123)
+// })
+
+//自调用
+
+// (function b(j){
+// 	return j()
+// })(function(){
+// 	alert(456)
+// })
+
+ 
+//   function aa(a){
+//   	if(a==1){
+//   		return a;
+//   	}else{
+//   		return aa(a-1)+5
+//   	}
+//   }										递归
+// alert(aa(5))
+
+// function a(i){
+// 	if(i==1){
+// 		return i;
+// 	}else{
+// 		return a(i-1)+i
+// 	}
+
+// }
+// alert(a(10))
+
+
+
+// 														闭包
+/*function aa(){
+	var a=123;
+	function bb(){
+		alert(a)
+	}
+	return bb;
+}
+var i=aa();
+alert(i)*/
+
+
+
+
+// function aa(){
+// 	var a=123;
+// 	function dd(){
+// 		alert(a)
+// 	}
+// 	return dd
+// }
+// var i=aa()
+// var i=function bb(){
+// 	alert(a)
+// }
+// i()
+/*
+var a='';
+document.write(escape(a))
+
+document.write(unescape('%u4F60%u53EB%u4EC0%u4E48%uFF0C%u8001%u540C%u5B66'))
+
+
+*/
+
+
+//回调
+/*function a(i){
+	return i()
+}
+a(b)
+function b(){
+for(var j=1;j<10;j++){
+	document.write('**&nbsp;')
+}
+}
+*/
+
+
+//递归
+/*function a(i){
+	if(i==1){
+		return i
+	}else{
+		return a(i-1)+i
+	}
+}
+alert(a(5))
+*/
+
+//闭包 
+
+/*function a(){
+	var i=123;
+	function c(){
+		alert(i)
+	}
+	return c
+}
+
+var j=a();
+j()
+*/
+
+
+	</script>
+</body>
+</html>

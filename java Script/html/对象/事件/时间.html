@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="font-size:40px;">
+	getMonth() 从 Date 对象返回月份 (0 ~ 11) 。<br>
+	getFullYear() 从 Date 对象以四位数字返回 年份。<br> 
+	getYear() 请使用 getFullYear() 方法代替。<br>
+	【现在的时间减去1900年】<br>
+	getHours() 返回 Date 对象的小时 (0 ~ 23) 。 <br>
+	getMinutes() 返回 Date 对象的分钟 (0 ~  59)。 <br>
+	getSeconds() 返回 Date 对象的秒数 (0 ~  59)。 <br>
+	getMilliseconds() 返回 Date 对象的毫秒(0  ~ 999)。 <br>
+	getTime() 返回 1970 年 1 月 1 日至今的毫 秒数。 <br>
+	getTimezoneOffset() 返回本地时间与格林 威治标准时间 (GMT) 的分钟差。 <br>
+	<script>
+/*
+	//获取设置时间
+	var date=new Date()
+	// alert(date)
+	var date3=new Date('10/2/2017 14:25:54')
+	var date1=new Date('14:45:30 10/1/2017')
+	var date2=new Date(2017,10,1,14,25,59);
+	alert(date1)*/
+	//获取本地时间
+	var a=new Date();
+	//日:1-31
+	var get1=a.getDate();
+	//星期：0-6 日为0
+	var get2=a.getDay;
+
+	var get3=a.getMonth()
+	// alert(get3)
+
+	var get4=a.getFullYear();
+	alert(get4)
+	var get5=a.getYear();
+	alert(get5)
+
+
+	var day1=a.setDath(4);
+	alert(a.getDath());
+	alert(a)
+
+	// var ge6t=a.();
+	// alert(get6)
+
+	// var get7=a.();
+	// alert(get7)
+	// var get8=a.();
+	// alert(get8)
+	// var get9=a.();
+	// alert(get9)
+	// var get10=a.();
+	// alert(get10)
+	// var get11=a.();
+	// alert(get11)
+	// var get12=a.();
+	// alert(get12)
+	// var get13=a.();
+	// alert(get13)
+
+
+	</script>
+</body>
+</html>

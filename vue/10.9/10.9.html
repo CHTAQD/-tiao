@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src='../vue.js'></script>
+<style>
+
+    .red{
+        color:red;
+    }
+    .green{
+        font-size:100px;
+    }
+</style>
+<body>
+    <div class="box">
+        <div v-bind:class="k">asasasasa</div>
+        <div v-bind:class='[j]'>1212121223232</div>
+    </div>
+g
+    <script>
+        var i = new Vue({
+
+            el:'.box',
+
+            data:{
+                k:'red',
+                j:{
+                red:'true',
+
+                green:'true'
+                }
+            },
+            computed:{
+                num:function(){
+
+                }
+            },
+            watch:{
+                num:function(){
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

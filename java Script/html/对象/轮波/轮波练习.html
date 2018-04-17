@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 250px;
+		width: 300px;
+		background-color: #ccc;
+		margin:100px auto;
+		/*overflow: hidden;*/
+		position: relative;
+	}
+	.innerbox{
+		height: 250px;
+		width: 1500px;
+		background-color: #c11;
+
+	}
+	.inner{
+		height: 100%;
+		width: 300px;
+		float: left;
+	}
+	.inner>img{
+		height:100% ;
+		width: 100%;
+		
+	}
+	.nthbox{
+		height: 20px;
+		width: 120px;
+		background-color:#ccc;
+		position: absolute;
+		bottom:0px;
+		left: 100px;
+	}
+	.nth{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		background-color: #c11;
+		float: left;
+		margin-left: 2px;
+	}
+	/* .nth:hover{
+		background-color: #ccc;
+	} */
+	.left{
+		height: 70px;
+		width:20px;
+		background-color:#f1ff11;
+		position: absolute;
+		left: 0;
+		top:95px;
+	}
+	.right{
+		height: 70px;
+		width:20px;
+		background-color:#f1ff11;
+		position: absolute;
+		right: 0;
+		top:95px;
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="innerbox">
+			<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208643099.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645061.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208645835.jpg@!420" alt=""></div>
+			<div class="inner"><img src="../image/133208587345.jpg@!420" alt=""></div>
+		</div>
+		<div class="nthbox">
+			<div class="nth"></div>
+			<div class="nth"></div>
+			<div class="nth"></div>
+			<div class="nth"></div>
+			<div class="nth"></div>
+		</div>
+		<div class="left">&lt;</div>
+		<div class="right">&gt;</div>	
+	</div>
+</body>
+<script src='animate.js'></script>
+<script>
+var inner=document.querySelectorAll('.inner');
+var innerbox=document.querySelector('.innerbox');
+var nth=document.querySelectorAll('.nth')
+var box=document.querySelector('.box');
+var left=document.querySelector('.left');
+var right=document.querySelector('.right');
+var num=0;
+var flag=true;
+var t=setInterval(move,1200);
+function move(){
+	if(flag){
+		flag=false;
+	num++ //可以依次增加的变量
+	if(num>=inner.length-1){ //如果num到了inner的长度了就把储存的num变为0，把图归到原本的位置，margin变零
+
+		animate(innerbox,{marginLeft:-300*num},500,function(){
+			num=0;
+			innerbox.style.marginLeft=0;
+			btnColor();
+			flag=true;
+		})
+	}else{ //否则他一直运行不会有终点
+		btnColor();
+		animate(innerbox,{marginLeft:-300*num},500,function(){
+			flag=true;
+		})
+	}
+	}
+}
+
+
+
+//num的下标和图片的下标同步，点击事件，则运行到那个对应的图
+for(var j=0;j<nth.length;j++){
+	nth[j].index=j;
+	nth[j].onclick=function(){
+		num=this.index;
+		btnColor();
+		animate(innerbox,{marginLeft:-300*num},500)
+	}
+}
+
+//该变小按钮的颜色
+function btnColor(){
+	for(var k=0;k<nth.length;k++){
+
+			nth[k].style.backgroundColor='#000';
+		}
+		nth[num].style.backgroundColor='green';
+}
+//鼠标放到大盒子上，停止轮播，离开，再轮播；
+box.onmouseover=function(){
+	clearInterval(t);
+}
+box.onmouseout=function(){
+	t=setInterval(move,1200);
+}
+//点击右按钮
+left.onclick=function(){
+	move();
+}
+// 反方向
+right.onclick=function(){
+	if(flag){
+	num--;
+	if(num<0){
+		innerbox.style.marginLeft=-300*(inner.length-1)+'px';
+		num=inner.length-2;
+		animate(innerbox,{marginLeft:-300*num},500,function(){
+			flag=true;
+		});
+	}else{
+		animate(innerbox,{marginLeft:-300*num},500,function(){
+			flag=true;
+		})
+	}
+	}
+}
+</script>
+</html>

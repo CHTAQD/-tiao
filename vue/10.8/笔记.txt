@@ -1,0 +1,123 @@
+  
+v-text 是不能在单标签里面使用的
+
+v-html在单标签里也无法使用，只能在双标签里使用
+
+v-text v-html
+
+这两条命令只是单向单向数据绑定
+
+并非双向数据绑定，只有后台才可以修改前端数据前端无法影响后台
+
+v-text和v-html是在双标签中添加内容
+
+input这样的单标签，是通过value是显示值的，所以v-text和v-html就无法使用了
+
+v- if 
+
+控制前端数据是否显示的命令，
+
+是通过删除和添加对应的元素来实现元素的添加和删除
+
+v-show
+
+是通过给元素添加display：none属性来实现指定元素的显示和隐藏
+
+v-if v-show 是通过布尔值来进行判断的如果值是true，就显示指定的元素，如果值是false就隐藏指定的元素
+
+
+
+v-model
+
+vue中实现数据绑定的指令，是vue的灵魂所在，他可以实现前端数据改变同步修改后台数据
+
+v-bind
+
+v-bind是vue中提供的可以进行运算操作的指令，这一条指令可以帮助我们实现在标签中的一些逻辑操作，
+
+v-bind语法
+
+<div v-bind：class="isRed?'red':'greed'"></div>
+
+注意：如果在三元表达式中，red和greed不加引号，表示red和greed要在vue的主模块的data数据中查找
+
+如果加上引号，表示直接使用red或green类名
+
+computed
+
+vue的计算属性
+
+这是vue中给我们提供的一种很强大的功能这个功能是可以配合v-model的双向数据绑定来实现一些前后端数据交互的效果，例如电商平台的购物车就是很好的例子。
+
+在计算属性computed中首先要在主模块中
+
+写入一个新的属性，叫做computed，值是一个对象，之后在对象中写入属性函数，在函数体内部进行运算操作，
+
+注意：在使用computed属性的时候一定要注意在computed对象中的属性命一定要和html代码结构中传入的变量名一致
+
+监听属  watch 属性
+
+lodash的-.debunce  延迟
+
+监听属性：watch
+
+他其实相当于js中的addeventListener事件监听，但是不同点在于add ~  是用来监听事件触发的，而watch是用来坚挺数据改变的
+
+watch的语法格式是
+
+watch：{			    新值，旧值
+    要监听的数据：function(两个形参newV，oldV){
+		
+	}
+}
+
+注意：function中的两个形参是有默认顺序的，前者是新值，后者是旧值
+
+触发监听的时机是当要监听的数据发生改变的时候
+
+VUE中更简洁的发送ajax请求的方式
+
+axios
+
+前提是先要引包，引入axios数据包
+
+axios.get("url?数据名=数据值").then(function(获取回来的数据){
+
+})
+
+Lodash 的 -。debounce
+
+Lodash的-。bounce是用来延时发送
+
+因为没有引包
+
+引入一个叫做lodash.js的数据包
+
+
+git config --global user.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

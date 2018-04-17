@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: #c11;
+		position: absolute;
+
+	}
+	.inner{
+		height: 20px;
+		width: 20px;
+		color: #fff;
+		margin-left: 80px;
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="inner">X</div>
+	</div>
+
+
+
+2
+
+<script>
+var box=document.querySelector('.box')		//先获取box盒子
+var inner=document.querySelector('.inner')
+
+var h=document.documentElement.clientHeight;
+var w=document.documentElement.clientWidth;
+var bh=box.offsetHeight;
+var bw=box.offsetWidth;
+
+var speedx=2;
+var speedy=2; 
+
+var t=setInterval(move,20)
+function move(){
+var bl=box.offsetLeft;
+var bt=box.offsetTop;
+if(bt<0||bt>h-bh){
+			speedy=-speedy;
+		}
+		if(bl<0||bl>w-bw){
+			speedx=-speedx;
+		}
+
+
+
+box.style.left=bl+speedx+'px';		//
+box.style.top=bt+speedy+'px';
+box.onmouseenter=function(){
+		clearInterval(t)
+	}
+	box.onmouseleave=function(){
+		t=setInterval(move,20)
+	}
+	inner.onclick=function(){
+		document.body.removeChild(box);
+		box=null;
+	}
+}
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

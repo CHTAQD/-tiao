@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="800" id="can"></canvas>
+
+    <script>
+        ctx.beginPath()
+        var canvas=document.querySelector("canvas");
+        var ctx=canvas.getContext("2d");
+        //起始点
+        var start=-Math.PI/2;
+        var step=0.01*Math.PI;//按弧度表示
+        //使用定时器
+        var timer = setInterval(function(){
+            ctx.moveTo(300,400);
+            ctx.arc(300,400,150,start,start+step);
+            //累加
+            ctx.closePath();
+            ctx.stroke();
+            start+=step;
+            /*ctx.fillStyle='pink';
+             ctx.fill();*/
+            ctx.stroke();
+            //判断：如果转成一个圆就清除当前定时器
+            if (start>=3*Math.PI/2){
+                clearInterval(timer)
+            }
+            console.log(start)
+
+        },50);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

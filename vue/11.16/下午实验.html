@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div class="box"></div>
+
+<script type="text/x-templatef
+" id="p"></script>
+
+<script>
+    Vue.component('bodi',{
+        template:'#p'
+    })
+    var i = new Vue({
+        el:'.box',
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>

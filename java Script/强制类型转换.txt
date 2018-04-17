@@ -1,0 +1,39 @@
+
+javascript数据类型强制转换
+一、转换为数值类型
+   1、 Number(参数): 把任何的类型转换为数 值类型;
+    A.如果是布尔值，false为0，true为1
+    B.如果是数字，转换成为本身。将无意义的 后导0去掉。
+    C.如果Null转换为0；
+    D.如果是undefined 转换为NaN（not a  number）；
+    E.如果转对象，则会先调用对象的valueOf()方法，然后再调用对象的toString()方法。
+eg:
+Number({
+  valueOf: function () {
+    return 2;
+  }
+})
+// 2
+
+Number({
+  toString: function () {
+    return 3;
+  }
+})
+// 3
+
+Number({
+  valueOf: function () {
+    return 2;
+  },
+  toString: function () {
+    return 3;
+  }
+})
+// 2
+
+    F.如果是字符串
+       （1）如果字符串当中只有数字，转换为 10进制(忽略前导0和后导0)；
+       （2）如果是有效的规范的浮点型，转换 为浮点值(忽略前导0和后导0)；
+       （3）如果是空字符串，则转换为0；
+       （4）如果是其他的值，返回NaN；

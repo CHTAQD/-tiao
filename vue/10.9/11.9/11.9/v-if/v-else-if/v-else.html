@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-if/v-else-if/v-else</title>
+    <script src="../../../vue.js"></script>
+    <style>
+        .green{
+            color:green;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="echo">
+    <input type="text" v-model='age'/>
+    <span v-if="age<18">小b崽子</span>
+    <span v-else-if="age<30">有毒青年</span>
+    <span v-else-if="age<50">猥琐大叔</span>
+    <span v-else>好色仙人</span>
+    <span v-bind:class="green">heheda</span>
+    <span :class="red">heheda</span>
+</div>
+<script>
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            age:0,
+            green:'green',
+            red:'red'
+        }
+    })
+</script>
+</body>
+</html>

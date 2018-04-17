@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+	.box{
+		height: 500px;
+		width: 500px;
+		border:1px solid #ccc;
+		margin:0px auto;
+		overflow: hidden;
+	}
+	.tab>li{
+		height:30px;
+		width: 92px;
+		background: #c11;
+		font-size: 20px;
+		text-align: center;
+		float: left;
+		color: #fff;
+		margin-left: 2px;
+	}
+	.tab>li:nth-child(1){
+		margin-left: 20px;
+	}
+	.view>li{
+		height: 500px;
+		width: 500px;
+		background: #000;
+		color: #fff;
+		font-size: 100px;
+		text-align: center;
+		border:1px solid #ccc;
+		line-height: 500px;
+	}
+	.view{
+		height: 500px;
+		width: 100%;
+		background: #000;
+	}
+</style>
+<body>
+	
+	<div class="box">
+		<ul class='tab'>
+			<li>tag1</li>
+			<li>tag2</li>
+			<li>tag3</li>
+			<li>tag4</li>
+			<li>tag5</li>
+		</ul>
+		<ol class="view">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</div>
+
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(document).ready(function(){
+		$('.view>li:not(:eq(0))').hide();
+		$('.tab>li').mouseover(function(){
+			$(this).addClass('bg').siblings().removeClass('bg');
+			var idx = $(this).index();
+			$('.view>li').eq(idx).show(600).siblings().hide(1000)
+		})
+
+
+	})
+
+	</script>
+</body>
+</html>

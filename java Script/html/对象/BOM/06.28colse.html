@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li>河北</li>
+    <li>山东</li>
+    <li>天津</li>
+    <li>山西</li>
+    <li>陕西</li>
+    <li>吉林</li>
+    <li>安徽</li>
+    <li>重庆</li>
+</ul>
+<input type="button" value="提交" id="btn1" >
+<script>
+    var btn1=document.getElementById('btn1');
+    var lts=document.getElementsByTagName('li');
+    for(var i=0;i<lts.length;i++){
+        lts[i].onclick=function(){
+            window.opener.document.getElementById('list').value=this.innerHTML;
+        }
+    }
+    btn1.onclick=function(){
+        window.close();
+    }
+</script>
+
+</script>
+</body>
+</html>

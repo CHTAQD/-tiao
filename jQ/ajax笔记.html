@@ -1,0 +1,70 @@
+1.jquery中的ajax方法
+	1>load(url,[data],[callback])
+	参数：
+		url:String,URL地址
+		请求HTML里的部分内容，URL参数语法：‘URL selector’
+		data：Object，发送到服务器的key/value数据
+		不存在GET传递方式
+		存在：POST传递方式
+		callback：function，回掉函数，无论请求是否成功
+	作用：能够载入远程的HTML代码并插入到DOM中
+			responseText:请求返回内容
+			textStatus:请求状态四种--success,error,notmodified,timeout
+			XMLHttpRequest核心对象
+
+	2>$get(url,[data],[callback],[type])  数据请求成功返回回掉函数
+	参数:
+		callback：载入成功时的回调函数(Response返回succss时调用)
+							--data(返回的内容)
+							--textStatus:请求状态四种--success,error,notmodified,timeout
+			XMLHttpRequest核心对象
+	
+			data:里不写参数就把整个页面里的内容全 传入到指定的地方
+			如果写上参数就只传参数里面的内容
+
+		type:String类型，服务器端返回内容的格式
+		数据格式：XML和JSON容易解析，JSON格式结构严谨，书写一定要符合规范.
+		JSONP：不是一种数据格式，是实现跨域访问的一种形式
+		作用:传递参数给服务器中的页面
+		
+		get和post的区别:
+		1>get请求将参数跟在URL后传递，post作为HTTP实体内容发送给web服务器
+		2>post传递数据量比get大很多
+		3>get请求的数据会被浏览器缓存起来，存在安全性问题。而post相对安全。
+		4>获取方式不同
+	3>$.getscript('.js',[callback]):直接加载.js文件
+	4>$.getJSON('.json',[callback]):直接回载.json文件，
+	对请求到的数据进行遍历，获取到我们所需的数据。
+	5>$.ajax({
+		url:'',
+		type:'',
+		date:''
+
+	})
+	6>序列化元素：
+	serialize()方法作用：将DOM元素内容序列化为字符串，用于Ajax请求。
+	编码解析方法：encodeURIcomponent()
+	7>serializeArray()方法作用：将DOM元素序列化后，返回json数据类型。可使用$.each(function(){})
+	对请求数据结果进行遍历
+	8>$.param()方法：是serialize()方法的核心，对数组/对象按照key/value进行序列化
+	
+	9>ajax全局事件
+
+	ajaxStart():Ajax请求开始时触发
+	ajaxStop():Ajax请求结束时触发
+	ajaxComplete():ajax请求完成时
+	ajaxSuccess():ajax请求成功
+	ajaxError():ajax请求错误
+	ajaxSend():Ajax请求发送前
+	可以任意位置调用
+	PS：如果想使用全局的事件，而不想受全局作用域的影响，
+	在新开辟的作用域内将global设置为false。
+
+
+
+
+
+
+
+
+

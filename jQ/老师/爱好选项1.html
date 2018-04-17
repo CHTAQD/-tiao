@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		.container{
+			width: 551px;
+			height: 166px;
+			margin: 50px auto;
+			padding: 10px;
+		}
+		.options{
+			width: 450px;
+		}
+		.options li,.result li{
+			float: left;
+			width: 100px;
+			height: 27px;
+			background: url(img/bg.jpg) no-repeat;
+			text-align: center;
+			line-height: 27px;
+			color: #A2A3A8;
+			margin: 0 10px 10px 0;
+			cursor: pointer;
+		}
+		.options li.bg{
+			background-position: 0 -27px;
+		}
+		.result li{
+			background-position: 0 -54px;
+		}
+		.button-info{
+			clear: left;
+			width: 551px;
+			height: 31px;
+			margin-bottom: 15px;
+		}
+		.button{
+			float: left;
+			width: 234px;
+			height: 31px;
+			background: url(img/add.jpg) no-repeat;
+		}
+		.button p{
+			float: left;
+			width: 154px;
+			margin: 5px 0 0 10px;
+		}
+		.button p #txt{
+			width: 145px;
+			border: none;
+			outline: none;
+		}
+		.button #add{
+			float: left;
+			width: 65px;
+			height: 31px;
+			text-align: center;
+			line-height: 31px;
+			font-size: 13px;
+			color: #fff;
+			cursor: pointer;
+		}
+		#tip{
+			background: url(img/tip.jpg) no-repeat left bottom;
+			float: left;
+			width: 281px;
+			height: 14px;
+			padding: 10px 0 5px 15px;
+			font-size: 14px;
+			font-weight: bold;
+			color: red;
+			margin-left: 15px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="options">
+			<ul id="items">
+				<li>音乐</li>
+				<li>美术</li>
+				<li>游泳</li>
+				<li>跑步</li>
+				<li>睡觉</li>
+				<li>登山</li>
+				<li>游戏</li>
+				<li>打球</li>
+			</ul>
+		</div>
+		<div class="button-info">
+			<div class="button">
+				<p><input type="text" placeholder='请添加您的爱好' id='txt' onkeydown='javascript:if(event.keyCode==32)return false'></p>
+				<span id='add'>爱好</span>
+			</div>
+			<div id="tip">最多选择三项</div>
+		</div>
+		<div class="result">
+			<ul id="selected">
+				
+			</ul>
+		</div>
+	</div>
+	<script src="../jquery-3.2.1.min.js"></script>
+	<script>
+		$(function(){
+			$('#items').on('click','li',function(){
+				if($('#selected>li').length<3){
+					$(this).addClass('bg');
+					//$(this).clone().appendTo('#selected');
+					var txt = $(this).text();
+					createLi(txt);
+				}else{
+					$('#tip').show();
+				}
+				
+			});
+			$('#add').on('click',function(){
+				var val = $('#txt').val();
+				if(val==''){
+					alert('内容不能为空')
+				}else{
+					if($('#selected>li').length<3){
+						createLi(val);
+						$('#txt').val('');
+					}else{
+						$('#tip').show();
+					}
+				}
+			});
+			function createLi(t){
+				var c = '<li>'+t+'</li>';
+				$('#selected').append(c);
+			}
+		})
+	</script>
+</body>
+</html>

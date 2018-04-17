@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        margin:0px auto;
+        margin-top: 300px;
+        position:relative;
+    }
+    .box>img{
+        width: 140px;
+        height: 210px;
+        position: absolute;
+        transition:all 1s;
+        transform-origin:0 -40px;
+    }
+    .box:hover img:nth-child(1){
+        transform: rotate(70deg);
+    }
+    .box:hover img:nth-child(2){
+        transform: rotate(150deg);
+    }
+    .box:hover img:nth-child(3){
+         transform: rotate(220deg);
+     }
+    .box:hover img:nth-child(4){
+          transform: rotate(300deg);
+      }
+</style>
+<body>
+    <div class="box">
+
+            <img src="img/puke.png" alt=""/>
+            <img src="img/puke.png" alt=""/>
+            <img src="img/puke.png" alt=""/>
+            <img src="img/puke.png" alt=""/>
+            <img src="img/puke.png" alt=""/>
+
+
+        
+    </div>
+</body>
+</html>

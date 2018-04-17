@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+	html,body{
+		height: 100%;
+		width: 100%;
+	}
+	.box{
+		width: 100%;
+
+	}
+	.inner{
+		width: 100%;
+		line-height: 400px;
+		text-align: center;
+		color:#fff;
+		font-size: 100px;
+		font-weight: 700;
+	}
+	.inner:nth-child(1){
+		background: #666666;
+	}
+	.inner:nth-child(2){
+		background: #c11;
+	}
+	.inner:nth-child(3){
+		background: #f1ff11;
+	}
+	.inner:nth-child(4){
+		background: green;
+	}
+	.inner:nth-child(5){
+		background: #6ac75b;
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="inner">1</div>
+		<div class="inner">2</div>
+		<div class="inner">3</div>
+		<div class="inner">4</div>
+		<div class="inner">5</div>
+	</div>
+</body>
+<script>
+var box=document.querySelector('.box');
+var inner1=document.querySelectorAll('.inner');
+var h=document.documentElement.clientHeight;
+
+for(var i=0;i<inner1.length;i++){
+	
+	inner1[i].style.height=h+'px';
+	box.style.height=h*inner1.length+'px';
+}
+</script>
+</html>

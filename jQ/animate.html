@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		background: #c11;
+	}
+</style>
+<body>
+	<div class="box"></div>
+
+
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+		$(function(){
+			$('.box').click(function(){
+				$(this).animate({marginLeft:'300px',opacity:'0'},3000)
+			})
+			
+		})
+	</script>
+</body>
+</html>

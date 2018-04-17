@@ -1,0 +1,140 @@
+
+下载node.js，之后node.js中就有npm，使用npm安装Vue–cli，再全局安装webpack，最后就可以初始化Vue项目
+
+
+
+
+
+
+
+
+node.js 会包含npm包管理工具
+
+
+
+
+前端脚手架  vue-cli
+
+webpack
+
+项目打包工具
+
+如果是全局安装就会在
+
+C:\Users\14374\AppData\Roaming\npm\node_modules
+
+如果不是--global 全局就在你创建的文件夹里
+
+是命令行开发工具  是通过命令行的形式实现vue框架开发项目， 的目的的前端手脚架
+
+安装方式
+
+Npm  install -g vue-cli
+
+注：-g表示全局安装，是可选项，可写可不写
+
+写了全局安装，会安装在c盘目录下的管理员文件夹下，appdata文件中
+
+
+如果不写-g 就表示局部安装就会安装在当前文件夹下
+
+
+
+gulp
+
+webpack							
+
+安装方式：
+
+npm install --save-dev webpack
+
+全局安装就在-dev 后面加个 -g
+
+注意在安装webpack的过程中，由于要下很多包文件，就可能导致对网速的要求比较高，在这个时候可以选用cnpm来进行安装（cnpm也有坑，因此如果cnpm安装报错，就是用npm进行安装）
+
+安装vue-cli 的时候提示信息的第一行就是这句话，意思是提示用户正在下载vue-cli，并将下载的指定目录显示用户
+
+downloading
+
+
+postinstall 表示开始安装
+
+表示当前安装的webpack版本号
+
+added 366 packages  in  165.832s
+
+已经安装了336个包，在165.832秒内
+
+
+初始化一个vue项目
+
+vue init  打包工具名称  项目名称
+
+初始化vue下命令行项目的提示信息信息
+
+1.project  name （echo）
+
+  //项目    名
+
+如果之前定义的项目名称不需要修改，直接回车
+
+如果需要修改，就在后面输入要修改的名称
+
+注意：项目名称不能包含大写字母
+
+2.project  description (a vue.js project)
+			  项目   描述
+
+3.author  (hahaha)作者 和邮件
+
+4。install  vue-router?(y/n)
+     安装
+
+如果想要安装vue -router插件，就在后面写上 Y  如果不想就写n
+
+5.use  eslint  to lint  your  code?(y/n)
+
+使用eslint（es6中的语法检测工具）
+
+6.setup unit   tests
+
+设置 代码验证工具
+
+一般不设置，选n
+
+7.setup  e2e tests  with nightwatch?(y/n)n
+
+8. CD 项目文件夹  进入项目文件
+
+npm install  安装项目以来文件
+
+npm run dev 运行当前默认项目
+
+
+总结前端安装vue框架的脚手架方法
+
+1.安装vue-cli
+
+2.安装打包工具（一般现在流行的打包工具 是 webpack  因此我们也使用webpack）
+
+3.通过vue  init 打包工具名 项目名称 初始化vue项目，并进行相关配置
+
+4.在配置完成之后会有提示信息  
+
+ CD 项目文件夹  进入项目文件
+
+npm install  安装项目以来文件
+
+npm run dev 运行当前默认项目代码
+
+
+5 在使用npm run dev 运行当前默认项目代码这条指令之后如果成功，会返回一条提示信息
+
+
+your application is running here:
+
+你的项目应用     正在运行  在这里
+
+http://localhost:8080
+
+项目运行地址

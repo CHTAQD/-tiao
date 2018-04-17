@@ -1,0 +1,38 @@
+一、获取与设置元素尺寸
+1、对象.style.属性
+注：只支持获取行内设置的属性值，否则值为空；
+2、getComputedStyle(box,null).属性
+注：只能获取，不能设置；
+3、offsetWidth/offsetHeight
+注：获取元素实际的宽高，包括边框与padding；
+
+
+二、获取与设置元素位置
+1、对象.style.属性
+注：只支持行内设置的属性值，否则值为空；
+2、getComputedStyle(box,null).属性
+注：只能获取，不能设置；
+3、offsetLeft/offsetTop
+注：返回相对于具有定位属性的某个父辈元素左边缘或上边缘的距离；
+
+（1）.如果父辈元素中有定位的元素，那么就返回距离当前元素最近的定位元素边缘的距离。
+（2）.如果父辈元素中没有定位元素，那么就返回相对于body左边缘距离。
+
+案例：漂浮的广告条
+      对联广告
+
+三、具有滚动条的元素的位置（与onscroll事件配合使用）
+scrollTop/scrollLeft
+注：具有滚动条的元素在滚动的时候，他的内部元素超出改元素顶部或左边的距离；
+
+兼容性的获取各个浏览器的scrollTop值；
+var  obj=document.documentElement.scrollTop==0?document.body:document.documentElement;
+var  objT=obj.scrollTop;
+或者+
+var obj=document.body.scrollTop||document.documentElement.scrollTop;
+
+
+案例：天猫顶部导航、返回顶部、楼层跳转
+
+
+

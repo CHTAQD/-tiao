@@ -1,0 +1,9 @@
+$ git remote add 名字    地址
+
+git pull 名字 master
+
+修改
+
+$ git remote add 新名字    地址
+
+git pull 新名字 master

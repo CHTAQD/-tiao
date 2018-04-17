@@ -1,0 +1,34 @@
+1、jQuery的发展：
+   基于原生javascript开发的一个类库
+   优点：1、轻量级
+         2、强大的选择器
+         3、出色的DOM操作
+         4、可靠的事件处理
+         5、完善的兼容性(IE6.0、FF2+、Safari2.0+、Opera9.0+),PS:jQuery2.0+不支持IE低版本(IE6~8)
+         6、链式操作
+         7、完善的Ajax
+         8、不污染顶级变量
+		 9、隐式迭代
+		 10、行为层与结构层的分离
+		 11、丰富的插件支持
+		 12、完善的文档
+		 13、开源
+   理念：写得少，做得多
+   官网：jquery.com
+   加载方式：
+   当页面加载完毕后执行
+   $(document).ready(function(){
+	   执行代码
+   });
+   $(function(){
+	   执行代码
+   });
+   与JS window.onload的区别:
+   执行时机、编写个数、简写形式
+   jQ具有重载功能，而JS window.onload会覆盖前面的代码
+   1>jQuery与$的关系:在jQuery库里等价,在插件里可能有控制权的一个差别。
+   2>jQuery对象与DOM对象转换:
+   $('ele'):转换成jQuery对象，$('ele')[0]或$('ele').get(0):转换成DOM对象
+   $('ele'):获到元素相当于document.getElementsByTagName('ele')
+
+

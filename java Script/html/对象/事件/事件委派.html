@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border=1 id="aaa">
+	<caption>学生成绩单</caption>
+	<tr>
+		<th>姓名</th>
+		<th>性别</th>
+		<th>班级</th>
+		<th>科目</th>
+		<th>分数</th>
+	</tr>
+	<tr>
+		<td>小军</td>
+		<td>男</td>
+		<td>1702</td>
+		<td>html</td>
+		<td>99</td>
+	</tr>
+	<tr>
+		<td>小军</td>
+		<td>男</td>
+		<td>1702</td>
+		<td>html</td>
+		<td>99</td>
+	</tr>
+	<tr>
+		<td>小军</td>
+		<td>男</td>
+		<td>1702</td>
+		<td>html</td>
+		<td>99</td>
+	</tr>
+	<tr>
+		<td>小军</td>
+		<td>男</td>
+		<td>1702</td>
+		<td>html</td>
+		<td>99</td>
+	</tr>
+	<tr>
+		<td>小军</td>
+		<td>男</td>
+		<td>1702</td>
+		<td>html</td>
+		<td>99</td>
+	</tr>
+	</table>
+</body>
+<script>
+var aaa=document.getElementById('aaa');
+aaa.onclick=function(e){
+	var ev=e||window.event;
+	var obj=ev.scrElement||ev.target;
+	alert(obj.innerHTML);
+/*	var text=obj.innerHTML;
+	obj.innerHTML='';
+	var input=document.creatElement('input');
+	input.type='text';
+	input.style.border=0;*/
+
+
+
+/*
+	input.onblur=obj.onkeydown=obj.ondblclick=function(e){
+		var ev=e||window.event;
+		if(ev.type=='blur'||ev.type=='keydown'&&ev.keyCode==13||ev.type=='dblclick')
+
+
+
+
+
+
+
+			
+	}*/
+}
+</script>
+</html>

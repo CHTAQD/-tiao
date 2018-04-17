@@ -1,0 +1,54 @@
+
+1、DOM:是一种与浏览器、平台、语言无关的接口(API),使用该接口可以轻松访问页面中所有的标准组件。
+2、DOM操作的分类:DOM Core(核心)、HTML_DOM、CSS_DOM
+3、DOM节点:
+   1、创建节点 $(html) 
+   html标签可以将<p></p>写成<p/>形式
+   2、插入节点的方法
+   $(ele).append():向元素内部的最后添加元素
+   $(ele).appendTo():将匹配的元素添加到元素内部的最后
+   $(ele).prepend():向元素内部的最前添加元素
+   $(ele).prependTo():将匹配的元素添加到元素内部的最前
+   $(ele).after():在匹配元素的后面添加元素
+   $(ele).insertAfter():将匹配元素添加到指定元素后面
+   $(ele).before():在匹配元素的前面添加元素
+   $(ele).insertBefore():将匹配元素添加到指定元素前面
+4、删除节点:
+   $(ele).remove()
+   $(ele).empty():清空所有的节点、文本、属性,但保留当前DOM节点
+5、克隆节点:
+	$(ele).clone()只复制节点，如果传入参数true，复制节点的同时，复值它的行为
+6.替换节点
+$(ele1).replacewith(ele2)
+$(ele2).replaceAll(ele1)
+  7.包裹节点
+$(ele).wrap 有几个元素就用几个元素进行包裹
+wrapAll 不管有几个元素都用一个元素进行包裹
+$(ele).wrapInner()包裹元素中的文本内容
+8.属性节点
+获取，设置：$(ele).attr()
+ps:类似方法：width（），height（），text（），html（）。css（）等
+删除节点：removeAttr()
+9.样式操作：
+追加样式：addclass
+删除样式:removeclass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+    .wrap{
+    	position: relative;
+    }
+
+
+	</style>
+
+
+</head>
+<body>
+	<div class="wrap">
+		<img src="img/1.png" alt="">
+		<img src="img/2.png" alt="">
+		<img src="img/3.png" alt="">
+		<img src="img/4.png" alt="">
+		<img src="img/5.png" alt="">
+		<img src="img/6.png" alt="">
+	</div>
+<script src="jquery-3.2.1.js"></script>
+	<script>
+	$(function(){
+		var imgW=$('.wrap>img').outerWidth();
+		var wW=Math.floor($(window).width()/imgW);
+		var boxW=$('.wrap').width(ww*imgW);
+		var arr=[];
+		for (var i = 0; i < $('.wrap>img').length; i++) {
+			if (i<wW) {
+				arr.push(0)
+			}
+			var imgH = $(".wrap>img").eq(i).outerHeight();
+			var minH=Math.min.apply(Math,arr);
+			var idx=$.inArray(minH,arr);
+			$('.warp>img').eq(i).animate({'left':idx*imgW,'top':minH},1500)
+			arr[idx]+=imgH;
+		}
+		function renderImg(){
+			var data= {'dataImg':[
+						{'src':'img/1.png'}
+						{'src':'img/2.png'}
+						{'src':'img/3.png'}
+						{'src':'img/4.png'}
+						{'src':'img/5.png'}
+						{'src':'img/6.png'}
+			]}
+			$.each(dataImg,function(i,v){
+				$('<img src='' alt='' />').attr(v).appendTo('.wrap')
+			})
+		}
+
+		$(window).on('scroll',function(){
+			var top = $(this).scrollTop();
+			var view = $(document).height()-$(window).height();
+			if(top>=view){
+				renderImg()
+			}
+		})
+	})
+	</script>
+</body>
+<ml>

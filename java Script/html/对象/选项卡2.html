@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.bigbox{
+		height: 100px;
+		width: 600px;
+		border:1px solid #000;
+		line-height:100px;
+		margin:100px auto 0px;
+		text-align: center;
+		font-size: 20px;
+		
+	}
+	.bottom{
+		height: 400px;
+		width: 600px;
+		border:1px solid #000;
+		line-height: 400px;
+		margin:0px auto;
+		text-align: center;
+		font-size: 80px;
+		position: relative;
+
+	}
+	.top{
+		float: left;
+		width: 197px;
+		height: 100%;
+		border:1px solid #ccc;
+	}
+	.footer{
+		height: 400px;
+		width: 600px;
+		position: absolute;
+		left:0;
+		top:0;
+		background-color: green;
+	}
+</style>
+<body>
+<div class="bigbox">
+	<div class="top">精品速递</div>
+	<div class="top">良品特区</div>
+	<div class="top">次品特卖</div>
+</div>
+<div class="bottom">
+	<div class="footer">精品速递</div>
+	<div class="footer">良品特区</div>
+	<div class="footer">次品特卖</div>
+</div>
+</body>
+<script>
+var top1=document.querySelectorAll('.top');
+console.log(top1)
+var footer1=document.querySelectorAll('.footer');
+// for(var i=0;i<top1.length;i++){
+// 	top1[i].index=i;
+// 	top1[i].onclick=function(){
+// 		for(var j=0;j<footer1.length;j++){
+// 			footer1[j].style.zIndex=0;
+// 		}
+// 		footer1[this.index].style.zIndex=2;
+// 	}
+// }
+
+for(var i=0;i<top1.length;i++){
+	top1[i].a=i;
+	top1[i].onclick=function(){		
+		for(var j=0;j<footer1.length;j++){
+			footer1[j].style.zIndex=0;
+		}
+		console.log(this.a)
+		footer1[this.a].style.zIndex=2;
+		// console.log(this)
+	}
+}
+
+</script>
+</html>
+

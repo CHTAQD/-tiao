@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<div id="view">
+			<h2>12321</h2>
+			<div>
+					ldkfnlsdfsldfnlsfndi kldnfkldafslnvldnlk
+			
+			</div>
+		</div>
+		<div id="view">
+			<h2>12321</h2>
+			<div>
+					ldkfnlsdfsldfnlsfndi kldnfkldafslnvldnlk
+			
+			</div>
+		</div><div id="view">
+			<h2>12321</h2>
+			<div>
+					ldkfnlsdfsldfnlsfndi kldnfkldafslnvldnlk
+			
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(document).ready(function(){
+		//默认状态,让所有内容DIV隐藏
+		$('#view>div').hide();
+		//H2绑定事件
+		$('#view>h2').on('click',function(){
+			//当前h2切换bg类
+			$(this).toggleClass('bg');
+			//当前div内容显示。隐藏
+			$(this).next().toggle();
+			//通过当前h2查找父元素#view的div兄弟元素，在向下查找div内容，让其隐藏
+			$(this).parent().siblings().children('div').hide();
+			//通过当前h2查找父元素#view的div兄弟元素，在向下查找h2标题，删除其类
+			$(this).parent().siblings().children('h2').removeClass('bg');
+		})
+	})
+	</script>
+</body>
+</html>

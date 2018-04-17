@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>artTemplate 原生语法</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 15px 5px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>图片地址</th>
+            <th>现价</th>
+            <th>原价</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="4">加载数据中...</td>
+        </tr>
+    </tbody>
+</table>
+<!--引包-->
+<script src="js/jquery.min.js"></script>
+<!--引入template包-->
+<script src="js/template-native.js"></script>
+<!--编写模板-->
+<!--1.定义解析方式-->
+<!--script标签的type属性中text/后面跟的是谁-->
+<!--就表示这个script标签中的文本内容按照谁的语法格式来解析-->
+
+<!--2.编写模板内容-->
+<!--2.1.在先前定义好的模板script标签中写入html结构-->
+<!--2.2. 模板的初始化，初始化的方法是：template()，他有两个参数
+第一个参数是要确定的模板script标签的id；第二个参数是一个对象；
+var xxx=template("id",{xxx:data(后台获取来的数据)})-->
+<!--3.数据的载入   模板引擎的原生语法-->
+<!--3.1.   模板引擎的原生语法
+<%代码逻辑%>
+3.2.  传入数据   模板引擎的原生语法
+<%= 要传入的数据 %>
+-->
+
+
+
+
+<script type="text/template" id="Allen">
+
+    <!-- <%for(var i = 0 ; i < SF.length ; i++){%>
+    <%var item=SF[i]%>
+    <tr>
+        <td><%= i+1%></td>
+        <td><%= item.url %></td>
+        <td><%= item.nowPrice %></td>
+        <td><%= item.oldPrice %></td>
+    </tr>
+    <%}%> -->
+</script>
+<script>
+    var data = [
+        {
+            "url": "images/detail01.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        },
+        {
+            "url": "images/detail01.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        },
+        {
+            "url": "images/detail01.jpg",
+            "nowPrice": "10.00",
+            "oldPrice": "100.00"
+        }
+    ];
+    //模板的初始化
+    //通过传参，定义模板的内容，确定是哪一个模板
+    //1.确定是哪一个模板   通过id进行确定的
+    // 因此，第一个参数就是要找的模板的id
+    //2.定义模板内容  第二个参数是一个对象
+    var html = template("Allen",{SF:data});
+    console.log(html);
+    $("tbody").html(html);
+</script>
+
+</body>
+</html>

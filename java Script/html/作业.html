@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+/*var a=1;
+var b=1;			+
+alert(a+b);*/
+// 在引号里相连不相加
+
+
+/*var a=5;
+var b=3;			-
+alert(a-b);*/
+
+/*var a=2;
+var b=2;			*
+alert(a*b)*/
+
+/*var a=4;
+var b=2;			/
+alert(a/b);*/
+
+/*var a=5;
+var b=3;			%
+alert(a%b);*/
+
+/*var a=1;
+var b=a++			a++:++在后先赋值后运算
+alert(b)			//1*/
+
+/*var  a=2;
+var  b=++a;			   //++a:++在前先运算后附值；
+alert(b)			   //3*/
+
+/*var a=2;*/			
+
+//写在alert 的++a，a++里面和写在var 之后是不一样的
+/*alert(a=a++);	*/	
+
+//这时候虽然出来的是2；但是因为是先给他附的值；后计算的所以是2，但是也是计算之后的 所以她现在a是计算之后的3，但因为a++,++在后所以显示2/
+/*alert(a=++a);		    *///这时候出来的是4，因为++a是加一，但是上一个也是计算后的，所以上一个结果是3；但因为先赋值所以他显示的是2，但是计算之后加上++a就是3+1=4；所以结果是3；
+
+/*var a=2;
+var b=a--;
+alert(b)    /*同上*/
+
+/*关系运算符*/
+
+/*var a=2;
+var b=3;		//如果不是用引号包起来，那么就是单纯的数值对比  答案是fasle错的
+alert(a>b)*/
+ 
+/*var a='3';
+var b='4';		//用引号包起来数值就会转化成ascii码 取第一个值比大小；答案：true 对的
+alert(a<b);*/
+
+/*var a='3';
+var b=2;		//一个数值被引号包起来比大小的时候引号里的会自动转化成数值；
+//比大小答案是错的
+// alert(parseInt(a,10));
+alert(a<b);
+*/
+
+/*var a='b';
+var b=2;
+alert(a>b)
+*/
+
+/*var a='b';
+var b='4';  		//同是引号引起来的数值和字母比较，取第一个字母或数字比谁的码大
+alert(a>b)*/              
+
+//上面字符串能转化为ascii码，那么就取第一个值进行比较
+
+
+
+
+// 字符串  3 赋值运算符
+/*var a=2;
+a+=2;*/
+/* var a=3;
+ a+=3;
+a+=b = a=a+b
+a*=b = a+a*b
+a/=b = a=a/b
+a-=b = a=a-b
+a%=b = a=a%b*/
+
+// 四，逻辑运算符
+/*且 与      and      &&   同真咋真，则为假； 只要有一个是假的都是假的
+或         or       ||	   同假则假，则为真 同上
+非         not      !*/	   //真亦假，假亦真
+//  var a=4;
+//  var b=3;
+//  var c=1;
+// alert(!c||b&&c||a);
+
+
+
+
+/* 
+且      and      &&       真真亦真，则亦假    赋值的规则：选择假值  没找到假值，就选择最后一个值；
+或      or       ||		  假假亦假，则亦真    赋值的规则：选择真值  没找到真值  就选择最后一个值；
+非      not      !		  假亦真，真亦假
+*/
+
+
+
+/*var a=5;
+var b=3;
+var c=2;
+var d=3;
+var e=6;				
+alert(!a>b||b>d&&a>c||!e>a&&c>a);
+*/
+
+// var a="";
+// var b=3;
+// var c=0;
+// var m=a||b||c;
+// alert(m);
+
+
+// var a=1;
+// var b=2;
+// var c=3;
+// alert((a+b)*c);
+
+
+// function aa(){
+// 	alert(1)
+// };aa()
+
+// if(1>2){
+// 	alert('这是对的')
+// }else{
+// 	alert('这是错的')
+// };
+
+// if如果后面是对的就弹出第一个；
+// else如果是错的就弹出这个后面的数据
+// if如果
+// else否则
+// 
+
+
+
+// = ? : 
+// 赋值符后写对错 如果是对的就显示？号后面的数据  如果是错的就显示：后面的数据；
+// var aa=1>0?"sjis":3;
+// alert(aa);
+
+
+
+
+
+
+
+
+
+
+// &&       比大小的：真真是真 则为假			选假值  要是没有选最后一个
+// ||		 大小：假假是假，则为真				选真值  要是没有选最后一个
+// !		 真是假   假为真	
+
+
+
+/*var a=2;
+var c='3';
+a+=c;
+c-=a;
+c=+c;
+c/=2;
+alert(c);
+*/
+
+// 回调
+
+/*function aa(i){
+	return i()
+}
+aa(bb)
+function bb(){
+	alert(123)
+}
+
+// 递归
+function aa(i){
+	if(i==1){
+		return i
+	}else{
+		return aa(i-1)+i
+	}
+}
+alert(aa(6))
+
+// 闭包
+function aa(){
+	var a=123;
+	function bb(){
+		alert(a)
+	}
+	return bb
+}
+var i=aa()
+i()
+*/
+
+
+function aa(){
+	基础语法
+}
+
+var aa=function(){
+	字面量
+}
+
+var aa=new Function(以对象形式声明 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src='jquery-3.2.1.js'></script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    ul{
+        height: 120px;
+        border:2px solid blue;
+        margin:30px auto;
+        position: relative;
+        /*overflow: hidden;*/
+    }
+    ul>li{
+        position: absolute;
+    }
+    ul>.lastLi{
+        right: 0;
+    }
+    img{
+        width: 300px;
+        height:120px;
+    }
+    </style>
+<body>
+	<ul>
+		<li><img src="img/1.png" alt=""></li>
+		<li><img src="img/2.png" alt=""></li>
+		<li><img src="img/3.png" alt=""></li>
+		<li><img src="img/4.png" alt=""></li>
+		<li><img src="img/5.png" alt=""></li>
+		<li id="lastLi"><img src="img/6.png" alt=""></li>
+	</ul>
+
+
+
+
+	<script>
+	$(function(){
+		var moveLi=$('ul>li').not('#lastLi');
+		var imgW=50;
+		var ulW=300+300+imgW*(moveLi.length-1);
+		$('ul').width(ulW)
+		moveLi.each(function(k){
+			if(k==0){
+				$(this).css('left',0)
+			}else{
+				$(this).css('left',300+(k-1)*imgW)
+			}
+		})
+
+
+
+	})
+	</script>
+
+</body>
+</html>

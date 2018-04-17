@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		height: 400px;
+		width: 400px;
+		border:1px solid #ccc;
+		margin:0 auto;
+	}
+
+</style>
+<body>
+	<div class="box">
+		<div class="top">
+			 <ul>
+			 	<li>吃</li>
+			 	<li>喝</li>
+			 	<li>玩</li>
+			 	<li>乐</li>
+			 	<li>扯</li>
+			 </ul>
+		 </div>
+		
+		<div class="button">
+			<input type="text">
+			<input type="button">
+			<div class="big">
+				<p>最多显示2个</p>
+			</div>
+		</div>
+		<div class="bottom">
+			<ul>
+
+			</ul>
+		</div>
+	</div>
+	
+
+
+
+
+
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+	$(function(){
+		$('').on('click','li',function(){
+			if($('#selected>li').length<3){
+				$(this).addClass('bg');
+				//$(this).clone().append()
+			}
+		})
+	})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div class="echo">
+    <allen :list='lovers'></allen>
+</div>
+
+<script type="text/x-handlebars-template" id='hehe'>
+    <div>
+        <ul>
+            <li v-for='v in list'>
+                {{v.name}}
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script>
+    Vue.component('allen',{
+        template:'#hehe',
+        props:['list']
+    })
+    var echo = new Vue({
+        el:'.echo',
+        data:{
+            lovers:[
+                {name:'echo'},
+                {name:'echo'},
+                {name:'echo'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

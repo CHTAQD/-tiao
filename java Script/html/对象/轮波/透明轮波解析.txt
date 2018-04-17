@@ -1,0 +1,121 @@
+
+12:20:04
+商 2017/7/7 12:20:04
+来
+商 2017/7/7 12:20:19
+@王晨宇 
+14:34:20
+滕老师 2017/7/7 14:34:20
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闪星</title>
+	<style>
+	body,html{
+		width:100%;
+		height:100%;
+		overflow: hidden;
+	}
+	body{
+		background: url(1.jpg) no-repeat center;
+		background-size:100%;
+	}
+	.star{
+		width:20px;
+		height:20px;
+		background: #eee;
+		border-radius: 50%;
+		position: absolute;
+		top:200px;
+		left:200px;
+	}
+	</style>
+</head>
+<body>
+	<div class="star"></div>
+	<script src='animate.js'></script>
+	<script>
+	var star=document.querySelector('.star');
+	setInterval(shan,1500)
+	function shan(){
+		animate(star,{opacity:0},500,function(){
+			animate(star,{opacity:1},500)
+		})
+	}
+	</script>
+</body>
+</html>
+14:55:51
+滕老师 2017/7/7 14:55:51
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>透明度切换</title>
+	<style>
+	.box{
+		width:520px;
+		height:280px;
+		border:10px solid #aaa;
+		position: absolute;
+		top:0;left:0;bottom: 0;right:0;
+		margin: auto;
+	}
+	.inner{
+		width:520px;
+		height:280px;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner"><img src="img/1.jpg" alt=""></div>
+		<div class="inner"><img src="img/2.jpg" alt=""></div>
+		<div class="inner"><img src="img/3.jpg" alt=""></div>
+		<div class="inner"><img src="img/4.jpg" alt=""></div>
+		<div class="inner"><img src="img/5.jpg" alt=""></div>
+	</div>
+	<script src='animate.js'></script>
+	<script>
+	var inner=document.querySelectorAll('.inner');
+
+	for(var i=0;i<inner.length;i++){
+		for(var j=0;j<inner.length;j++){
+			animate(inner[j],{zIndex:1,opacity:0},1000)
+		}
+		animate(inner[i],{zIndex:2,opacity:1},1000)
+	}
+	
+	</script>
+</body>
+</html>
+15:22:50
+滕老师 2017/7/7 15:22:50
+
+15:28:20
+滕老师 2017/7/7 15:28:20
+var inner=document.querySelectorAll('.inner');
+	// num代表显示出来的图的下标
+	var num=0;
+	// 让循环函数循环起来
+	setInterval(move,1200)
+	// 循环函数
+	function move(){
+		// 循环让所有图层级为1，透明度为0
+		for(var j=0;j<inner.length;j++){
+			animate(inner[j],{zIndex:1,opacity:0},500)
+		}
+		// 让指定的图显示出来
+		animate(inner[num],{zIndex:2,opacity:1},500);
+		// 让图循环起来
+		num++;
+		// 判断：图到了第五张时，回到第一张
+		if(num>inner.length-1){
+			num=0
+		}
+	}
+	
